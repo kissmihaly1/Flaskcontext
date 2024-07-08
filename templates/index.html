@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontextus.</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KONTE<span class="highlight">XTUS</span></h1>
+            <p>Nap: <span id="game-number">#1</span> | Tippek száma: <span id="guesses-count">0</span></p>
+        </header>
+        <main>
+            <input type="text" placeholder="írj ide egy szót..." id="word-input">
+            <button id="submit-button">Küldés</button>
+            <div id="results"></div>
+            <div class="instructions">
+                 <h2>Hogyan kell játszani?</h2>
+                 <p>Találd meg a titkos szót. Korlátlan számú tipped van.</p>
+                 <p>A szavakat egy mesterséges intelligencia algoritmusa rendezte aszerint, hogy mennyire hasonlítanak a titkos szóhoz.</p>
+                 <p>A szó elküldése után látni fogja a szó pozícióját. A titkos szó az 1. szám.</p>
+                 <p>Az algoritmus több ezer szöveget elemzett. Azt a szövegkörnyezetet használja, amelyben a szavakat használjuk a köztük lévő hasonlóság kiszámításához.</p>
+            </div>
+        </main>
+        <footer id="faq-section">
+            <h2>GYK</h2>
+            <p><strong>How is the word order defined?</strong></p>
+            <p><strong>How can I ask for a hint?</strong></p>
+        </footer>
+    </div>
+
+    <script src="../static/script.js"></script>
+
+
+</body>
+</html>
+
+
