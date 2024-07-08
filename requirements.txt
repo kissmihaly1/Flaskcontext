@@ -3,3 +3,4 @@ numpy
 pandas
 python-dotenv
 flask
+scipy==1.10.1
