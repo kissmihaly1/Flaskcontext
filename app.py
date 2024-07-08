@@ -3,6 +3,8 @@ from get_context_number import ContextoGame
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 app = Flask(__name__)
 
 contexto_game = ContextoGame('model/glove-hu_152.gensim', 'lemmatized_words.csv')
