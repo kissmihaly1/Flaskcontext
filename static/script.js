@@ -473,3 +473,7 @@ function saveGameData() {
 
     localStorage.setItem(currentDate, JSON.stringify(gameData));
 }
+
+//TODO
+// lemma szavak használata
+// tipp adása ha a 2. szónál jár

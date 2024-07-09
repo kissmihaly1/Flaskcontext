@@ -6,7 +6,7 @@ class ContextoGame:
     def __init__(self, model_path, lemmatized_words_path):
         self.model = KeyedVectors.load(model_path)
         self.lemmatized_words_df = pd.read_csv(lemmatized_words_path)
-        self.lemmatized_words = self.lemmatized_words_df['word'].tolist()
+        self.lemmatized_words = list(set(self.lemmatized_words_df['lemma'].tolist()))
         self.ranked_list = []
         self.hints = 0
 
