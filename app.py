@@ -8,7 +8,7 @@ load_dotenv()
 app = Flask(__name__)
 
 contexto_game = ContextoGame('model/glove-hu_152.gensim', 'lemmatized_words.csv')
-solution_word = 'anya'
+solution_word = os.getenv('SOLUTION_WORD')
 contexto_game.create_ranked_list(solution_word)
 
 

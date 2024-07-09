@@ -21,7 +21,7 @@
 
         if (solutionGuessed) {
             const solutionWord = savedResults.find(result => result.rank === 1).word;
-            showCongratulationsPage(solutionWord, guessedWords.size);
+            showCongratulationsPage(solutionWord, savedResults.size);
             return;
         }
         if (giveUp){
@@ -419,5 +419,7 @@ function showError(message) {
 
 //TODO
     //újrakezdés gomb
-    //
-    //
+    //ha másodiknál jár, tipp nem megy
+    //feladás megkérdezése
+    // ne adhassa fel egyből
+    // tippet se kérhessen a főoldalon
