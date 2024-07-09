@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     document.getElementById('streak').innerText = streak;
 });
-
 function handleGuess() {
     let word = document.getElementById('word-input').value.trim().toLowerCase();
     document.getElementById('word-input').value = '';
@@ -124,6 +123,7 @@ function handleGuess() {
 
                 guessedWordBox = document.createElement('div');
                 guessedWordBox.classList.add('result-box', 'guessed-word-box', getColorClass(data.rank));
+                guessedWordBox.id = 'guessed-word-box';
                 guessedWordBox.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
 
                 resultContainer.prepend(guessedWordBox);
@@ -135,8 +135,14 @@ function handleGuess() {
                     resultContainer.appendChild(separator);
                 }
 
+                let allResultBoxes = resultContainer.getElementsByClassName('result-box');
+                for (let box of allResultBoxes) {
+                    box.classList.remove('guessed-word-box');
+                }
+
+
                 let newResult = document.createElement('div');
-                newResult.classList.add('result-box', getColorClass(data.rank));
+                newResult.classList.add('result-box', 'guessed-word-box', getColorClass(data.rank));
                 newResult.setAttribute('data-word', word);
                 newResult.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
 
@@ -150,6 +156,10 @@ function handleGuess() {
                         break;
                     }
                 }
+                let lastOne = [...guessedWords].pop();
+                let latestGuess = savedResults.find(pair => pair.word === lastOne);
+                guessedWordBox.classList.add('guessed-word-box');
+                guessedWordBox.id = 'guessed-word-box';
 
                 if (!inserted) {
                     resultContainer.appendChild(newResult);
@@ -216,7 +226,7 @@ function showCongratulationsPage(word, guessCount) {
     document.body.innerHTML = `
         <div class="congrats">
             <header>
-                <h1>KONT<span class="highlight">EXTUS</span></h1>
+                <h1>KONT<span class="highlight">EXTUS</span>.</h1>
                 <hr>
                 <h1>Gratulálok!</h1>
             </header>
@@ -345,9 +355,7 @@ function handleGiveUp() {
             showError(error);
         });
 }
-
 function handleHint() {
-    // Check if the user has already used 3 hints today
     if (hintCount >= 3) {
         showError("Már elhasználtad a 3 tippedet mára.");
         return;
@@ -398,8 +406,13 @@ function handleHint() {
                 resultContainer.appendChild(separator);
             }
 
+            let allResultBoxes = resultContainer.getElementsByClassName('result-box');
+            for (let box of allResultBoxes) {
+                box.classList.remove('guessed-word-box');
+            }
+
             let newResult = document.createElement('div');
-            newResult.classList.add('result-box', getColorClass(data.rank));
+            newResult.classList.add('result-box', 'guessed-word-box', getColorClass(data.rank));
             newResult.setAttribute('data-word', word);
             newResult.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
 
@@ -413,7 +426,10 @@ function handleHint() {
                     break;
                 }
             }
-
+            let lastOne = [...guessedWords].pop();
+            let latestGuess = savedResults.find(pair => pair.word === lastOne);
+            guessedWordBox.classList.add('guessed-word-box');
+            guessedWordBox.id = 'guessed-word-box';
             if (!inserted) {
                 resultContainer.appendChild(newResult);
             }
@@ -518,4 +534,4 @@ function saveGameData() {
 }
 
 //TODO
-// aktuális tipp legyen vastagabb
+// menü mindig latszodjon
