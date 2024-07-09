@@ -1,22 +1,17 @@
-const currentDate = new Date().toLocaleDateString();
-const storedDate = localStorage.getItem('gameDate');
-let guessedWords = new Set();
-let savedResults = [];
-let guessesCount = 0;
-let solutionGuessed = false;
-let giveUp = false;
+let currentDate = new Date().toLocaleDateString();
+currentDate = "2024. 10. 12"
+const storedGameData = JSON.parse(localStorage.getItem(currentDate)) || {};
+let guessedWords = new Set(storedGameData.guessedWords || []);
+let savedResults = storedGameData.results || [];
+let guessesCount = storedGameData.guessesCount || 0;
+let solutionGuessed = storedGameData.solutionGuessed || false;
+let giveUp = storedGameData.giveUp || false;
 let streak = parseInt(localStorage.getItem('streak')) || 0;
 let lastSolvedDate = localStorage.getItem('lastSolvedDate') || null;
 
-if (storedDate !== currentDate) {
-    localStorage.setItem('gameDate', currentDate);
-    localStorage.removeItem(`giveUp_${currentDate}`);
-} else {
-    guessedWords = new Set(JSON.parse(localStorage.getItem(`guessedWords_${currentDate}`) || '[]'));
-    savedResults = JSON.parse(localStorage.getItem(`results_${currentDate}`) || '[]');
-    guessesCount = localStorage.getItem(`guessesCount_${currentDate}`) || 0;
-    solutionGuessed = localStorage.getItem(`solutionGuessed_${currentDate}`) === 'true';
-    giveUp = localStorage.getItem(`giveUp_${currentDate}`) === 'true';
+if (!storedGameData || storedGameData.date !== currentDate) {
+    localStorage.setItem(currentDate, JSON.stringify({ date: currentDate }));
+    localStorage.removeItem('giveUp');
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -62,7 +57,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // Display the streak
     document.getElementById('streak').innerText = streak;
 });
 
@@ -90,14 +84,12 @@ function handleGuess() {
                 showError(data.error);
             } else {
                 guessedWords.add(word);
-                localStorage.setItem(`guessedWords_${currentDate}`, JSON.stringify([...guessedWords]));
+                saveGameData();
 
                 if (data.rank === 1) {
-                    const results = JSON.parse(localStorage.getItem(`results_${currentDate}`) || '[]');
-                    results.push(data);
-                    localStorage.setItem(`results_${currentDate}`, JSON.stringify(results));
-                    localStorage.setItem(`solutionGuessed_${currentDate}`, 'true');
-
+                    savedResults.push(data);
+                    solutionGuessed = true;
+                    saveGameData();
                     if (lastSolvedDate) {
                         const lastDate = new Date(lastSolvedDate);
                         const differenceInTime = new Date(currentDate) - lastDate;
@@ -111,8 +103,6 @@ function handleGuess() {
                     } else {
                         streak = 1;
                     }
-
-                    // Save the current date as the last solved date
                     localStorage.setItem('lastSolvedDate', currentDate);
                     localStorage.setItem('streak', streak);
 
@@ -161,16 +151,15 @@ function handleGuess() {
                     resultContainer.appendChild(newResult);
                 }
 
-                const results = JSON.parse(localStorage.getItem(`results_${currentDate}`) || '[]');
-                results.push(data);
-                results.sort((a, b) => a.rank - b.rank);
-                localStorage.setItem(`results_${currentDate}`, JSON.stringify(results));
+                savedResults.push(data);
+                savedResults.sort((a, b) => a.rank - b.rank);
+                saveGameData();
 
                 document.getElementById('faq-section').classList.add('hidden');
                 document.querySelector('.instructions').classList.add('hidden');
                 guessesCount = parseInt(guessesCount) + 1;
                 document.getElementById('guesses-count').innerText = guessesCount;
-                localStorage.setItem(`guessesCount_${currentDate}`, guessesCount);
+                saveGameData();
             }
         })
         .catch(error => {
@@ -185,7 +174,13 @@ document.getElementById('word-input').addEventListener('keypress', function (e) 
         handleGuess();
     }
 });
+function updateSolutionGuessed(currentDate, newValue) {
+    let gameData = JSON.parse(localStorage.getItem(currentDate)) || {};
 
+    gameData.solutionGuessed = newValue;
+
+    localStorage.setItem(currentDate, JSON.stringify(gameData));
+}
 function getColorClass(rank) {
     if (rank <= 1000) {
         return 'green';
@@ -195,12 +190,11 @@ function getColorClass(rank) {
         return 'red';
     }
 }
-
 function showCongratulationsPage(word, guessCount) {
     let green_number = 0;
     let orange_number = 0;
     let red_number = 0;
-    const savedResults = JSON.parse(localStorage.getItem(`results_${currentDate}`) || '[]');
+    const savedResults = JSON.parse(localStorage.getItem(currentDate)).results || [];
 
     savedResults.forEach(data => {
         if (data.rank <= 1000) {
@@ -232,24 +226,32 @@ function showCongratulationsPage(word, guessCount) {
     `;
     startCountdown();
 }
-let hintUsed = false;
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('give-up').addEventListener('click', (event) => {
-        if (savedResults.length<=0) {
+        if (savedResults.length <= 0) {
             showError("Tippelned kell, mielőtt feladnád.");
             event.preventDefault();
             return;
         }
 
-        if (confirm("Biztos, hogy feladod?")) {
-            handleGiveUp();
-        } else {
-            event.preventDefault();
-        }
+        showSurrenderModal();
     });
+
     document.getElementById('hint').addEventListener('click', handleHint);
     document.getElementById('informations').addEventListener('click', handleInformations);
     document.querySelector('.dropbtn').addEventListener('click', toggleDropdown);
+
+    // Surrender modal event listeners
+    document.getElementById('close-surrender-modal').addEventListener('click', closeSurrenderModal);
+    document.getElementById('cancel-surrender').addEventListener('click', closeSurrenderModal);
+    document.getElementById('confirm-surrender').addEventListener('click', handleGiveUp);
+
+    window.addEventListener('click', function(event) {
+        let modal = document.getElementById('surrender-modal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
     window.addEventListener('click', function(event) {
         if (!event.target.matches('.dropbtn')) {
@@ -278,7 +280,16 @@ function toggleDropdown() {
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 
+function showSurrenderModal() {
+    document.getElementById('surrender-modal').style.display = 'block';
+}
+
+function closeSurrenderModal() {
+    document.getElementById('surrender-modal').style.display = 'none';
+}
+
 function handleGiveUp() {
+    closeSurrenderModal();
     localStorage.setItem(`giveUp_${currentDate}`, 'true');
     // Reset the streak
     localStorage.setItem('streak', 0);
@@ -312,7 +323,7 @@ function handleGiveUp() {
 }
 
 function handleHint() {
-    savedResults = JSON.parse(localStorage.getItem(`results_${currentDate}`) || '[]');
+    savedResults = JSON.parse(localStorage.getItem(currentDate)).results || [];
     const best_yet = savedResults.reduce((best, current) => {
         return (current.rank < best.rank) ? current : best;
     }, savedResults[0]);
@@ -334,7 +345,7 @@ function handleHint() {
             }
             word = data.word;
             guessedWords.add(word);
-            localStorage.setItem(`guessedWords_${currentDate}`, JSON.stringify([...guessedWords]));
+            saveGameData();
 
             let resultContainer = document.getElementById('results');
 
@@ -377,16 +388,15 @@ function handleHint() {
                 resultContainer.appendChild(newResult);
             }
 
-            const results = JSON.parse(localStorage.getItem(`results_${currentDate}`) || '[]');
-            results.push(data);
-            results.sort((a, b) => a.rank - b.rank);
-            localStorage.setItem(`results_${currentDate}`, JSON.stringify(results));
+            savedResults.push(data);
+            savedResults.sort((a, b) => a.rank - b.rank);
+            saveGameData();
 
             document.getElementById('faq-section').classList.add('hidden');
             document.querySelector('.instructions').classList.add('hidden');
             guessesCount = parseInt(guessesCount) + 1;
             document.getElementById('guesses-count').innerText = guessesCount;
-            localStorage.setItem(`guessesCount_${currentDate}`, guessesCount);
+            saveGameData();
         }
     })
     .catch(error => {
@@ -452,7 +462,15 @@ function showError(message) {
     }, 3000);
 }
 
-//TODO
-// ne adhassa fel egyből
-// megkérdezze hogy fel akarja e adni biztos
-//
+function saveGameData() {
+    const gameData = {
+        date: currentDate,
+        guessedWords: [...guessedWords],
+        results: savedResults,
+        guessesCount: guessesCount,
+        solutionGuessed: solutionGuessed,
+        giveUp: giveUp
+    };
+
+    localStorage.setItem(currentDate, JSON.stringify(gameData));
+}
