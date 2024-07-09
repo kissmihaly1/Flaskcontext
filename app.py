@@ -43,6 +43,9 @@ def hint():
     if not best_rank:
         return jsonify({"error": "Nem lett szó beírva!"}), 400
     word, rank = contexto_game.get_hint(best_rank)
+    if word is None:
+        return jsonify({"error": "Már megtaláltad a legközelebbi szót!"}), 400
+
     return jsonify({"word": word, "rank": rank})
 
 @app.route('/giveup', methods=['POST'])

@@ -34,9 +34,9 @@ header .highlight {
 
 main {
     background-color: #333;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    max-height: 70vh;
+    max-height: 50vh;
     overflow-y: auto;
 }
 
@@ -58,7 +58,24 @@ main {
     cursor: pointer;
     font-size: 1em;
 }
-
+#cancel-surrender{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a90c0c;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+}
+#confirm-surrender{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #cececd;
+    color: #0a0a0a;
+    cursor: pointer;
+    font-size: 1em;
+}
 #submit-button:hover {
     background-color: #ad5906;
     transition: background-color 1s;
@@ -81,6 +98,8 @@ main {
     background-color: #f0f0f0;
     color: #f0f0f0;
     font-weight: bold;
+    border: 3px solid #fff;
+
 }
 
 .result-box.highlight {
@@ -226,7 +245,21 @@ footer p {
     border-radius: 5px ;
 
 }
+.modal_info {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+    border-radius: 5px ;
 
+}
 .modal-content {
     background-color: #8f8a8a;
     margin: 5% auto;

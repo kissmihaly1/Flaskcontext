@@ -59,4 +59,4 @@ class ContextoGame:
         elif rank > 2:
             return self.ranked_list[1][0], 2
         else:
-            return None
+            return None, None

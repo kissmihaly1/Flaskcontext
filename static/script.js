@@ -7,10 +7,12 @@ let solutionGuessed = storedGameData.solutionGuessed || false;
 let giveUp = storedGameData.giveUp || false;
 let streak = parseInt(localStorage.getItem('streak')) || 0;
 let lastSolvedDate = localStorage.getItem('lastSolvedDate') || null;
+let hintCount = storedGameData.hintCount || 0;
 
 if (!storedGameData || storedGameData.date !== currentDate) {
     localStorage.setItem(currentDate, JSON.stringify({ date: currentDate }));
     localStorage.removeItem('giveUp');
+    hintCount = 0; // Reset hint count for the new day
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -49,10 +51,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         savedResults.forEach(data => {
             let newResult = document.createElement('div');
+            if (latestGuess.word === data.word){
+                newResult.classList.add('guessed-word-box');
+            }
             newResult.classList.add('result-box', getColorClass(data.rank));
             newResult.setAttribute('data-word', data.word);
             newResult.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
             resultContainer.appendChild(newResult);
+
         });
     }
 
@@ -118,7 +124,6 @@ function handleGuess() {
 
                 guessedWordBox = document.createElement('div');
                 guessedWordBox.classList.add('result-box', 'guessed-word-box', getColorClass(data.rank));
-                guessedWordBox.id = 'guessed-word-box';
                 guessedWordBox.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
 
                 resultContainer.prepend(guessedWordBox);
@@ -173,6 +178,7 @@ document.getElementById('word-input').addEventListener('keypress', function (e) 
         handleGuess();
     }
 });
+
 function updateSolutionGuessed(currentDate, newValue) {
     let gameData = JSON.parse(localStorage.getItem(currentDate)) || {};
 
@@ -180,6 +186,7 @@ function updateSolutionGuessed(currentDate, newValue) {
 
     localStorage.setItem(currentDate, JSON.stringify(gameData));
 }
+
 function getColorClass(rank) {
     if (rank <= 1000) {
         return 'green';
@@ -189,6 +196,7 @@ function getColorClass(rank) {
         return 'red';
     }
 }
+
 function showCongratulationsPage(word, guessCount) {
     let green_number = 0;
     let orange_number = 0;
@@ -225,6 +233,7 @@ function showCongratulationsPage(word, guessCount) {
     `;
     startCountdown();
 }
+
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('give-up').addEventListener('click', (event) => {
         if (savedResults.length <= 0) {
@@ -239,9 +248,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('hint').addEventListener('click', handleHint);
     document.getElementById('informations').addEventListener('click', handleInformations);
     document.querySelector('.dropbtn').addEventListener('click', toggleDropdown);
+    document.getElementById('game_info').addEventListener('click', gameInformations);
 
     // Surrender modal event listeners
     document.getElementById('close-surrender-modal').addEventListener('click', closeSurrenderModal);
+    document.getElementById('close-game-info-modal').addEventListener('click', closeGameInformations);
+    document.getElementById('close-info-modal').addEventListener('click', closeInformations);
     document.getElementById('cancel-surrender').addEventListener('click', closeSurrenderModal);
     document.getElementById('confirm-surrender').addEventListener('click', handleGiveUp);
 
@@ -268,7 +280,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('.close').addEventListener('click', closeModal);
     window.addEventListener('click', function(event) {
         let modal = document.getElementById('modal');
-        if (event.target == modal) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    document.querySelector('.close').addEventListener('click', closeModal);
+    window.addEventListener('click', function(event) {
+        let modal = document.getElementById('modal_info');
+        if (event.target === modal) {
             modal.style.display = 'none';
         }
     });
@@ -285,6 +304,12 @@ function showSurrenderModal() {
 
 function closeSurrenderModal() {
     document.getElementById('surrender-modal').style.display = 'none';
+}
+function closeGameInformations() {
+    document.getElementById('modal_info').style.display = 'none';
+}
+function closeInformations() {
+    document.getElementById('modal').style.display = 'none';
 }
 
 function handleGiveUp() {
@@ -322,6 +347,12 @@ function handleGiveUp() {
 }
 
 function handleHint() {
+    // Check if the user has already used 3 hints today
+    if (hintCount >= 3) {
+        showError("Már elhasználtad a 3 tippedet mára.");
+        return;
+    }
+
     savedResults = JSON.parse(localStorage.getItem(currentDate)).results || [];
     const best_yet = savedResults.reduce((best, current) => {
         return (current.rank < best.rank) ? current : best;
@@ -354,7 +385,7 @@ function handleHint() {
             }
 
             guessedWordBox = document.createElement('div');
-            guessedWordBox.classList.add('result-box', 'guessed-word-box', getColorClass(data.rank));
+            guessedWordBox.classList.add('result-box', 'guessed-word-box', 'current-hint', getColorClass(data.rank));
             guessedWordBox.id = 'guessed-word-box';
             guessedWordBox.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
 
@@ -396,6 +427,12 @@ function handleHint() {
             guessesCount = parseInt(guessesCount) + 1;
             document.getElementById('guesses-count').innerText = guessesCount;
             saveGameData();
+
+            // Increment hint count and save it
+            hintCount++;
+            let gameData = JSON.parse(localStorage.getItem(currentDate)) || {};
+            gameData.hintCount = hintCount;
+            localStorage.setItem(currentDate, JSON.stringify(gameData));
         }
     })
     .catch(error => {
@@ -405,6 +442,11 @@ function handleHint() {
 
 function handleInformations() {
     let modal = document.getElementById('modal');
+    modal.style.display = 'block';
+}
+
+function gameInformations() {
+    let modal = document.getElementById('modal_info');
     modal.style.display = 'block';
 }
 
@@ -468,12 +510,12 @@ function saveGameData() {
         results: savedResults,
         guessesCount: guessesCount,
         solutionGuessed: solutionGuessed,
-        giveUp: giveUp
+        giveUp: giveUp,
+        hintCount: hintCount
     };
 
     localStorage.setItem(currentDate, JSON.stringify(gameData));
 }
 
 //TODO
-// lemma szavak használata
-// tipp adása ha a 2. szónál jár
+// aktuális tipp legyen vastagabb
