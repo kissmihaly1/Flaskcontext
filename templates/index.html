@@ -14,14 +14,14 @@
             <div class="dropdown">
                 <button class="dropbtn">⋮</button>
                 <div class="dropdown-content">
-                    <a href="#" id="give-up">Feladás</a>
+                    <a href="#" id="give-up" class="disabled">Feladás</a>
                     <a href="#" id="hint">Tipp kérése</a>
                     <a href="#" id="informations">Információk</a>
                 </div>
             </div>
         </header>
         <hr>
-        <p>Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span></p>
+        <p>Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Sorozat: <span id="streak">00</span> nap</p>
         <main>
             <input type="text" placeholder="írj ide egy szót..." id="word-input">
             <button id="submit-button">Küldés</button>
@@ -45,8 +45,9 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Információk</h2>
-            <p>Ez egy személyes projekt, amelyet már létező oldalak ihlettek, azonban azok nem voltak elérhetőek magyar szavakkal. Folyamatosan fejlesztés alatt áll, hibák előfordulhatnak, és még nem a legjobb a pontosság.</p>
-            <p>Fejlesztő: Kiss Mihály, SZTE MSC hallgatója és ML engineer gyakornok</p>
+            <p>Ez egy személyes projekt, amelyet már létező oldalak ihlettek, azonban azok nem voltak elérhetőek magyar szavakkal. Hibák előfordulhatnak, és még nem a legjobb a pontosság, de folyamatosan fejlesztve van.</p>
+            <p>Fejlesztő: Kiss Mihály, SZTE hallgatója, és ML engineer gyakornok</p>
+            <p>Email cím: kissmihalyit@gmail.com</p>
         </div>
     </div>
     <script src="../static/script.js"></script>
