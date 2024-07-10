@@ -356,7 +356,7 @@ function handleGiveUp() {
         });
 }
 function handleHint() {
-    if (hintCount >= 10) {
+    if (hintCount > 3) {
         showError("Már elhasználtad a 3 tippedet mára.");
         return;
     }
