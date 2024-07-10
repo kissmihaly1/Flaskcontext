@@ -356,7 +356,7 @@ function handleGiveUp() {
         });
 }
 function handleHint() {
-    if (hintCount >= 3) {
+    if (hintCount >= 10) {
         showError("Már elhasználtad a 3 tippedet mára.");
         return;
     }
@@ -533,5 +533,8 @@ function saveGameData() {
     localStorage.setItem(currentDate, JSON.stringify(gameData));
 }
 
-//TODO
-// menü mindig latszodjon
+// TODO
+// Ha a korábbi napról meghagyja a szavakat, akkor megmaradnak utána is. valahogy lekezelni, hogy frissitse
+// telefonon a modalok jobban nézzenek ki
+// giveup modal is jobban nézzen ki
+// kontextus felirat legyen a giveup pagen is

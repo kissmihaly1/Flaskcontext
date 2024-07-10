@@ -4,7 +4,7 @@ import pandas as pd
 
 class ContextoGame:
     def __init__(self, model_path, lemmatized_words_path):
-        self.model = KeyedVectors.load(model_path)
+        self.model = KeyedVectors.load_word2vec_format(model_path)
         self.lemmatized_words_df = pd.read_csv(lemmatized_words_path)
         self.lemmatized_words = list(set(self.lemmatized_words_df['lemma'].tolist()))
         self.ranked_list = []
@@ -31,6 +31,7 @@ class ContextoGame:
             similarities.append((word, similarity))
 
         self.ranked_list = sorted(similarities, key=lambda x: x[1], reverse=True)
+        self.save_list_to_txt(self.ranked_list, 'ranked_list2.txt')
 
         return self.ranked_list
 
@@ -47,7 +48,7 @@ class ContextoGame:
         elif rank > 250:
             return self.ranked_list[249][0], 250
         elif rank > 100:
-            return self.ranked_list[99][0], 100
+            return self.ranked_list[50][0], 99
         elif rank > 50:
             return self.ranked_list[49][0], 50
         elif rank > 25:
@@ -60,3 +61,8 @@ class ContextoGame:
             return self.ranked_list[1][0], 2
         else:
             return None, None
+
+    def save_list_to_txt(self, lst, filename):
+        with open(filename, 'w') as file:
+            for item in lst:
+                file.write(f"{item}\n")

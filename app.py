@@ -7,20 +7,17 @@ load_dotenv()
 
 app = Flask(__name__)
 
-contexto_game = ContextoGame('model/glove-hu_152.gensim', 'lemmatized_words.csv')
+contexto_game = ContextoGame('model/w2vhun.w2v', 'lemmatized_words.csv')
 solution_word = os.getenv('SOLUTION_WORD')
 contexto_game.create_ranked_list(solution_word)
-
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
-
 
 @app.route('/guess', methods=['POST'])
 def process():
@@ -34,7 +31,6 @@ def process():
         return jsonify({"error": f"Ez a szó ('{input_word}') nincs benne a listában!"}), 404
 
     return jsonify({"word": input_word, "rank": rank})
-
 
 @app.route('/hint', methods=['POST'])
 def hint():
@@ -51,7 +47,6 @@ def hint():
 @app.route('/giveup', methods=['POST'])
 def giveup():
     return jsonify({'solution_word': solution_word})
-
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False)
