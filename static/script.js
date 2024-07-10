@@ -65,6 +65,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('streak').innerText = streak;
 });
 function handleGuess() {
+    const newCurrentDate = new Date().toLocaleDateString();
+
+    // Check if the date has changed
+    if (currentDate !== newCurrentDate) {
+        // Clear previous day's data
+        localStorage.setItem(newCurrentDate, JSON.stringify({ date: newCurrentDate }));
+        location.reload();
+        return;
+    }
+
     let word = document.getElementById('word-input').value.trim().toLowerCase();
     document.getElementById('word-input').value = '';
 
@@ -96,7 +106,7 @@ function handleGuess() {
                     saveGameData();
                     if (lastSolvedDate) {
                         const lastDate = new Date(lastSolvedDate);
-                        const differenceInTime = new Date(currentDate) - lastDate;
+                        const differenceInTime = new Date(newCurrentDate) - lastDate;
                         const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
                         if (differenceInDays === 1) {
@@ -107,7 +117,7 @@ function handleGuess() {
                     } else {
                         streak = 1;
                     }
-                    localStorage.setItem('lastSolvedDate', currentDate);
+                    localStorage.setItem('lastSolvedDate', newCurrentDate);
                     localStorage.setItem('streak', streak);
 
                     showCongratulationsPage(data.word, guessedWords.size);
@@ -139,7 +149,6 @@ function handleGuess() {
                 for (let box of allResultBoxes) {
                     box.classList.remove('guessed-word-box');
                 }
-
 
                 let newResult = document.createElement('div');
                 newResult.classList.add('result-box', 'guessed-word-box', getColorClass(data.rank));
@@ -181,6 +190,7 @@ function handleGuess() {
         });
     }
 }
+
 
 document.getElementById('submit-button').addEventListener('click', handleGuess);
 document.getElementById('word-input').addEventListener('keypress', function (e) {
@@ -522,8 +532,9 @@ function showError(message) {
 }
 
 function saveGameData() {
+    const newCurrentDate = new Date().toLocaleDateString();
     const gameData = {
-        date: currentDate,
+        date: newCurrentDate,
         guessedWords: [...guessedWords],
         results: savedResults,
         guessesCount: guessesCount,
@@ -532,8 +543,9 @@ function saveGameData() {
         hintCount: hintCount
     };
 
-    localStorage.setItem(currentDate, JSON.stringify(gameData));
+    localStorage.setItem(newCurrentDate, JSON.stringify(gameData));
 }
+
 
 // TODO
 // Ha a korábbi napról meghagyja a szavakat, akkor megmaradnak utána is. valahogy lekezelni, hogy frissitse
