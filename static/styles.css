@@ -246,7 +246,6 @@ footer p {
     display: block;
 }
 
-/* General styles for the modals */
 .modal, .modal_info {
     display: none;
     position: fixed;
@@ -280,6 +279,12 @@ footer p {
 @keyframes slideIn {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+    }
 }
 
 .close {
@@ -319,13 +324,13 @@ button {
 }
 
 #cancel-surrender {
-    background-color: #cececd;
+    background-color: #a90c0c;
     color: #fff;
 }
 
 #confirm-surrender {
-    background-color: #a90c0c;
-    color: #fff;
+    background-color: #cececd;
+    color: #0a0a0a;
 }
 
 #cancel-surrender:hover {
@@ -335,8 +340,6 @@ button {
 #confirm-surrender:hover {
     background-color: #adadad;
 }
-
-
 
 .error-message {
     position: fixed;

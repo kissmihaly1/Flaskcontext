@@ -12,7 +12,7 @@ let hintCount = storedGameData.hintCount || 0;
 if (!storedGameData || storedGameData.date !== currentDate) {
     localStorage.setItem(currentDate, JSON.stringify({ date: currentDate }));
     localStorage.removeItem('giveUp');
-    hintCount = 0; // Reset hint count for the new day
+    hintCount = 0;
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -67,9 +67,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function handleGuess() {
     const newCurrentDate = new Date().toLocaleDateString();
 
-    // Check if the date has changed
     if (currentDate !== newCurrentDate) {
-        // Clear previous day's data
         localStorage.setItem(newCurrentDate, JSON.stringify({ date: newCurrentDate }));
         location.reload();
         return;
@@ -279,37 +277,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     window.addEventListener('click', function(event) {
         let modal = document.getElementById('surrender-modal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+        let modalInfo = document.getElementById('modal_info');
+        let modalGeneral = document.getElementById('modal');
+        let dropdownContent = document.querySelector('.dropdown-content');
 
-    window.addEventListener('click', function(event) {
+        if (event.target === modal || event.target === modalInfo || event.target === modalGeneral) {
+            modal.style.display = 'none';
+            modalInfo.style.display = 'none';
+            modalGeneral.style.display = 'none';
+        }
+
         if (!event.target.matches('.dropbtn')) {
-            let dropdowns = document.getElementsByClassName('dropdown-content');
-            for (let i = 0; i < dropdowns.length; i++) {
-                let openDropdown = dropdowns[i];
-                if (openDropdown.style.display === 'block') {
-                    openDropdown.style.display = 'none';
-                }
+            if (dropdownContent.style.display === 'block') {
+                dropdownContent.style.display = 'none';
             }
         }
     });
 
-    // Modal close button
     document.querySelector('.close').addEventListener('click', closeModal);
-    window.addEventListener('click', function(event) {
-        let modal = document.getElementById('modal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-    document.querySelector('.close').addEventListener('click', closeModal);
-    window.addEventListener('click', function(event) {
-        let modal = document.getElementById('modal_info');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
+    document.querySelectorAll('.close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', closeModal);
     });
 });
 
@@ -325,17 +312,24 @@ function showSurrenderModal() {
 function closeSurrenderModal() {
     document.getElementById('surrender-modal').style.display = 'none';
 }
+
 function closeGameInformations() {
     document.getElementById('modal_info').style.display = 'none';
 }
+
 function closeInformations() {
     document.getElementById('modal').style.display = 'none';
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('modal_info').style.display = 'none';
+    document.getElementById('surrender-modal').style.display = 'none';
 }
 
 function handleGiveUp() {
     closeSurrenderModal();
     localStorage.setItem(`giveUp_${currentDate}`, 'true');
-    // Reset the streak
     localStorage.setItem('streak', 0);
     fetch('/giveup', {
                 method: 'POST',
@@ -456,7 +450,6 @@ function handleHint() {
             document.getElementById('guesses-count').innerText = guessesCount;
             saveGameData();
 
-            // Increment hint count and save it
             hintCount++;
             let gameData = JSON.parse(localStorage.getItem(currentDate)) || {};
             gameData.hintCount = hintCount;
@@ -489,7 +482,7 @@ function startCountdown() {
     function updateCountdown() {
         const now = new Date();
         const endOfDay = new Date();
-        endOfDay.setHours(24, 0, 0, 0); // 0:00:00 of next day
+        endOfDay.setHours(24, 0, 0, 0);
 
         const totalSeconds = (endOfDay - now) / 1000;
 
@@ -548,6 +541,6 @@ function saveGameData() {
 
 
 // TODO
-// Ha a korábbi napról meghagyja a szavakat, akkor megmaradnak utána is. valahogy lekezelni, hogy frissitse
 // telefonon a modalok jobban nézzenek ki
-// giveup modal is jobban nézzen ki
+// segitség kérése ugyanugy mint giveup hogy tippelnie kell előbb
+//telefonnál ha máshova klikkelek akkor a dropdown menüről dobjon le, meg a modalokról is ha meg vannak nyitva és máshova klikkelek, illetve legyen szélesebb telefonon a modalok
