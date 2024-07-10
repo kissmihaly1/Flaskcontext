@@ -4,7 +4,7 @@ import pandas as pd
 
 class ContextoGame:
     def __init__(self, model_path, lemmatized_words_path):
-        self.model = KeyedVectors.load_word2vec_format(model_path)
+        self.model = KeyedVectors.load_word2vec_format(model_path, binary=True)
         self.lemmatized_words_df = pd.read_csv(lemmatized_words_path)
         self.lemmatized_words = list(set(self.lemmatized_words_df['lemma'].tolist()))
         self.ranked_list = []
