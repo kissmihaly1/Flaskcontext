@@ -55,7 +55,7 @@ class ContextoGame:
         elif rank > 25:
             return self.ranked_list[24][0], 25
         elif rank > 12:
-            return self.ranked_list[9][0], 12
+            return self.ranked_list[11][0], 12
         elif rank > 8:
             return self.ranked_list[7][0], 8
         elif rank > 5:
