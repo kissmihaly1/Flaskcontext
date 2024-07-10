@@ -1,4 +1,5 @@
-const currentDate = new Date().toLocaleDateString();
+let currentDate = new Date().toLocaleDateString();
+currentDate = "2024. 07. 12"
 const storedGameData = JSON.parse(localStorage.getItem(currentDate)) || {};
 let guessedWords = new Set(storedGameData.guessedWords || []);
 let savedResults = storedGameData.results || [];
@@ -67,11 +68,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function handleGuess() {
     const newCurrentDate = new Date().toLocaleDateString();
 
-    if (currentDate !== newCurrentDate) {
+    /*if (currentDate !== newCurrentDate) {
         localStorage.setItem(newCurrentDate, JSON.stringify({ date: newCurrentDate }));
         location.reload();
         return;
-    }
+    }*/
 
     let word = document.getElementById('word-input').value.trim().toLowerCase();
     document.getElementById('word-input').value = '';
@@ -107,7 +108,7 @@ function handleGuess() {
                         const differenceInTime = new Date(newCurrentDate) - lastDate;
                         const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
-                        if (differenceInDays === 1) {
+                        if (differenceInDays === -1) {
                             streak++;
                         } else {
                             streak = 0;
@@ -115,7 +116,7 @@ function handleGuess() {
                     } else {
                         streak = 1;
                     }
-                    localStorage.setItem('lastSolvedDate', newCurrentDate);
+                    localStorage.setItem('lastSolvedDate', currentDate);
                     localStorage.setItem('streak', streak);
 
                     showCongratulationsPage(data.word, guessedWords.size);
@@ -547,6 +548,4 @@ function saveGameData() {
 
 
 // TODO
-// telefonon a modalok jobban nézzenek ki
-// segitség kérése ugyanugy mint giveup hogy tippelnie kell előbb
 //telefonnál ha máshova klikkelek akkor a dropdown menüről dobjon le, meg a modalokról is ha meg vannak nyitva és máshova klikkelek, illetve legyen szélesebb telefonon a modalok
