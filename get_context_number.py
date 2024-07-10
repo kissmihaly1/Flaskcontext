@@ -46,18 +46,18 @@ class ContextoGame:
         return -1
 
     def get_hint(self, rank):
-        if rank > 500:
-            return self.ranked_list[499][0], 500
-        elif rank > 250:
-            return self.ranked_list[249][0], 250
+        if rank > 200:
+            return self.ranked_list[199][0], 200
         elif rank > 100:
-            return self.ranked_list[50][0], 100
+            return self.ranked_list[99][0], 100
         elif rank > 50:
             return self.ranked_list[49][0], 50
         elif rank > 25:
             return self.ranked_list[24][0], 25
-        elif rank > 10:
-            return self.ranked_list[9][0], 10
+        elif rank > 12:
+            return self.ranked_list[9][0], 12
+        elif rank > 8:
+            return self.ranked_list[7][0], 8
         elif rank > 5:
             return self.ranked_list[4][0], 5
         elif rank > 2:
