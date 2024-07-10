@@ -1,5 +1,4 @@
-let currentDate = new Date().toLocaleDateString();
-currentDate = "2024. 07. 12"
+const currentDate = new Date().toLocaleDateString();
 const storedGameData = JSON.parse(localStorage.getItem(currentDate)) || {};
 let guessedWords = new Set(storedGameData.guessedWords || []);
 let savedResults = storedGameData.results || [];
@@ -68,11 +67,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function handleGuess() {
     const newCurrentDate = new Date().toLocaleDateString();
 
-    /*if (currentDate !== newCurrentDate) {
+    if (currentDate !== newCurrentDate) {
         localStorage.setItem(newCurrentDate, JSON.stringify({ date: newCurrentDate }));
         location.reload();
         return;
-    }*/
+    }
 
     let word = document.getElementById('word-input').value.trim().toLowerCase();
     document.getElementById('word-input').value = '';
