@@ -9,6 +9,7 @@ let streak = parseInt(localStorage.getItem('streak')) || 0;
 let lastSolvedDate = localStorage.getItem('lastSolvedDate') || null;
 let hintCount = storedGameData.hintCount || 0;
 
+
 // Check if there's stored game data for today, if not initialize new data
 if (!storedGameData || storedGameData.date !== currentDate) {
     localStorage.setItem(currentDate, JSON.stringify({ date: currentDate }));
@@ -60,6 +61,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             newResult.setAttribute('data-word', data.word);
             newResult.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
             resultContainer.appendChild(newResult);
+
         });
     }
 
@@ -110,7 +112,7 @@ function handleGuess() {
                         const differenceInTime = new Date(newCurrentDate) - lastDate;
                         const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
-                        if (differenceInDays === 1) {
+                        if (differenceInDays === -1) {
                             streak++;
                         } else {
                             streak = 0;
@@ -258,6 +260,7 @@ function showCongratulationsPage(word, guessCount) {
     startCountdown();
 }
 
+
 // Add event listeners for various UI interactions and modal behavior
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('give-up').addEventListener('click', (event) => {
@@ -289,15 +292,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let modalGeneral = document.getElementById('modal');
         let dropdownContent = document.querySelector('.dropdown-content');
 
-        // Check if the click is outside the modals or dropdown content
-        if (modal.style.display === 'block' && !modal.contains(event.target)) {
-            closeModal();
-        }
-        if (modalInfo.style.display === 'block' && !modalInfo.contains(event.target)) {
-            closeGameInformations();
-        }
-        if (modalGeneral.style.display === 'block' && !modalGeneral.contains(event.target)) {
-            closeInformations();
+        if (event.target === modal || event.target === modalInfo || event.target === modalGeneral) {
+            modal.style.display = 'none';
+            modalInfo.style.display = 'none';
+            modalGeneral.style.display = 'none';
         }
 
         if (!event.target.matches('.dropbtn')) {
@@ -333,7 +331,6 @@ function closeSurrenderModal() {
 function closeGameInformations() {
     document.getElementById('modal_info').style.display = 'none';
 }
-
 // Function to close the general information modal
 function closeInformations() {
     document.getElementById('modal').style.display = 'none';
@@ -527,6 +524,7 @@ document.addEventListener('DOMContentLoaded', startCountdown);
 let cooldown = false;
 
 // Function to show an error message
+
 function showError(message) {
     if (cooldown) return;
 
@@ -565,7 +563,6 @@ function saveGameData() {
 
     localStorage.setItem(newCurrentDate, JSON.stringify(gameData));
 }
-
 
 
 // TODO
