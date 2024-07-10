@@ -362,6 +362,12 @@ function handleGiveUp() {
         });
 }
 function handleHint() {
+    if (savedResults.length <= 0) {
+        showError("Tippelned kell, mielőtt segítséget kérnél.");
+        event.preventDefault();
+        return;
+        }
+
     if (hintCount >= 3) {
         showError("Már elhasználtad a 3 tippedet mára.");
         return;

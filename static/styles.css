@@ -264,7 +264,11 @@ footer p {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
+@media screen and (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+}
 .modal-content {
     background-color: #333;
     margin: 5% auto;
@@ -324,13 +328,13 @@ button {
 }
 
 #cancel-surrender {
-    background-color: #a90c0c;
-    color: #fff;
+    background-color: #cececd;
+    color: #0a0a0a;
 }
 
 #confirm-surrender {
-    background-color: #cececd;
-    color: #0a0a0a;
+    background-color: #a90c0c;
+    color: #fff;
 }
 
 #cancel-surrender:hover {
