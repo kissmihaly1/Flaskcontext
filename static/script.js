@@ -9,12 +9,14 @@ let streak = parseInt(localStorage.getItem('streak')) || 0;
 let lastSolvedDate = localStorage.getItem('lastSolvedDate') || null;
 let hintCount = storedGameData.hintCount || 0;
 
+// Check if there's stored game data for today, if not initialize new data
 if (!storedGameData || storedGameData.date !== currentDate) {
     localStorage.setItem(currentDate, JSON.stringify({ date: currentDate }));
     localStorage.removeItem('giveUp');
     hintCount = 0;
 }
 
+// Setup the game on DOM content loaded
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('game-number').innerText = `${currentDate}`;
 
@@ -58,12 +60,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             newResult.setAttribute('data-word', data.word);
             newResult.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
             resultContainer.appendChild(newResult);
-
         });
     }
 
     document.getElementById('streak').innerText = streak;
 });
+
+// Handle a new guess submission
 function handleGuess() {
     const newCurrentDate = new Date().toLocaleDateString();
 
@@ -107,7 +110,7 @@ function handleGuess() {
                         const differenceInTime = new Date(newCurrentDate) - lastDate;
                         const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
-                        if (differenceInDays === -1) {
+                        if (differenceInDays === 1) {
                             streak++;
                         } else {
                             streak = 0;
@@ -189,7 +192,7 @@ function handleGuess() {
     }
 }
 
-
+// Add event listeners for guess submission
 document.getElementById('submit-button').addEventListener('click', handleGuess);
 document.getElementById('word-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -197,6 +200,7 @@ document.getElementById('word-input').addEventListener('keypress', function (e) 
     }
 });
 
+// Function to update the solutionGuessed flag in localStorage
 function updateSolutionGuessed(currentDate, newValue) {
     let gameData = JSON.parse(localStorage.getItem(currentDate)) || {};
 
@@ -205,6 +209,7 @@ function updateSolutionGuessed(currentDate, newValue) {
     localStorage.setItem(currentDate, JSON.stringify(gameData));
 }
 
+// Function to get CSS class for rank-based coloring
 function getColorClass(rank) {
     if (rank <= 1000) {
         return 'green';
@@ -215,6 +220,7 @@ function getColorClass(rank) {
     }
 }
 
+// Function to show the congratulations page after finding the solution word
 function showCongratulationsPage(word, guessCount) {
     let green_number = 0;
     let orange_number = 0;
@@ -252,6 +258,7 @@ function showCongratulationsPage(word, guessCount) {
     startCountdown();
 }
 
+// Add event listeners for various UI interactions and modal behavior
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('give-up').addEventListener('click', (event) => {
         if (savedResults.length <= 0) {
@@ -275,16 +282,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('cancel-surrender').addEventListener('click', closeSurrenderModal);
     document.getElementById('confirm-surrender').addEventListener('click', handleGiveUp);
 
+    // Close modals and dropdowns when clicking outside them
     window.addEventListener('click', function(event) {
         let modal = document.getElementById('surrender-modal');
         let modalInfo = document.getElementById('modal_info');
         let modalGeneral = document.getElementById('modal');
         let dropdownContent = document.querySelector('.dropdown-content');
 
-        if (event.target === modal || event.target === modalInfo || event.target === modalGeneral) {
-            modal.style.display = 'none';
-            modalInfo.style.display = 'none';
-            modalGeneral.style.display = 'none';
+        // Check if the click is outside the modals or dropdown content
+        if (modal.style.display === 'block' && !modal.contains(event.target)) {
+            closeModal();
+        }
+        if (modalInfo.style.display === 'block' && !modalInfo.contains(event.target)) {
+            closeGameInformations();
+        }
+        if (modalGeneral.style.display === 'block' && !modalGeneral.contains(event.target)) {
+            closeInformations();
         }
 
         if (!event.target.matches('.dropbtn')) {
@@ -300,33 +313,40 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+// Function to toggle the dropdown menu visibility
 function toggleDropdown() {
     let dropdownContent = document.querySelector('.dropdown-content');
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 
+// Function to show the surrender modal
 function showSurrenderModal() {
     document.getElementById('surrender-modal').style.display = 'block';
 }
 
+// Function to close the surrender modal
 function closeSurrenderModal() {
     document.getElementById('surrender-modal').style.display = 'none';
 }
 
+// Function to close the game information modal
 function closeGameInformations() {
     document.getElementById('modal_info').style.display = 'none';
 }
 
+// Function to close the general information modal
 function closeInformations() {
     document.getElementById('modal').style.display = 'none';
 }
 
+// Function to close any modal
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
     document.getElementById('modal_info').style.display = 'none';
     document.getElementById('surrender-modal').style.display = 'none';
 }
 
+// Handle giving up the game
 function handleGiveUp() {
     closeSurrenderModal();
     localStorage.setItem(`giveUp_${currentDate}`, 'true');
@@ -361,6 +381,8 @@ function handleGiveUp() {
             showError(error);
         });
 }
+
+// Handle requesting a hint
 function handleHint() {
     if (savedResults.length <= 0) {
         showError("Tippelned kell, mielőtt segítséget kérnél.");
@@ -406,7 +428,6 @@ function handleHint() {
 
             guessedWordBox = document.createElement('div');
             guessedWordBox.classList.add('result-box', 'guessed-word-box', 'current-hint', getColorClass(data.rank));
-            guessedWordBox.id = 'guessed-word-box';
             guessedWordBox.innerHTML = `<span>${data.word}</span> <span>${data.rank}</span>`;
 
             resultContainer.prepend(guessedWordBox);
@@ -467,21 +488,19 @@ function handleHint() {
     });
 }
 
+// Function to show the general information modal
 function handleInformations() {
     let modal = document.getElementById('modal');
     modal.style.display = 'block';
 }
 
+// Function to show the game information modal
 function gameInformations() {
     let modal = document.getElementById('modal_info');
     modal.style.display = 'block';
 }
 
-function closeModal() {
-    let modal = document.getElementById('modal');
-    modal.style.display = 'none';
-}
-
+// Function to start the countdown timer for the next game
 function startCountdown() {
     const countdownElement = document.getElementById('countdown');
 
@@ -507,6 +526,7 @@ document.addEventListener('DOMContentLoaded', startCountdown);
 
 let cooldown = false;
 
+// Function to show an error message
 function showError(message) {
     if (cooldown) return;
 
@@ -530,6 +550,7 @@ function showError(message) {
     }, 3000);
 }
 
+// Function to save the current game data to localStorage
 function saveGameData() {
     const newCurrentDate = new Date().toLocaleDateString();
     const gameData = {
@@ -546,5 +567,7 @@ function saveGameData() {
 }
 
 
+
 // TODO
-//telefonnál ha máshova klikkelek akkor a dropdown menüről dobjon le, meg a modalokról is ha meg vannak nyitva és máshova klikkelek, illetve legyen szélesebb telefonon a modalok
+//telefonnál ha máshova klikkelek akkor a dropdown menüről dobjon le, meg a modalokról is ha meg vannak nyitva és máshova
+//automatizálni éjfélrere
