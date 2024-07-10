@@ -387,8 +387,8 @@ function handleHint() {
         return;
         }
 
-    if (hintCount >= 3) {
-        showError("Már elhasználtad a 3 tippedet mára.");
+    if (hintCount >= 4) {
+        showError("Már elhasználtad a 4 tippedet mára.");
         return;
     }
 
