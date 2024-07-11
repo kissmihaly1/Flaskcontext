@@ -563,8 +563,3 @@ function saveGameData() {
 
     localStorage.setItem(newCurrentDate, JSON.stringify(gameData));
 }
-
-
-// TODO
-//telefonnál ha máshova klikkelek akkor a dropdown menüről dobjon le, meg a modalokról is ha meg vannak nyitva és máshova
-//automatizálni éjfélrere
