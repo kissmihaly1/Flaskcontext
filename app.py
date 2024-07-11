@@ -5,8 +5,9 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 import os
 import certifi
-from lemmawords import lemmatiz_words
+from datetime import datetime
 load_dotenv()
+
 app = Flask(__name__)
 
 
@@ -41,6 +42,12 @@ def home():
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
+
+@app.route('/checkdate', methods=['POST'])
+def checkdate():
+    current_date = datetime.now().strftime('%Y. %m. %d.')
+    return jsonify({"date": current_date})
+
 
 
 @app.route('/guess', methods=['POST'])
