@@ -4,11 +4,12 @@ import pandas as pd
 import re
 class ContextoGame:
     def __init__(self, model_path, lemmatized_words_path):
-        self.model = KeyedVectors.load_word2vec_format(model_path, binary=True)
+        self.model = KeyedVectors.load_word2vec_format(model_path, limit=100000)
         self.lemmatized_words_df = pd.read_csv(lemmatized_words_path)
-        self.lemmatized_words = list(set(self.lemmatized_words_df['lemma'].tolist()))
+        self.lemmatized_words = list(set(self.lemmatized_words_df['lemma'].str.lower().tolist()))
         self.ranked_list = []
         self.hints = 0
+        self.model_size = self.model.vector_size
 
     def get_similarity(self, word1, word2):
         if word1 in self.model and word2 in self.model:
@@ -24,18 +25,19 @@ class ContextoGame:
     def create_ranked_list(self, solution_word):
         if solution_word not in self.model:
             raise ValueError(f"The solution word '{solution_word}' is not in the model.")
-
         similarities = []
         for word in self.lemmatized_words:
-            if isinstance(word, str):
-                if re.search(r'[^a-zA-Z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ]', word):
-                    continue
-                similarity = self.get_similarity(solution_word, word)
-                similarities.append((word, similarity))
+            if word in self.model:
+                if isinstance(word, str):
+                    if re.search(r'[^a-zA-Z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ]', word):
+                        continue
+                    #similarity = self.get_similarity(solution_word, word)
+                    similarity = self.model.similarity(solution_word, word)
+                    similarities.append((word, similarity))
 
         self.ranked_list = sorted(similarities, key=lambda x: x[1], reverse=True)
-        self.save_list_to_txt(self.ranked_list, 'ranked_list2.txt')
-
+        self.save_list_to_txt(self.ranked_list, 'ranked_list4.txt')
+        print(self.model_size)
         return self.ranked_list
 
     def get_similarity_rank(self, input_word):
@@ -69,3 +71,5 @@ class ContextoGame:
         with open(filename, 'w') as file:
             for item in lst:
                 file.write(f"{item}\n")
+
+        self.model.save_word2vec_format('model/w2vnewest.bin', binary=True)
