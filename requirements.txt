@@ -1,7 +1,9 @@
-gensim
-numpy
-pandas
-python-dotenv
-flask
+gensim~=4.3.2
+numpy~=1.26.4
+pandas~=2.2.2
+python-dotenv~=1.0.1
+flask~=3.0.3
 scipy==1.10.1
 gunicorn
+pymongo~=4.8.0
+fasttext~=0.9.3

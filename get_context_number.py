@@ -2,6 +2,8 @@ from gensim.models import KeyedVectors
 import numpy as np
 import pandas as pd
 import re
+
+
 class ContextoGame:
     def __init__(self, model_path, lemmatized_words_path):
         self.model = KeyedVectors.load_word2vec_format(model_path, limit=100000)
