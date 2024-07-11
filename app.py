@@ -52,7 +52,7 @@ def process():
 
     rank = contexto_game.get_similarity_rank(input_word)
     if rank == -1:
-        return jsonify({"error": f"Ez a szó ('{input_word}') nincs benne a listában!"}), 404
+        return jsonify({"error": f"Ez a szó ('{input_word}') nincs a szavak között!"}), 404
     response, status_code = save_guess(input_word, rank)
     print(response, status_code)
     return jsonify({"word": input_word, "rank": rank})
