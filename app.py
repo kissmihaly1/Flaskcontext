@@ -5,11 +5,12 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 import os
 import certifi
-
+from lemmawords import lemmatiz_words
 load_dotenv()
 app = Flask(__name__)
 
-contexto_game = ContextoGame('model/w2vhun.w2v', 'lemmatized_words.csv')
+
+contexto_game = ContextoGame('model/w2vhun.w2v', 'lemmatized_words2.csv')
 solution_word = os.getenv('SOLUTION_WORD')
 contexto_game.create_ranked_list(solution_word)
 
