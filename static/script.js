@@ -19,8 +19,11 @@ function checkDate() {
         .then(response => response.json())
         .then(data => {
             const date = data.date;
-            if (date !== currentDate) {
-                location.reload();
+            const date2 = data.date2;
+            if (date === currentDate || date2=== currentDate) {
+            }
+            else{
+                location.reload()
             }
         })
         .catch(error => {
