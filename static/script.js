@@ -133,7 +133,7 @@ function checkDate() {
                                     if (differenceInDays === -1) {
                                         streak++;
                                     } else {
-                                        streak = 0;
+                                        streak = 1;
                                     }
                                 } else {
                                     streak = 1;
