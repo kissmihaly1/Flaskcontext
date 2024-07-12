@@ -93,11 +93,11 @@ function checkDate() {
         function handleGuess() {
             const newCurrentDate = new Date().toLocaleDateString();
             checkDate();
-            if (currentDate !== newCurrentDate) {
+            /*if (currentDate !== newCurrentDate) {
                 localStorage.setItem(newCurrentDate, JSON.stringify({date: newCurrentDate}));
                 location.reload();
                 return;
-            }
+            }*/
 
             let word = document.getElementById('word-input').value.trim().toLowerCase();
             document.getElementById('word-input').value = '';
@@ -223,14 +223,6 @@ function checkDate() {
             }
         });
 
-// Function to update the solutionGuessed flag in localStorage
-        function updateSolutionGuessed(currentDate, newValue) {
-            let gameData = JSON.parse(localStorage.getItem(currentDate)) || {};
-
-            gameData.solutionGuessed = newValue;
-
-            localStorage.setItem(currentDate, JSON.stringify(gameData));
-        }
 
 // Function to get CSS class for rank-based coloring
         function getColorClass(rank) {
