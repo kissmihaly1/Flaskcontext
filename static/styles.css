@@ -255,11 +255,7 @@ footer p {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-@media screen and (max-width: 768px) {
-    .modal-content {
-        width: 90%;
-    }
-}
+
 .modal-content {
     background-color: #333;
     margin: 5% auto;
@@ -279,6 +275,12 @@ footer p {
 @media screen and (max-width: 768px) {
     .modal-content {
         width: 80%;
+    }
+    main{
+        max-height: 60vh;
+    }
+    .container{
+        padding-bottom: 0;
     }
 }
 
@@ -416,49 +418,56 @@ button {
     animation: shake 0.5s;
 }
 
-    .congrats {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        color: #fff;
-        font-family: 'Arial', sans-serif;
-        padding: 20px;
-        text-align: center;
-    }
-    .title {
-        font-size: 2.5em;
-        margin-bottom: 0;
-    }
-    .highlight {
-        color: #ec7b0a;
-    }
-    .subtitle {
-        font-size: 2em;
-        margin-top: 0;
-    }
-    .solution {
-        margin: 20px 0;
-    }
-    .solution-word {
-        font-size: 2em;
-        color: #ec7b0a;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    .stats {
-        margin: 20px 0;
-    }
-    .countdown-container {
-        margin: 20px 0;
-    }
-    .streak-container {
-        margin: 20px 0;
-    }
-    #countdown {
-        font-size: 2em;
-        color: #ec7b0a;
-    }
-    #streak{
-        color: #ec7b0a;
-    }
+.congrats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+.title {
+    font-size: 2.5em;
+}
+.highlight {
+    color: #ec7b0a;
+}
+.subtitle {
+    font-size: 2em;
+    margin-top: 0;
+}
+.solution {
+    margin: 20px 0;
+}
+.solution-word {
+    font-size: 2em;
+    color: #ec7b0a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.stats {
+    margin: 20px 0;
+}
+.countdown-container {
+    margin: 20px 0;
+}
+.streak-container {
+    margin: 20px 0;
+}
+#countdown {
+    font-size: 2em;
+    color: #ec7b0a;
+}
+#streak{
+    color: #ec7b0a;
+}
+.congrats-main{
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 90%;
+}

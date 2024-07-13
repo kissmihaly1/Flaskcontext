@@ -349,7 +349,7 @@ document.body.innerHTML = `
             <h1 class="title">KONT<span class="highlight">EXTUS</span>.</h1>
             <hr>
         </header>
-        <main>
+        <main class="congrats-main">
             <div class="solution">
                 <h1 class="subtitle">Gratulálok!</h1>
                 <p>Eltaláltad a titkos szót:</p>
