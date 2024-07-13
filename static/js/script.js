@@ -7,7 +7,6 @@ let lastGuess;
 let cooldown;
 let streak; // Initialize streak
 let lastSolvedDay;
-
 // Function to fetch the current game day from the backend
 async function getDate() {
     return fetch('/checkdate', {
@@ -34,6 +33,7 @@ function initializeNewGameData() {
         giveUp: false,
         hintCount: 0,
         solvedToday: false,
+        lastGuess: []
     };
 }
 
@@ -81,14 +81,15 @@ window.addEventListener('load', () => {
             giveUp = storedGameData.giveUp;
             hintCount = storedGameData.hintCount;
             solvedToday = storedGameData.solvedToday;
-
+            lastGuess = storedGameData.lastGuess;
             // Example of updating the current game day's data (if needed)
             let newDayData = {
                 results: savedResults,
                 guessesCount: guessesCount,
                 giveUp: giveUp,
                 hintCount: hintCount,
-                solvedToday: solvedToday
+                solvedToday: solvedToday,
+                lastGuess: lastGuess,
             };
             updateGameData(gameDay, newDayData);
             if (giveUp) {
@@ -108,7 +109,7 @@ window.addEventListener('load', () => {
                     container.innerHTML = '';
 
                     // Create and insert the latest tip box (first occurrence of the current guess)
-                    const latestResult = savedResults[savedResults.length - 1];
+                    const latestResult = lastGuess;
                     createWordBox(latestResult.word, latestResult.rank, true);
 
                     // Add a separator line
@@ -197,8 +198,9 @@ function handleGuess() {
                     document.querySelector('.instructions').classList.add('hidden');
                     results.push({ word: word, rank: data.rank });
                     gameData[gameDay].results = results;
+                    lastGuess = { word: word, rank: data.rank };
+                    gameData[gameDay].lastGuess = lastGuess;
                     localStorage.setItem('gameData', JSON.stringify(gameData));
-
 
                     document.getElementById('guesses-count').innerText = results.length;
 
@@ -655,6 +657,8 @@ function handleHint() {
                             showError(data.error);
                         }else {
                     // Save the result to localStorage
+                    lastGuess = { word: data.word, rank: data.rank };
+                    gameData[gameDay].lastGuess = lastGuess;
                     results.push({ word: data.word, rank: data.rank });
                     gameData[gameDay].results = results;
                     localStorage.setItem('gameData', JSON.stringify(gameData));
@@ -713,6 +717,6 @@ function updateJsVariablesFromLocalStorage() {
         giveUp = false;
         hintCount = 0;
         solvedToday = false;
-        lastGuess = null;
+        lastGuess = [];
     }
 }
