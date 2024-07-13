@@ -14,6 +14,7 @@ body {
 .container {
     width: 500px;
     text-align: center;
+    padding-bottom: 100px;
 }
 .separator {
     width: 100%;
@@ -25,7 +26,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 header h1 {
@@ -39,13 +40,13 @@ header .highlight {
 
 main {
     background-color: #333;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
-    max-height: 70vh;
+    max-height: 60vh;
     overflow-y: auto;
 }
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -54,7 +55,7 @@ main {
 
 ::-webkit-scrollbar-thumb {
     background-color: #888;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -193,7 +194,7 @@ footer p {
     background-color: #333;
     color: white;
     padding: 10px;
-    font-size: 18px;
+    font-size: 24px;
     border: none;
     cursor: pointer;
     border-radius: 50%;
@@ -414,3 +415,50 @@ button {
 .shake {
     animation: shake 0.5s;
 }
+
+    .congrats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+        text-align: center;
+    }
+    .title {
+        font-size: 2.5em;
+        margin-bottom: 0;
+    }
+    .highlight {
+        color: #ec7b0a;
+    }
+    .subtitle {
+        font-size: 2em;
+        margin-top: 0;
+    }
+    .solution {
+        margin: 20px 0;
+    }
+    .solution-word {
+        font-size: 2em;
+        color: #ec7b0a;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .stats {
+        margin: 20px 0;
+    }
+    .countdown-container {
+        margin: 20px 0;
+    }
+    .streak-container {
+        margin: 20px 0;
+    }
+    #countdown {
+        font-size: 2em;
+        color: #ec7b0a;
+    }
+    #streak{
+        color: #ec7b0a;
+    }

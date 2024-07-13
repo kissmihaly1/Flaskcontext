@@ -175,6 +175,11 @@ function handleGuess() {
         .then(response => response.json())
         .then(data => {
             if (data.error) {
+            const inputElement = document.getElementById('word-input');
+                    inputElement.classList.add('shake');
+                    setTimeout(() => {
+                        inputElement.classList.remove('shake');
+                    }, 1000);
                 showError(data.error);
             } else {
                 if (data.rank === 1) {
@@ -335,25 +340,109 @@ function showCongratulationsPage(word, guessCount) {
             red_number += 1;
         }
     });
+updateJsVariablesFromLocalStorage();
+document.body.innerHTML = `
+    <div class="congrats">
+        <header>
+            <h1 class="title">KONT<span class="highlight">EXTUS</span>.</h1>
+            <hr>
+        </header>
+        <main>
+            <div class="solution">
+                <h1 class="subtitle">Gratulálok!</h1>
+                <p>Eltaláltad a titkos szót:</p>
+                <strong class="solution-word">${word}</strong>
 
-    document.body.innerHTML = `
-        <div class="congrats">
-            <header>
-                <h1>KONT<span class="highlight">EXTUS</span>.</h1>
+            </div>
+            <div class="stats">
+                <p>Tippek száma: <span id="guesses-count">${guessCount}</span> | Segítségek száma: <span id="hint-count">${hintCount}</span></p>
+
+                <canvas id="colorBarChart" width="400" height="200"></canvas>
+            </div>
+            <div class="hints">
+            </div>
+            <div class="countdown-container">
+                <p>A következő napi játék:</p>
+                <div id="countdown"></div>
                 <hr>
-                <h1>Gratulálok!</h1>
-            </header>
-            <main>
-                <p>Eltaláltad a titkos szót: <strong>${word}</strong></p>
-                <p>Tippek száma: <span id="guesses-count">${guessCount}</span></p>
-                <p>🟩: <span>${green_number}</span></p>
-                <p>🟧: <span>${orange_number}</span></p>
-                <p>🟥: <span>${red_number}</span></p>
-                <p>A következő napi játék: </p><div id="countdown"></div>
-                <p>Sorozat: <span id="streak">${streak}</span> nap</p>
-            </main>
-        </div>
-    `;
+            </div>
+            <div class="streak-container">
+                <p>Sorozat: <strong id="streak">${streak}</strong> nap</p>
+            </div>
+        </main>
+    </div>
+`;
+
+// Function to create the bar chart
+function createColorBarChart(green, orange, red) {
+    const ctx = document.getElementById('colorBarChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Green', 'Orange', 'Red'],
+            datasets: [{
+                label: '', // Set label to empty to remove the legend box
+                data: [green, orange, red],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.7)',
+                    'rgba(255, 165, 0, 0.7)',
+                    'rgba(255, 69, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 165, 0, 1)',
+                    'rgba(255, 69, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false // Hide the legend
+                },
+                datalabels: {
+                    color: '#fff', // Set text color to white
+                    anchor: 'end',
+                    align: 'end',
+                    formatter: Math.round,
+                    font: {
+                        weight: 'bold',
+                        size: 14
+                    },
+                    offset: 5 // Add offset to ensure labels fit within the chart
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#fff', // Set tick color to white
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#fff', // Set tick color to white
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    suggestedMax: Math.max(green, orange, red) + 6 // Ensure space for labels
+                }
+            }
+        },
+        plugins: [ChartDataLabels] // Ensure ChartDataLabels plugin is included
+    });
+}
+
+
+// Create the bar chart with the given numbers
+createColorBarChart(green_number, orange_number, red_number);
 
     // Countdown to 00:00:00
     function updateCountdown() {
