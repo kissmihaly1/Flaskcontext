@@ -277,7 +277,7 @@ footer p {
         width: 80%;
     }
     main{
-        max-height: 60vh;
+        height: 90%;
     }
     .container{
         padding-bottom: 0;

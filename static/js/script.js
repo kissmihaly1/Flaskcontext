@@ -343,6 +343,8 @@ function showCongratulationsPage(word, guessCount) {
         }
     });
 updateJsVariablesFromLocalStorage();
+guessCount = guessCount-hintCount;
+green_number = green_number - hintCount;
 document.body.innerHTML = `
     <div class="congrats">
         <header>
