@@ -1,29 +1,16 @@
 word,lemma
 </s>,</s>
-",",","
-a,a
-.,.
 az,az
 és,és
-A,a
 hogy,hogy
 is,is
 nem,nem
--,-
-:,:
-),)
-(,(
 egy,egy
-"""",""""
 Az,az
 meg,meg
 vagy,vagy
-...,.
 volt,van
 de,de
-;,;
-!,!
-?,?
 csak,csak
 van,van
 kell,kell
@@ -35,15 +22,12 @@ el,el
 még,még
 mint,mint
 ki,ki
-#,""""
 szerint,szerint
-&,""""
 akkor,akkor
 sem,sem
 lehet,lesz
 olyan,olyan
 mert,mert
-s,s
 magyar,magyar
 ezt,ez
 minden,minden
@@ -100,7 +84,6 @@ Magyar,Magyar
 ahol,ahol
 mellett,mellett
 alapján,alap
-ő,ő
 előtt,előtt
 ott,ott
 ne,ne
@@ -109,7 +92,6 @@ tehát,tehát
 ember,ember
 saját,saját
 &verbar;,&verbar
-1,1
 le,le
 Egy,egy
 És,és
@@ -120,8 +102,6 @@ mindig,mindig
 át,át
 vannak,van
 például,például
-2,2
-e,e
 mondta,mond
 lett,lesz
 ennek,ez
@@ -158,13 +138,11 @@ megfelelő,megfelelő
 szükséges,szükséges
 ezzel,ez
 akár,akár
-3,3
 nagyobb,nagy
 ebben,ez
 éves,éves
 erre,ez
 együtt,együtt
-','
 mind,mind
 politikai,politikai
 legyen,lesz
@@ -193,7 +171,6 @@ Európai,Európai
 mivel,mivel
 Én,én
 abban,az
-hozzá,ő
 maga,maga
 második,második
 mely,mely
@@ -217,10 +194,7 @@ magát,maga
 fog,fog
 nemzetközi,nemzetközi
 szemben,szemben
-[,(
 János,János
-neki,ő
-],)
 helyi,helyi
 vonatkozó,vonatkozó
 című,című
@@ -248,9 +222,7 @@ elmúlt,elmúlt
 teljesen,teljes
 történt,történik
 szakmai,szakmai
-benne,ő
 további,további
-*,""""
 legnagyobb,nagy
 kellene,kell
 nap,nap
@@ -258,11 +230,9 @@ aztán,aztán
 közös,közös
 azon,az
 évben,év
-4,4
 Magyarország,Magyarország
 része,rész
 lévő,lévő
-5,5
 egyetlen,egyetlen
 kerül,kerül
 elég,elég
@@ -369,7 +339,6 @@ megfelelően,meg+felelő
 egyszer,egyszer
 nekem,én
 mondja,mond
-§§,
 született,születik
 fő,fő
 Bizottság,Bizottság
@@ -389,7 +358,6 @@ gondolom,gondol
 jelenti,jelent
 miniszter,miniszter
 Gábor,Gábor
-E,e
 dolog,dolog
 jobban,jól
 kicsit,kicsi
@@ -412,7 +380,6 @@ harmadik,harmadik
 régi,régi
 tenni,tesz
 ők,ők
-S,s
 közben,közben
 férfi,férfi
 kisebb,kis
@@ -448,7 +415,6 @@ helyzet,helyzet
 cég,cég
 lehetőség,lehetőség
 lehetett,lehet
-6,6
 helyett,helyett
 szervezet,szervezet
 ad,ad
@@ -475,7 +441,6 @@ tette,tesz
 utóbbi,utóbbi
 állam,állam
 országos,országos
-=,""""
 területén,terület
 Rt.,Rt.
 külföldi,külföldi
@@ -490,7 +455,6 @@ továbbá,továbbá
 the,the
 20,20
 végül,végül
-"-,",-
 adatok,adat
 előző,előző
 ELNÖK,ELNÖK
@@ -499,7 +463,6 @@ egészen,egészen
 melyek,mely
 15,15
 jövő,jövő
-őt,ő
 addig,addig
 vett,vesz
 legjobb,jó
@@ -511,7 +474,6 @@ gyakran,gyakran
 közel,közel
 Nagyon,nagyon
 út,út
-8,8
 hiszem,hisz
 párt,párt
 lehetővé,lehető
@@ -628,9 +590,7 @@ működik,működik
 március,március
 Mv,mv
 uniós,uniós
-7,7
 szervezetek,szervezet
-+,""""
 végre,végre
 alkalommal,alkalom
 amelyben,amely
@@ -682,7 +642,6 @@ sokan,sokan
 munkát,munka
 erős,erős
 egyéni,egyéni
-Ő,ő
 rendelkező,rendelkező
 részére,rész
 érintett,érintett
@@ -707,7 +666,6 @@ megy,megy
 Orbán,Orbán
 november,november
 oka,ok
-bele,ő
 anyagi,anyagi
 pár,pár
 The,The
@@ -812,7 +770,6 @@ Ne,ne
 tudnak,tud
 R.,h.
 szerződés,szerződés
-/,""""
 úgynevezett,úgynevezik
 hogyha,hogyha
 támogatást,támogatás
@@ -838,12 +795,10 @@ ekkor,ekkor
 forintos,forintos
 Szabó,Szabó
 Erre,ez
-9,9
 évre,év
 egyelőre,egyelőre
 föl,föl
 Jézus,Jézus
-(1),(
 révén,révén
 vita,vita
 igénybe,igény
@@ -981,7 +936,6 @@ Viktor,Viktor
 szellemi,szellemi
 Ilyen,ilyen
 1072,1072
-%,""""
 mondom,mond
 mindkét,mindkét
 katolikus,katolikus
@@ -990,7 +944,6 @@ katolikus,katolikus
 pénz,pénz
 jövőben,jövő
 Lehet,lehet
-:),:
 konkrét,konkrét
 parlament,parlament
 adja,ad
@@ -1022,7 +975,6 @@ fehér,fehér
 gyerek,gyerek
 napja,nap
 délután,délután
-:-,:
 egyszerre,egyszerre
 adta,ad
 könnyen,könnyű
@@ -1042,7 +994,6 @@ nyelv,nyelv
 tartó,tartó
 tartalmaz,tartalmaz
 Hivatal,Hivatal
-(2),(
 megoldás,megoldás
 hónap,hónap
 különleges,különleges
@@ -1060,7 +1011,6 @@ származó,származó
 érvényes,érvényes
 lép,lép
 évig,év
-|,""""
 idei,idei
 engem,én
 Mária,Mária
@@ -1068,7 +1018,6 @@ veszi,vesz
 mezőgazdasági,mezőgazdasági
 40,40
 Taps,Taps
-0,0
 iskolai,iskolai
 társaság,társaság
 sikeres,sikeres
@@ -1121,7 +1070,6 @@ körében,kör
 Fórum,fórum
 minket,mi
 szolgáló,szolgáló
-b),b
 felhasználó,felhasználó
 kötött,köt
 vélemény,vélemény
@@ -1278,11 +1226,9 @@ különféle,különféle
 tiszta,tiszta
 nyújtott,nyújt
 hamarosan,hamarosan
-a),a
 Sok,sok
 nyújt,nyújt
 fogják,fog
-I,""""
 szolgáltatások,szolgáltatás
 köszönhetően,köszönhető
 Csaba,Csaba
@@ -1371,7 +1317,6 @@ zárt,zár
 megyében,megye
 elérhető,elérhető
 neked,neked
-to,
 nincsen,nincs
 alatti,alatti
 ismeretlen,ismeretlen
@@ -1402,7 +1347,6 @@ kiemelt,kiemelt
 amint,amint
 kívánja,kíván
 élni,él
-_,""""
 felső,felső
 iránti,iránti
 egy-két,egy-két
@@ -1454,7 +1398,6 @@ testület,testület
 1090,1090
 bizottsági,bizottsági
 támogatási,támogatási
-m,m
 véve,véve
 kezdődött,kezdődik
 bekezdés,bekezdés
@@ -1590,7 +1533,6 @@ kívánt,kíván
 fogalmazott,fogalmaz
 vonatkozóan,vonatkozó
 élnek,él
-§,""""
 foglalkozó,foglalkozó
 Állami,Állami
 II,II
@@ -1738,7 +1680,6 @@ fia,fia
 kifejezetten,kifejezett
 Ahogy,ahogy
 rendszeres,rendszeres
-(3),(
 irányuló,irányuló
 határozza,határoz
 Más,más
@@ -1756,7 +1697,6 @@ számomra,számára
 tevékenységet,tevékenység
 életében,élet
 kérte,kér
-c),c
 hatalom,hatalom
 Géza,Géza
 rosszul,rosszul
@@ -2089,7 +2029,6 @@ meghalt,meg+hal
 veszik,vesz
 tanács,tanács
 Színház,Színház
-B,""""
 jogszabályok,jogszabály
 felel,felel
 B.,b.
@@ -2172,7 +2111,6 @@ Ráadásul,ráadás
 működött,működik
 biztosítása,biztosítás
 ritkán,ritkán
-:-),:
 napra,nap
 http:,http
 eléggé,eléggé
@@ -2231,7 +2169,6 @@ kellő,kellő
 szigorú,szigorú
 lettek,lesz
 várják,vár
-C,""""
 mindenkit,mindenki
 származik,származik
 változik,változik
@@ -2492,7 +2429,6 @@ pedagógiai,pedagógiai
 módja,mód
 fogadja,fogad
 lista,lista
-~,""""
 vállalt,vállal
 tartottak,tart
 átlagosan,átlagos
@@ -2723,7 +2659,6 @@ Online,Online
 szolgálati,szolgálati
 szabott,szab
 sorban,sor
-`,""""
 El,el
 arányban,arány
 önkéntes,önkéntes
@@ -2785,7 +2720,6 @@ embereknek,ember
 fejlesztés,fejlesztés
 elsőként,elsőként
 Különösen,különösen
-(4),(
 amiért,amiért
 Akadémia,Akadémia
 kénytelen,kénytelen
@@ -2800,12 +2734,10 @@ könnyebb,könnyű
 védelme,védelem
 ősi,ősi
 magunk,maga
-M,m
 T.,t.
 helyezett,helyez
 köze,köze
 valaha,valaha
-b,b
 Ifjúsági,Ifjúsági
 földön,föld
 dokumentum,dokumentum
@@ -2819,7 +2751,6 @@ tanárok,tanár
 hagyta,hagy
 Addbot,Addb
 püspök,püspök
-..,.
 örömmel,öröm
 Demokrata,Demokrata
 sárga,sárga
@@ -2968,7 +2899,6 @@ melletti,melletti
 tekinti,tekint
 részének,rész
 irányába,irány
-d),d
 ügyek,ügy
 tapasztalatok,tapasztalat
 nettó,nettó
@@ -3018,7 +2948,6 @@ tagjainak,tag
 közti,közti
 avagy,avagy
 nyilvánvaló,nyilvánvaló
-i,i
 hangzott,hangzik
 tartalmi,tartalmi
 döntése,döntés
@@ -3134,7 +3063,6 @@ akarunk,akar
 derül,derül
 figyelmüket,figyelem
 száraz,száraz
-ˇˇ,
 ellentétes,ellentétes
 vállalati,vállalati
 adót,adó
@@ -3157,7 +3085,6 @@ Valóban,valóban
 részvétel,részvétel
 esetek,eset
 rosszabb,rosszú
-x,""""
 alkotó,alkotó
 diák,diák
 eljárások,eljárás
@@ -3225,7 +3152,6 @@ megadom,meg+ad
 szakértő,szakértő
 folytatódik,folytatódik
 valakit,vala
-F,""""
 építeni,épít
 eszközöket,eszköz
 vegyes,vegyes
@@ -3236,7 +3162,6 @@ pályázó,pályázó
 számok,szám
 sérült,sérül
 ilyet,ilyet
-a.,a
 héttel,hét
 legkésőbb,neg
 hangot,hang
@@ -3387,7 +3312,6 @@ Ettől,ez
 újonnan,újonnan
 létrehozása,létrehozás
 erővel,erő
-Ja,
 befektetési,befektetési
 nehezebb,nehéz
 mozgalom,mozgalom
@@ -3426,7 +3350,6 @@ munkák,munka
 részletek,részlet
 28.,28.
 kifejezés,kifejezés
-L,l
 Török,Török
 magától,maga
 kiválasztott,ki+választ
@@ -3567,7 +3490,6 @@ módosítani,módosít
 hete,hét
 mutató,mutató
 amelyekben,amely
-bennük,ő
 érhető,érhet
 Legyen,lesz
 fiúk,fiú
@@ -3604,7 +3526,6 @@ szerettem,szeret
 tilos,tilos
 debreceni,debreceni
 találtam,talál
-o,o
 könnyedén,könnyedén
 megvalósítani,meg+valósít
 igaza,igaza
@@ -3647,7 +3568,6 @@ tanári,tanári
 ténylegesen,tényleges
 eredményei,eredmény
 stratégia,stratégia
-!!!,!
 mutatta,mutat
 küldeni,küld
 javaslatok,javaslat
@@ -3659,7 +3579,6 @@ elnökség,elnökség
 súlyosan,súlyos
 15-én,15.
 kérelmet,kérelem
-X,""""
 rendszerint,rendszerint
 programja,program
 ügyekben,ügy
@@ -3710,7 +3629,6 @@ Iroda,Iroda
 vehető,vehető
 tonna,tonna
 védelem,védelem
-e.,e
 tömeg,tömeg
 kg,kg
 készültek,készül
@@ -3830,7 +3748,6 @@ házi,házi
 eladó,eladó
 bajnoki,bajnoki
 Privát,Priva
-m.,m
 gyorsabban,gyors
 háborús,háborús
 Semmi,semmi
@@ -3876,7 +3793,6 @@ korlátozott,korlátozott
 Dezső,Dezső
 06/01/99,06
 Romániában,Románia
-H,h
 jelentenek,jelent
 mértékét,mérték
 linkre,link
@@ -3886,7 +3802,6 @@ használ,hasz
 támadás,támadás
 tisztességes,tisztességes
 alternatív,alternatív
-T,)
 fejezte,fejez
 javítása,javítás
 előfordul,elő+fordul
@@ -3910,7 +3825,6 @@ tényezők,tényező
 alkalmazható,alkalmazható
 vállalkozói,vállalkozói
 keresi,keres
-?!,?
 álláspontja,álláspont
 történetét,történet
 Albert,Albert
@@ -4072,7 +3986,6 @@ biztonság,biztonság
 ponton,pont
 rendeletben,rendelet
 mennyit,mennyi
-K,k
 ágazat,ágazat
 E.,e.
 válaszol,válaszol
@@ -4276,10 +4189,8 @@ meghirdetett,meghirdetett
 szintre,szint
 múzeum,múzeum
 amelyekkel,amely
-l,l
 vér,vér
 800,800
-D,""""
 eltérően,eltérő
 1992.,1992.
 Egyetlen,egyetlen
@@ -4547,7 +4458,6 @@ felmerülő,felmerülő
 37,37
 hajnalban,hajnal
 vehetnek,vehet
-R:,""""
 gondoskodik,gondoskodik
 kezdődő,kezdődő
 frakció,frakció
@@ -4591,7 +4501,6 @@ körbe,körbe
 költség,költség
 Deák,Deák
 hatékonyabb,hatékony
-(5),(
 Ákos,Ákos
 kiemelte,ki+emel
 előttem,előz
@@ -4602,7 +4511,6 @@ adunk,ad
 mennyisége,mennyiség
 kutató,kutató
 próbálják,próbál
-:)),:
 otthont,otthon
 Franciaországban,Franciaország
 munkában,munka
@@ -4696,7 +4604,6 @@ bennünk,ők
 változatlan,változatlan
 bajnokság,bajnokság
 ellátása,ellátás
-n,n
 fejében,féj
 törekszik,törekszik
 egyezmény,egyezmény
@@ -4741,7 +4648,6 @@ réteg,réteg
 funkció,funkció
 tudná,tud
 Neked,neked
-t,)
 vonatkoznak,vonatkozik
 időkben,idő
 lakói,lakó
@@ -4771,7 +4677,6 @@ adható,adható
 magatartás,magatartás
 Egész,egész
 szellem,szellem
-Ó,""""
 visszatért,visszatért
 keze,kez
 H.,h.
@@ -4817,7 +4722,6 @@ nyújtanak,nyújt
 frissen,friss
 megrendezett,meg+rend
 Minél,minél
-e),e
 alkalmazásával,alkalmazás
 fejlesztések,fejlesztés
 jelentősebb,jelentős
@@ -4915,12 +4819,10 @@ szolgáltatási,szolgáltatási
 köré,köré
 szeretik,szeret
 kettőt,kettő
-l.,l
 Köszönjük,köszön
 munkájának,munka
 kapják,kap
 kérdését,kérdés
-$,""""
 vásárolni,vásárol
 Gabriella,Gabriella
 ízben,íz
@@ -5040,7 +4942,6 @@ fogalom,fogalom
 pénteki,pénteki
 Ugyan,ugyan
 Kht.,Kht.
-­­,
 értelmes,értelmes
 hiszi,hisz
 háromszor,háromszor
@@ -5122,13 +5023,11 @@ mozog,mozog
 Közalapítvány,Közalapítvány
 költői,költői
 nevelési,nevelési
-:))),:
 viccet,vicc
 létrehozását,létrehozás
 döntéseket,döntés
 1075,1075
 19-én,19.
-k,k
 jogszabályban,jogszabály
 alján,alja
 futó,futó
@@ -5171,7 +5070,6 @@ kedvezőbb,kedvező
 évében,év
 tantárgy,tantárgy
 Nehéz,nehéz
-i.,i
 nőnek,nő
 legyünk,lesz
 nyomás,nyomás
@@ -5431,7 +5329,6 @@ részvételével,részvétel
 tábornok,tábornok
 tulajdonosi,tulajdonosi
 részei,rész
-N,a
 jeles,jeles
 ugyanez,ugyanez
 folyóirat,folyóirat
@@ -5460,7 +5357,6 @@ két-három,két-három
 szállítási,szállítási
 bizottsága,bizottság
 látunk,lát
-\,""""
 hírlevelünkre,hírlevelün
 Küldj,küld
 email,email
@@ -5521,7 +5417,6 @@ kanadai,kanadai
 rendezvényen,rendezvény
 kereszténység,kereszténység
 működés,működés
-g,g
 fakadó,fakadó
 mutatták,mutat
 arcát,arca
@@ -5543,7 +5438,6 @@ emberrel,ember
 rajtam,rajtam
 ELTE,ELTE
 2011.,2011.
-d,d
 jogokkal,jog
 ciklus,ciklus
 elve,elv
@@ -5553,7 +5447,6 @@ helyek,hely
 helyenként,hely
 munkaerő,munkaerő
 stílusban,stílus
-R,""""
 fokú,fokú
 szövege,szöveg
 13-án,13.
@@ -5777,7 +5670,6 @@ matematika,matematika
 festett,festett
 ítélt,ítél
 felvétele,felvétel
-1-től,1
 Nálunk,nálik
 kívánjuk,kíván
 külföldiek,külföldi
@@ -5793,7 +5685,6 @@ ponttal,pont
 41,41
 magán,magán
 lét,lét
-Őt,Ő
 párhuzamos,párhuzamos
 Debreceni,Debreceni
 ének,én
@@ -5964,7 +5855,6 @@ megalakult,meg+alakul
 másodperc,másodperc
 Bécsben,Bécs
 hirdetes,hirdetes
-­,""""
 létezett,létezik
 sora,sora
 tömeges,tömeges
@@ -6294,7 +6184,6 @@ metró,metró
 ortodox,ortodox
 kielégítő,kielégítő
 kamera,kamer
-ó,ó
 sebességgel,sebesség
 vélhetően,vélhető
 megtalálhatók,megtalálható
@@ -6660,7 +6549,6 @@ szeptemberében,szeptember
 jövője,jövő
 csoportokat,csoport
 előadásokat,előadás
-???,?
 adtam,ad
 hatályon,hatály
 szervezetekkel,szervezet
@@ -6713,7 +6601,6 @@ szándékkal,szándék
 pénze,pénze
 ellenség,ellenség
 csapadék,csapadék
-(6),(
 elkészítése,elkészítés
 Pécsett,Pécsett
 akarod,akarod
@@ -6919,7 +6806,6 @@ fát,fát
 Egyszerű,egyszerű
 tárgyakat,tárgy
 rejlik,rejlik
-h,h
 fényében,fény
 turisták,turista
 hossza,hossz
@@ -7015,7 +6901,6 @@ barátságos,barátságos
 forgalomban,forgalom
 valósult,valósul
 kutyák,kutya
-P,""""
 szerelmi,szerelmi
 fizika,fizika
 ezüst,ezüs
@@ -7032,7 +6917,6 @@ térségében,térség
 ügyrendi,ügyrendi
 Los,Los
 októberben,október
-:(,:
 lelke,lelke
 IMF,IMF
 légy,légy
@@ -7096,7 +6980,6 @@ beállítva,beállítva
 FVM,FVM
 említik,említ
 baja,baja
-^,""""
 Esti,Esti
 költészet,költészet
 vonatkozásban,vonatkozás
@@ -7266,7 +7149,6 @@ próbáltam,próbál
 osztályban,osztály
 megvolt,meg+vol
 stílusú,stílusú
-f),f
 erdők,erdő
 Valaki,valaki
 évtizede,évtized
@@ -7441,7 +7323,6 @@ irányított,irányított
 repülőgép,repülőgép
 mindkettő,mindkettő
 finoman,finom
-r,r
 száll,száll
 fennmaradó,fennmaradó
 halljuk,hall
@@ -7492,7 +7373,6 @@ felépítése,felépítés
 számítógépek,számítógép
 rögzíteni,rögzít
 En,en
-!!,!
 napját,nap
 fogta,fog
 művet,mű
@@ -7605,7 +7485,6 @@ birodalom,birodalom
 Túl,túl
 Illetve,illetve
 gondolkodik,gondolkodik
-O,)
 érzékelhető,érzékelhető
 leteltét,letelte
 keretet,keret
@@ -7633,7 +7512,6 @@ hiányos,hiányos
 ítéli,ítél
 lakosságának,lakosság
 üzemeltető,üzemeltető
-k.,k
 magányos,magányos
 nyers,nyers
 Választási,Választási
@@ -7911,7 +7789,6 @@ leszögezte,le+szögez
 Orvosi,Orvosi
 sebesség,sebesség
 szakemberei,szakember
-:-)),:
 mennyiségi,mennyiségi
 tevő,tevő
 halak,hal
@@ -8155,7 +8032,6 @@ munkájukat,munka
 gyanú,gyanú
 Andrássy,Andrássy
 Honnan,honnan
-:-))),:
 gondolunk,gondol
 bizonyítják,bizonyít
 lapon,lap
@@ -8192,7 +8068,6 @@ hirdet,hird
 kereszt,keresz
 fordulhat,fordulhat
 néma,néma
-´,""""
 bizonytalanság,bizonytalanság
 panasz,panasz
 fogsz,fogsz
@@ -8375,7 +8250,6 @@ hiszek,hisz
 Göncz,Göncz
 központjában,központ
 dráma,drám
-z,z
 bolgár,bolgár
 határán,határ
 magyaroknak,magyar
@@ -8432,7 +8306,6 @@ alapította,alapít
 autóval,autó
 ép,ép
 fogadó,fogadó
-V,""""
 Legalábbis,legalábbis
 vacsora,vacsora
 900,900
@@ -8660,7 +8533,6 @@ bűnügyi,bűnügyi
 értelmi,értelmi
 erősödött,erősöd
 lágy,lágy
-×,""""
 adva,adva
 étterem,étterem
 magyarázható,magyarázható
@@ -8900,7 +8772,6 @@ hátul,hátul
 Áder,Áder
 magukra,maga
 fordultak,fordul
-(7),(
 helyezik,helyez
 ismerek,ismer
 rendjébe,rend
@@ -9066,7 +8937,6 @@ Romániai,Romániai
 rendszereket,rendszer
 viszonyban,viszony
 akadnak,akad
-@,""""
 kiadványok,kiadvány
 bajnokságban,bajnokság
 feszültséget,feszültség
@@ -9080,7 +8950,6 @@ mondhatnám,mondhat
 bocsátott,bocsát
 gondolsz,gondolsz
 készítették,készít
-c,c
 tudjunk,tud
 fordította,fordít
 kihasználva,kihasználva
@@ -9336,7 +9205,6 @@ megtudni,meg+tud
 nyitottak,nyit
 Atya,Atya
 nyújtja,nyújt
-!...,!
 tevékenységéről,tevékenység
 szerződő,szerződő
 módosítások,módosítás
@@ -9413,7 +9281,6 @@ Kiemelt,kiemelt
 előadása,előadás
 középkorban,középkor
 jelenet,jelenet
-",-",","
 terhesség,terhesség
 májusi,májusi
 remekül,remekül
@@ -9533,7 +9400,6 @@ tiszt,tiszt
 határozattal,határozat
 törvénymódosítás,törvénymódosítás
 autonóm,autonó
-g),g
 iratkozz,iratkozz
 felvette,felvet
 következményekkel,következmény
@@ -9570,7 +9436,6 @@ XV.,1V.
 teljesítményét,teljesítmény
 Tel,tel
 kancellár,kancellár
-....,.
 jogszabályt,jogszabály
 virágok,virág
 kifizetett,kifizet
@@ -9619,7 +9484,6 @@ parton,part
 menetét,menet
 kisbolygói,kisbolygói
 hiányoznak,hiányoz
-v,v
 csatában,csata
 Közösséget,közösség
 közlekedik,közlekedik
@@ -9628,7 +9492,6 @@ képességét,képesség
 szabályt,szabály
 University,University
 filmeket,film
-Á,""""
 Szűz,Szűz
 állása,állás
 részből,rész
@@ -9862,7 +9725,6 @@ végrehajtás,végrehajtás
 térítési,térítési
 értenek,ért
 műsorok,műsor
-p,p
 hivatkozik,hivatkozik
 felelni,felel
 kerékpáros,kerékpáros
@@ -9894,7 +9756,6 @@ Adminisztrátortól,Adminisztrátor
 őrült,őrült
 Konferencia,Konferencia
 üzemelteti,üzemeltet
-??,?
 sugárzás,sugárzás
 2003-as,2003-as
 sült,sül
@@ -10030,7 +9891,6 @@ nagyságát,nagyság
 tevékenységre,tevékenység
 reméli,remél
 Megállapodás,megállapodás
-f,f
 térni,tér
 megteremteni,meg+teremt
 jelentkezését,jelentkezés
@@ -10047,7 +9907,6 @@ Mt,mt
 vezetést,vezetés
 képzése,képzés
 ajánlunk,ajánl
-G,""""
 tanácsokat,tanács
 nyelvén,nyelv
 papíron,papíron
@@ -10310,7 +10169,6 @@ templomba,templom
 sújtotta,sújtotta
 és/vagy,és/vagy
 tisztelet,tisztelet
-y,y
 Szombaton,szombat
 utasítást,utasítás
 szeretnél,szeret
@@ -10519,7 +10377,6 @@ szükségszerűen,szükségszerű
 Bajnokok,bajnok
 érdeklődési,érdeklődési
 biztosítunk,biztosít
-",,",","
 1078,1078
 Ede,Ede
 szeretetet,szeretet
@@ -11376,7 +11233,6 @@ szennyezett,szennyez
 edzés,edzés
 szükségem,szükség
 játékokat,játék
-n.,n
 figyeli,figyel
 bírósághoz,bíróság
 legrövidebb,nagy
@@ -11440,7 +11296,6 @@ kockázatok,kockázat
 javaslatait,javaslat
 haladni,halad
 méltán,méltán
-m),m
 Bulgária,Bulgária
 állapotú,állapotú
 belgrádi,belgrádi
@@ -11990,7 +11845,6 @@ sovány,sovány
 indítványok,indítvány
 mediterrán,mediterra
 döntőben,döntő
--A,""""
 elmulasztása,elmulasztás
 őrnagy,őrnagy
 tudásukat,tudás
@@ -12084,7 +11938,6 @@ megkérdezi,meg+kérdez
 követendő,követendő
 köréből,kör
 holmi,holmi
-Z,Z
 leghíresebb,nagy
 1987-ben,1987
 következményeként,következmény
@@ -12670,7 +12523,6 @@ Magyarországgal,Magyarország
 okait,ok
 csináltak,csinál
 szünetet,szünet
-(8),(
 schengeni,scheng
 üdvözölte,üdvözöl
 térnek,tér
@@ -12687,7 +12539,6 @@ szívét,szív
 Valutaalap,Valutaalap
 José,José
 Bánk,Bánk
-(c),(
 közöl,közöl
 ellentmondásos,ellentmondásos
 da,da
@@ -12738,7 +12589,6 @@ Apám,apám
 szóvá,szó
 felmutatni,felmutat
 végzetes,végzetes
-naiv,ő
 félmillió,félmillió
 hírei,hír
 tömegközlekedés,tömegközlekedés
@@ -12746,7 +12596,6 @@ többségük,többség
 térképek,térkép
 Fischer,Fischer
 segélyt,segély
-t.,)
 felének,fél
 megtesz,megtesz
 javaslatról,javaslat
@@ -12829,7 +12678,6 @@ módosításához,módosítás
 elismerését,elismerés
 folytatását,folytatás
 terápiás,terápiás
-J,""""
 Teréz,Teréz
 küzdeni,küzd
 nyugat,nyugat
@@ -13139,7 +12987,6 @@ Rock,Rock
 hordoz,hordoz
 országoknak,ország
 frakciója,frakció
-h),h
 rekord,rekord
 egyénileg,egyéni
 Fidesz-Magyar,Fidesz-Magyar
@@ -13279,7 +13126,6 @@ Tivadar,Tivadar
 bukása,bukás
 tisztségviselők,tisztségviselő
 büntetni,büntet
-{,""""
 munkatárs,munkatárs
 Henry,Henry
 Big,Big
@@ -13450,7 +13296,6 @@ emlékei,emlék
 tartás,tartás
 hátrány,hátrány
 elveszti,elveszt
-},""""
 reá,reá
 javaslatokról,javaslat
 ültem,ült
@@ -13555,7 +13400,6 @@ ugyanannyi,ugyanannyi
 jelenleginél,jelenlegi
 Svédországban,Svédország
 Könnyen,könnyű
-?...,?
 Novák,Novák
 felülvizsgálat,felülvizsgálat
 követését,követés
@@ -14168,7 +14012,6 @@ mestere,mester
 mindenkire,mindenki
 Lélek,Lélek
 tagokat,tag
-U,U
 1848,1848
 többszörösen,többszörös
 változtatásokat,változtatás
@@ -14376,7 +14219,6 @@ kísért,kísér
 keményebb,kemény
 ellenkezőjét,ellenkező
 Főügyészség,Főügyészség
-VI,""""
 tagállamokban,tagállam
 átlaga,átlag
 olyankor,olyankor
@@ -14458,7 +14300,6 @@ tengeren,tenger
 átvétele,átvétel
 sincsenek,sincs
 teljesítésének,teljesítés
-á,á
 sorokat,sor
 maradó,maradó
 daganatos,daganatos
@@ -14997,7 +14838,6 @@ Valahol,valahol
 Semmit,semmi
 Izraelben,Izrael
 maradjunk,marad
-:)))),:
 -ot,-ot
 oktatásra,oktatás
 Köztársaságban,Köztársaság
@@ -15427,7 +15267,6 @@ Szomorú,szomorú
 gyorsforgalmi,gyorsforgalmi
 programokra,program
 Doktor,Doktor
-;),;
 halállal,halál
 Kimondom,ki+mond
 rendszerváltást,rendszerváltás
@@ -15533,7 +15372,6 @@ kiadványt,kiadvány
 viselik,visel
 Minisztériuma,Minisztériuma
 megalapozó,megalapozó
-!!!!,!
 örülnek,örül
 szerződött,szerződik
 tábori,tábori
@@ -15936,7 +15774,6 @@ tartására,tartás
 kóros,kóros
 programról,program
 fogyaszt,fogyaszt
-:-(,:
 béremelés,béremelés
 athéni,athéni
 hitelesen,hiteles
@@ -16504,7 +16341,6 @@ weboldalát,weboldal
 indulatok,indulat
 Barbara,Barbara
 telepítése,telepítés
-Q,Q
 megtudhatod,meg+tudhat
 K&H,K&H
 középiskolák,középiskola
@@ -16540,7 +16376,6 @@ segítsék,segít
 díjjal,díj
 táplálkozási,táplálkozási
 Bibliát,Biblia
-(9),(
 biztosítékot,biztosíték
 rajtad,rajtad
 vásároltak,vásárol
@@ -17413,7 +17248,6 @@ parányi,parányi
 sírni,sír
 Horn-kormány,horn-kormány
 légkörben,légkör
-i),i
 Tudniillik,Tudniillik
 Bíróságon,Bíróság
 alsóbb,alsó
@@ -17655,7 +17489,6 @@ feltételezhető,feltételezhető
 meri,meri
 egyszóval,egyszó
 kitér,kitér
-?.,?
 alapelveinket,alapelev
 1951,1951
 mezők,mező
@@ -17694,7 +17527,6 @@ katasztrófák,katasztrófa
 közvetíti,közvetít
 hozzájárulását,hozzájárulás
 korlátozódik,korlátozódik
-u,u
 felismerték,fel+ismer
 gyűjtése,gyűjtés
 fotókat,fotó
@@ -18072,7 +17904,6 @@ reményeket,remény
 értetődő,értetődő
 Barabás,Barabás
 zenével,zene
-ö,""""
 tanúsító,tanúsító
 beszerzésére,beszerzés
 Tudomány,Tudomány
@@ -18170,7 +18001,6 @@ hétfőtől,hétfő
 Tanácsot,tanács
 letilthatja,le+tilt
 gondolkodunk,gondolkodik
-...?,.
 Angeles,Angeles
 8-as,8-as
 ismételni,ismétel
@@ -18386,7 +18216,6 @@ Szarvas,Szarvas
 fokig,fokig
 úgyszólván,úgyszólván
 újfent,újfent
-Y,""""
 elemzését,elemzés
 talan,tal
 Golden,Golden
@@ -18581,7 +18410,6 @@ tekintélyét,tekintély
 pontszám,pontszám
 magyar-szlovák,magyar-szlovák
 törvényjavaslatnak,törvényjavaslat
-????,?
 kultúrájának,kultúra
 karbantartása,karbantartás
 türelemmel,türel
@@ -18619,7 +18447,6 @@ településekre,település
 Jogok,Jogok
 megőrzi,megőr
 Gyermek-,Gyermek-
-:o),:
 lakóit,lakó
 Open,Open
 szervezését,szervezés
@@ -18721,7 +18548,6 @@ sorrendet,sorrendet
 szállodák,szálloda
 alvó,alvó
 PC-s,PC-s
-é,é
 megkülönböztetett,meg+különöböz
 egyezmények,egyezmény
 halnak,hal
@@ -19206,7 +19032,6 @@ faxon,faxon
 front,fron
 szálltak,száll
 ajtaja,ajtaj
-GM,""""
 távlati,távlati
 civilizált,civilizál
 elismeréseként,elismerés
@@ -20762,7 +20587,6 @@ hasznosítási,hasznosítási
 foglalkoztatást,foglalkoztatás
 megkérdezték,meg+kérdez
 azonosítóját,azonosító
-2),2
 milliméter,milliméter
 1940-ben,1940
 néki,néki
@@ -20841,7 +20665,6 @@ Felhívjuk,nel+hív
 tanúja,tanú
 csapást,csapás
 csillagot,csillag
-Ö,)
 Old,Old
 barbár,barbár
 Vége,vég
@@ -20975,7 +20798,6 @@ börtönre,börtön
 kerüli,kerül
 hoztunk,hoz
 felszólalások,felszólalás
-w,w
 Bad,Bad
 Szekszárd,Szekszárd
 munkaköri,munkaköri
@@ -21015,7 +20837,6 @@ beállt,beál
 video,víd
 nehézségei,nehézség
 pedagógusoknak,pedagógus
-:-)))),:
 összeszedni,összeszed
 gyermekeink,gyermek
 véljük,vél
@@ -21232,7 +21053,6 @@ időből,idő
 gyáva,gyáva
 garanciák,garancia
 Képzeld,képzeld
-W,W
 Ezekről,ez
 minduntalan,minduntalan
 Sose,sose
@@ -21264,7 +21084,6 @@ fedezik,fedez
 nyilatkozatokat,nyilatkozat
 Földre,Földre
 méltóan,méltó
-1),1
 táplálékot,táplálék
 éreznek,érez
 tárcát,tárca
@@ -21401,7 +21220,6 @@ má,má
 szájjal,szájjal
 Havas,Havas
 ülésein,ülés
-j,j
 ismerősök,ismerős
 illetéktelen,illetéktelen
 Night,Night
@@ -21487,7 +21305,6 @@ előmozdítása,előmozdítás
 kórházakban,kórház
 tul,tul
 seb,seb
-(b),(
 szükséged,szükséged
 norma,norma
 Dark,Dark
@@ -21599,7 +21416,6 @@ tanulsága,tanulság
 legjellemzőbb,felkés
 tulajdonképpeni,tulajdonképpeni
 kockázatokat,kockázat
-1:1,1
 hoztuk,hoz
 régészek,régész
 1925,1925
@@ -21668,7 +21484,6 @@ maradéktalan,maradéktalan
 esetét,eset
 kizárták,kizár
 szállítja,szállít
-ˇ,""""
 megnyílik,megnyíl
 mozdulatlan,mozdulatlan
 megegyezéssel,megegyezés
@@ -23049,7 +22864,6 @@ vezetőkkel,vezető
 szimpla,szimpla
 felhőtlen,felhőtlen
 igénytelen,igénytelen
-.A,.
 1964.,1964.
 kutyája,kutya
 tudományt,tudomány
@@ -23241,7 +23055,6 @@ olajjal,olaj
 Joó,Joó
 Események,esemény
 tanulják,tanul
-¤¤,
 fán,fán
 kategóriájában,kategória
 gátló,gátló
@@ -23720,7 +23533,6 @@ elkészítésében,elkészítés
 beosztás,beosztás
 Nyitrai,Nyitrai
 elbírálásának,elbírálás
-6:3,6
 társasházi,társasházi
 Téli,Téli
 Kétféle,kétféle
@@ -24210,7 +24022,6 @@ laktanya,laktany
 mikro-,mikro-
 szelíden,szelíd
 fogalmaznak,fogalmaz
-j),j
 nagyvárosok,nagyváros
 Tizenöt,tizenöt
 követői,követő
@@ -24275,7 +24086,6 @@ Szellemi,Szellemi
 utazások,utazás
 könyvei,könyv
 teszel,teszel
-!?,!
 részvétellel,részvétel
 nyomni,nyom
 VAN,VAN
@@ -24398,7 +24208,6 @@ igyekvő,igyekvő
 közszolgáltatások,közszolgáltatás
 megjelölni,meg+jelöl
 alaki,alaki
-.....,.
 hadseregben,hadsereg
 Montenegró,Montenegró
 kérdésként,kérdés
@@ -24546,7 +24355,6 @@ pontokon,pont
 alkalmazottat,alkalmazott
 munkamegosztás,munkamegosztás
 MS,MS
-"2,4",2
 elrejtett,elrej
 levágott,levág
 honlapját,honlap
@@ -24672,7 +24480,6 @@ háromdimenziós,háromdimenziós
 Tűz,tűz
 ugyanennyi,ugyanennyi
 szorítja,szorít
-1-ig,1
 gáz-,gáz-
 kérelme,kérelem
 1931-ben,1931
@@ -24950,7 +24757,6 @@ időtartamú,időtartamú
 Pályázni,pályáz
 Tokaj,Tokaj
 Almási,Almási
-"2,2",2
 1918-ban,1918
 Gabi,Gabi
 korlátlanul,korlátlan
@@ -25466,7 +25272,6 @@ ET,eT
 akciója,akció
 halom,halom
 mutatói,mutató
-PL,""""
 al-Kaida,al-Kaida
 kérelemhez,kérel
 kombinációja,kombináció
@@ -25676,7 +25481,6 @@ legénység,legénység
 Tökéletes,tökéletes
 úszott,úszik
 sírás,sírás
-6:4,6
 gépészeti,gépészeti
 bejegyzést,bejegyzés
 panaszokat,panasz
@@ -25875,7 +25679,6 @@ megnyugtatni,meg+nyugtat
 sikerülni,sikerül
 Siklós,Siklós
 kertbe,kert
-MV,""""
 142,142
 percnyi,percnyi
 innét,innét
@@ -26185,7 +25988,6 @@ oldalnak,oldal
 kinevezés,kinevezés
 példányszámban,példányszám
 93.,93.
-.?,.
 oklevéllel,oklevél
 testületben,testület
 meglepetésre,meglepetés
@@ -26250,7 +26052,6 @@ téglalap,téglalap
 összeállítást,összeállítás
 Jugoszláv,Jugoszláv
 felfüggesztése,felfüggesztés
-"0,1",0
 tárgyból,tárgy
 merek,mer
 Lőrincz,Lőrincz
@@ -26665,7 +26466,6 @@ helyreállítási,helyreállítási
 hátát,hát
 röpke,röpk
 beszéljek,beszél
-;-)),;
 hölgyeim,hölgy
 felszámolták,felszámol
 weblapon,weblap
@@ -26877,7 +26677,6 @@ távot,táv
 problémáira,probléma
 legalabb,legalabb
 egyszercsak,egyszercsak
-?????,?
 formákban,forma
 elégedetlenek,elégedetlen
 igazgatóságának,igazgatósága
@@ -27191,7 +26990,6 @@ szekta,szekta
 korlátolt,korlátol
 késett,kés
 követheti,követ
-(1)-(2),(
 határolja,határol
 gyulladás,gyulladás
 Projekt,Projekt
@@ -27340,7 +27138,6 @@ szövegen,szöveg
 12.00,12.00
 kanál,kanál
 Firefox,Firefox
-...!,.
 államközi,államközi
 fenébe,fenébe
 fölül,fölül
@@ -27781,8 +27578,6 @@ mozdulatokkal,mozdulat
 Kitűnő,kitűnő
 gyilkosok,gyilkos
 mutatunk,mutat
-2:1,2
--:,-
 jelöljük,jelöl
 célozta,céloz
 Rövidesen,rövides
@@ -27835,7 +27630,6 @@ elkötelezettségét,elkötelezettség
 heteken,het
 Bajcsy-Zsilinszky,Bajcsy-Zsilinszky
 közszolgálat,közszolgálat
-q,""""
 főpap,főpap
 Meglehetősen,ménie+hetős
 hatos,hatos
@@ -27850,7 +27644,6 @@ külvárosi,külvárosi
 aggodalommal,aggodalom
 történelemből,történelem
 megszervezett,megszervez
-belénk,ő
 kalauz,kalauz
 Köztudott,köztud
 félúton,félúton
@@ -28472,7 +28265,6 @@ sajátosság,sajátosság
 szponzorok,szponzor
 csöppet,csöppet
 megvalósíthatósági,megvalósíthatósági
-XI,""""
 megmaradó,megmaradó
 Haider,Haider
 lattam,lat
@@ -28743,7 +28535,6 @@ tehetségek,tehetség
 érvényességét,érvényesség
 átalakítási,átalakítási
 szánja,szán
-o),o
 Csülök,Csülök
 Koordinációs,Koordinációs
 indulása,indulás
@@ -29276,7 +29067,6 @@ fordulójának,forduló
 kamatmentes,kamatmentes
 Oroszországot,Oroszország
 ikon,ik
-FB,""""
 vonzotta,vonz
 fokban,fak
 Anno,anno
@@ -29367,7 +29157,6 @@ alakulásának,alakulás
 amelyiket,amelyik
 léptél,léptél
 aktivista,aktivista
-"0,2",0
 formálja,formál
 sírját,sír
 zászlók,zászló
@@ -29414,7 +29203,6 @@ szexet,szex
 ívet,ív
 munkatársának,munkatárs
 hasznosítását,hasznosítás
-6:2,6
 nyaka,nyaka
 tervezését,tervezés
 neveli,nevel
@@ -29702,7 +29490,6 @@ gondolkozik,gondolkozik
 2013-as,2013-as
 ablaka,ablaka
 jogkörét,jogkör
-k),k
 tengert,tenger
 okáért,ok
 jún.,jún
@@ -29768,7 +29555,6 @@ gólját,gólja
 munkaképes,munkaképes
 átélni,át+él
 1896,1896
-É,é
 drámája,dráma
 különböztetni,különböztet
 iménti,iménti
@@ -31264,7 +31050,6 @@ zongoraművész,zongoraművész
 feminista,feminista
 megvárni,meg+vár
 ízek,íz
-A),a
 felnövekvő,felnövekvő
 segítsük,segít
 mérkőzéseinek,mérkőzés
@@ -31284,7 +31069,6 @@ beadványt,beadvány
 világnézet,világnézet
 09/17/99,09
 Scythe-ot,Scythe-
-¨¨,
 hitük,hit
 5-i,5-i
 földeken,földek
@@ -31389,7 +31173,6 @@ mesés,mesés
 Áruház,Áruház
 mindenen,mindenen
 hozzányúlni,hozzányúl
-CE,""""
 egyezségre,egyezség
 tojások,tojás
 darabra,darab
@@ -31574,7 +31357,6 @@ gyárilag,gyárilag
 szánják,szán
 erősebbek,erős
 Kelly,Kelly
-3),3
 vetőmag,vetőmag
 hírszerzés,hírszerzés
 talajok,talaj
@@ -31825,7 +31607,6 @@ mindenhez,minden
 Utalt,utal
 Náray,Náray
 kívánság,kívánság
-n.a,n
 szobrokat,szobor
 jellegére,jelleg
 meghirdette,meg+hird
@@ -31892,7 +31673,6 @@ működtetésével,működtetés
 honlapra,honlap
 ld,ld
 prioritásokat,prioritás
-??????,?
 eredményeképp,eredmény
 szimbolizálja,szimbolizál
 reklámokat,reklám
@@ -32086,7 +31866,6 @@ hullik,hull
 karral,kar
 karján,kar
 gyógyulást,gyógyulás
-0:0,0
 nyersen,nyers
 jelölnek,jelöl
 demó,demó
@@ -32552,7 +32331,6 @@ kézikönyve,kéziköny
 elhatározott,elhatározott
 riasztották,riaszt
 riportja,riport
-!!!!!,!
 hangsúlyozása,hangsúlyozás
 beépült,be+épül
 biológus,biológus
@@ -33228,7 +33006,6 @@ hazajött,haza+jön
 legszükségesebb,szép
 szja,szja
 Senkinek,sen
-:))))),:
 életfogytiglani,életfogytiglani
 Noé,noé
 italokat,ital
@@ -33246,7 +33023,6 @@ megváltoztatásának,megváltoztatás
 Községinfó,Községinfó
 optimizmus,optimizmus
 sávok,sáv
-V:,v
 tatárjárás,tatárjárás
 Down,Down
 protestánsok,protestáns
@@ -33330,7 +33106,6 @@ millióért,millió
 készüljenek,készül
 használtuk,használ
 nyomorúságos,nyomorúságos
-iOS,i
 kabát,kaba
 1954.,1954.
 megépített,meg+épít
@@ -33419,7 +33194,6 @@ Alkalmazott,alkalmaz
 viselték,visel
 Tavasz,Tavasz
 gerjesztett,gerjeszt
-A:,a
 gesztust,gesztus
 magántőke,magántőke
 kohézió,kohézió
@@ -33559,7 +33333,6 @@ dobozok,doboz
 hivatását,hivatás
 céloknak,cél
 századunk,század
-LB,""""
 emlékező,emlékező
 kiadják,ki+ad
 mosolygós,mosolygós
@@ -33702,7 +33475,6 @@ Vállalkozásfejlesztési,Vállalkozásfejlesztési
 06/22/99,06
 megértse,meg+ért
 nagyközség,nagyközség
-5-ig,5
 Országház,Országház
 Kereső.hu,Kereső.hu
 induláskor,induláskor
@@ -33739,7 +33511,6 @@ képviseletének,képviselet
 kádári,kádári
 lelkének,lelek
 hozzáférhetnek,hozzáférhet
-???????,?
 Kapitány,Kapitány
 kódja,kód
 láthatott,lát
@@ -34104,7 +33875,6 @@ GB-os,gb-os
 tanfolyami,tanfolyami
 egerek,eger
 Boldogasszony,Boldogasszony
-(C),(
 Bor,Bor
 fokára,foka
 Abba,az
@@ -34883,7 +34653,6 @@ Megrendelő,Megrendelő
 IQ,IQ
 barlangot,barlang
 Művész,Művész
-HV,""""
 érdemesített,érdemesít
 tréningek,tréning
 üveges,üveges
@@ -34971,7 +34740,6 @@ beépíthető,beépíthető
 jogosultságok,jogosultság
 népszavazásra,népszavazás
 vágtam,vág
-:-))))),:
 10_000,10_000
 Lajossal,Lajossal
 Álmos,Álmos
@@ -35124,7 +34892,6 @@ egykorú,egykorú
 tanítónő,tanítónő
 mindannak,mindan
 fellépését,fellépés
-B:,""""
 dolgokon,dolgok
 belügyminisztériumi,belügyminisztériumi
 bizonyosság,bizonyosság
@@ -36029,7 +35796,6 @@ atlanti,atlanti
 kisfia,kisfia
 uborka,uborka
 diktálta,diktál
-when,w
 elődeink,előd
 ülésszakának,ülésszak
 Dean,Dean
@@ -36914,7 +36680,6 @@ sárba,sár
 Próbáltam,próbál
 vm.,vm
 felteszem,fel+tesz
-NA,NA
 08/04/99,08/04/99
 irodalommal,irodalom
 húzó,húzó
@@ -37616,7 +37381,6 @@ lépésének,lépés
 társulata,társulat
 kivárni,ki+vár
 elnökként,elnök
-BA,""""
 ügyintézési,ügyintézési
 szegénységet,szegénység
 08/23/99,08/23/99
@@ -37914,7 +37678,6 @@ kerülök,kerül
 érzékelhetően,érzékelhető
 ablakhoz,ablak
 előirányzatának,előirányzat
-°°,
 Tagok,tag
 szinkron,szinkron
 módjával,mód
@@ -38041,7 +37804,6 @@ Hruscsov,Hruscsov
 sikkasztás,sikkasztás
 költségvetésen,költségvetés
 vehessen,vesz
-3:1,3
 07/02/99,07/02
 Twitter,Twitter
 csatára,csatár
@@ -38167,7 +37929,6 @@ megrendezni,meg+rend
 alkotmányosan,alkotmányos
 szavazhatnak,szavaz
 Cegléd,Cegléd
-l),l
 összefüggésében,összefüggés
 foglaltakra,foglalt
 Georges,Georges
@@ -38256,9 +38017,7 @@ Somogyban,Somogy
 társuk,társ
 helyezettek,helyezett
 Fiát,via
-"2,1",2
 BB,bb
-6:1,6
 másolni,másol
 önhibájukon,önhiba
 nyugalommal,nyugalom
@@ -38439,7 +38198,6 @@ hűs,hűs
 Megtörtént,eeg+történik
 finanszírozásához,finanszírozás
 öntjük,önt
-ŠŠ,
 űrszonda,űrszonda
 ápolónő,ápolónő
 visszaéléseket,visszaélés
@@ -38632,9 +38390,7 @@ aranyérem,aranyérem
 megkötésének,megkötés
 távcső,távcső
 Bazilika,Bazilika
-;-))),;
 szalon,szal
-"0,8",0
 Nevezetességek,nevezetesség
 lábat,láb
 Sportcsarnokban,Sportcsarn
@@ -38647,7 +38403,6 @@ indokolása,indokolás
 Arabella,Arabella
 felnőttképzés,felnőttképzés
 menüből,mene
-"0,4",0
 zarándoklat,zarándoklat
 borsos,borsos
 váz,váz
@@ -39012,7 +38767,6 @@ Mazda,Mazda
 2100,2100
 szégyenletes,szégyenletes
 nézzétek,nézzét
-0:1,0
 garázsába,garázs
 férgek,férg
 szolgáltatva,szolgáltatva
@@ -39046,7 +38800,6 @@ válasszal,válasz
 Kaszás,Kaszás
 melletted,mellet
 magatartásának,magatartás
-××,
 címedet,címedet
 fehéren,fehéren
 cs.,cs
@@ -39900,7 +39653,6 @@ iskoláját,iskola
 Bányai,Bányai
 műhelyt,műhely
 esedékessé,esedékessé
-őrá,ő
 vizsgálatokkal,vizsgálat
 elkezdjük,el+kezik
 projektnek,projekt
@@ -40207,7 +39959,6 @@ magánszektor,magánszektor
 Szigorú,szigorú
 elkövetését,elkövetés
 MOLNÁR,MOLNÁR
-"0,7",0
 birtokát,birtok
 Teodóra,Teodóra
 krónikája,krónika
@@ -40592,8 +40343,6 @@ túlsúly,túlsúly
 megérkeznek,meg+érkezik
 eszközre,eszköz
 mozgókép,mozgókép
-ú,ú
-XX,""""
 megszűnés,megszűnés
 Reményeink,remény
 segítését,segítés
@@ -40618,7 +40367,6 @@ kormánydöntés,kormánydöntés
 megalakul,megalakul
 vágyait,vágy
 köves,köves
-őneki,ő
 Mihályné,Mihályné
 percnél,percnél
 átváltási,átváltási
@@ -40760,7 +40508,6 @@ kapusa,kapus
 Hallgass,Hallgass
 szíveskedjen,szíveskedik
 erdőn,erdő
-(i),(
 03/24/99,03/24/99
 kétfelé,kétfelé
 elfojtani,elfojt
@@ -40934,7 +40681,6 @@ kívülállók,kívülálló
 vezérszónoki,vezérszón
 Valamelyik,valamelyik
 Névnapok,névnap
-:((,:
 szövevényes,szövevényes
 felfigyeltek,fel+figyel
 ellenzői,ellenző
@@ -41128,7 +40874,6 @@ különadó,különadó
 megküldte,meg+küld
 viadalon,viadal
 Jót,Jó
-KVI,""""
 08/12/99,08
 Perry,Perry
 kereszténynek,keresztény
@@ -41648,7 +41393,6 @@ taneszközök,taneszközök
 létszámcsökkentés,létszámcsökkentés
 előkerültek,elő+kerül
 Nápolyi,Nápolyi
-Fa,
 iparági,iparági
 leszállni,le+száll
 alakítson,alakít
@@ -42293,7 +42037,6 @@ lakáshitelek,lakáshitel
 verve,verve
 Alapot,alap
 hivatalvezető,hivatalvezető
-:(((,:
 könnyűszerrel,könnyűszer
 Szegedről,Szeged
 hangolni,hangol
@@ -42667,7 +42410,6 @@ ettünk,et
 konzol,konzol
 lapunkon,lap
 csillaggal,csillag
-"5,2",5
 hiedelem,hiedelem
 munkatársaként,munkatárs
 körmenet,körmenet
@@ -43022,7 +42764,6 @@ finanszírozásra,finanszírozás
 kihívása,kihívás
 átvehető,átvehető
 megtérítését,megtérítés
-????????,?
 világranglista,világranglista
 sebezhető,sebezhető
 kialakította,kialakít
@@ -43713,7 +43454,6 @@ Kohéziós,Kohéziós
 gépekre,gép
 könyv-,könyv-
 Leon,Leon
-FA,""""
 Hkoala,hkoala
 Hatodik,hatodik
 Fordította,fordít
@@ -45013,7 +44753,6 @@ Salvador,Salvador
 látogatóinak,látogató
 következni,következik
 sugárzása,sugárzás
-"3,1",3
 kiváltképpen,kiváltképpen
 használatakor,használat
 Zsoltnak,Zsolt
@@ -45145,7 +44884,6 @@ megérdemel,megérdemel
 szívni,szív
 jogosítványa,jogosítvány
 Önökkel,tnök
-n),n
 tékozló,tékozló
 kiszűrjük,kiszűr
 látványosabb,látványos
@@ -45258,7 +44996,6 @@ mentése,mentés
 idő-,idő-
 becsülöm,becsül
 telefonját,telefon
-LV,""""
 ügyelve,ügyel
 testsúly,testsúly
 adásvétel,adásvétel
@@ -45483,7 +45220,6 @@ erőben,erő
 készüléke,készülék
 törvényszéki,törvényszéki
 Kupában,Kupa
-ü,ü
 férfinév,férfinév
 nyújtana,nyújt
 forrásban,forrás
@@ -45629,7 +45365,6 @@ utaltunk,utal
 vetélkedőt,vetélkedő
 Zoltánné,Zoltánné
 előkészítéséhez,előkészítés
-......,.
 Guardian,Guardian
 romlottak,romlik
 kísérletnek,kísérlet
@@ -45800,7 +45535,6 @@ fújta,fújt
 büntetéseket,büntetés
 vitákra,viták
 állásfoglalások,állásfoglalás
-(ii),(
 szakmunkásképző,szakmunkásképző
 kötelezze,kötelez
 WEB,web
@@ -45915,7 +45649,6 @@ tüntetve,tüntetve
 eltávolítják,el+távolít
 hulladékkal,hulladék
 tervezéssel,tervezés
-X:,""""
 katalizátor,katalizátor
 bekapcsolódik,be+kapcsolódik
 adottságainak,adottság
@@ -46364,7 +46097,6 @@ prózában,próza
 tragédiáját,tragédia
 feladatellátás,feladatellátás
 katalógusban,katalógus
-:-((,:
 Cohen,Cohen
 konferenciának,konferencia
 márciusa,március
@@ -46456,7 +46188,6 @@ akarnák,akar
 eddigiekben,eddigi
 Korridor,Korridor
 letiltva,letiltva
-:-(((,:
 cm-re,cm
 magasságig,magasságig
 213,213
@@ -46539,7 +46270,6 @@ harmonikusan,harmonikus
 közölje,közöl
 dolgozókkal,dolgozó
 Vettem,vesz
-i.m,i
 sértve,sértve
 összehangoltan,összehangolt
 urán,ura
@@ -46823,7 +46553,6 @@ party,party
 tole,tole
 működéséhez-bővüléséhez,működéséhezbővülés
 Now,Now
-4),4
 moduláris,moduláris
 szabadfoglalkozású,szabadfoglalkozású
 mecset,mecs
@@ -46844,7 +46573,6 @@ fordulóba,forduló
 Megnéztem,meg+néz
 jelzőlámpa,jelzőlámpa
 szórakoztatás,szórakoztatás
-(2)-(3),(
 GYSEV,GYSEV
 Társaságának,Társaság
 ruházta,ruház
@@ -47002,7 +46730,6 @@ kifizetetlen,kifizetetlen
 kiegészítője,kiegészítő
 kimunkált,ki+munkál
 értékesítettek,ért
-6-tól,6
 növendékei,növendék
 Szulejmán,Szulejma
 16-os,16-os
@@ -47051,7 +46778,6 @@ elhúzódott,el+húzódik
 Gloria,Gloria
 oltani,olt
 karom,karom
-tu,
 Ortodox,Ortodox
 lefoglalta,le+foglal
 pontatlanul,pontatlan
@@ -47334,7 +47060,6 @@ kivetni,kivet
 felelősöket,felelős
 szempontnak,szempont
 vállalkozással,vállalkozás
-(1)-(3),(
 kódhoz,kód
 Encyclopedia,Encyclopedia
 visszatérést,visszatérés
@@ -48084,7 +47809,6 @@ megkérdőjelezik,meg+kérdőjelez
 énekelték,énekel
 határja,határ
 Udvari,udvari
-9-ig,9
 Kamarás,Kamarás
 városvezető,városvezető
 ősrégi,ősrégi
@@ -48177,7 +47901,6 @@ Jorge,Jorge
 Athenaeum,Athenaeum
 ismerniük,ismer
 finanszírozásával,finanszírozás
--tól,-
 apad,apad
 útig,út
 építésénél,építés
@@ -48245,7 +47968,6 @@ gépész,gépész
 pénzügyőrök,pénzügyőrök
 televíziózásról,televíziózás
 Sportvilág,Sportvilág
-´´,
 Jégkorong,Jégkorong
 1910-es,1910-es
 utóbbinál,utóbbi
@@ -48526,7 +48248,6 @@ Tudományok,tudomány
 tulajdonítja,tulajdonít
 Szlobodan,Szlobodan
 arcuk,arc
-2:2,2
 címlapon,címlap
 Csiba,Csiba
 munkakörökben,munkakörök
@@ -48709,7 +48430,6 @@ Kokó,Kokó
 szennyvizek,szennyviz
 chips,chips
 külügyminiszterek,külügyminiszter
-ťť,
 §-át§,§-át§
 különbözősége,különbözőség
 memóriája,memória
@@ -48945,7 +48665,6 @@ feladataink,feladat
 aktiválásra,aktiválás
 Cargo,Cargo
 koleszterin,koleszterin
-5),5
 megalakította,meg+alakít
 free,fr
 elnyeli,el+nyel
@@ -49154,7 +48873,6 @@ Gazsi,Gazsi
 tapasztalataiból,tapasztalat
 érvénnyel,érvény
 merjük,mer
-közünk,k
 előírásaival,előírás
 EGK,EGK
 formátumot,formátum
@@ -49188,7 +48906,6 @@ csődeljárás,csődeljárás
 bevallottan,bevallott
 tejből,te
 Elfogadhatatlan,elfogadhatatlan
--val,-
 elszámoltatási,elszámoltatási
 üzletszerűen,üzletszerű
 hulladékgyűjtő,hulladékgyűjtő
@@ -50266,7 +49983,6 @@ részvénytársaságok,részvénytársaság
 1864,1864
 1787-ben,1787
 higany,higany
-7-től,7
 bővelkedik,bővelkedik
 megmozgató,megmozgató
 eltörött,eltör
@@ -50389,7 +50105,6 @@ alakúak,alakú
 rákok,rák
 elismerései,elismerés
 Fort,Fort
-CA,""""
 Algéria,Algéria
 hatásfoka,hatásf
 figyelhetők,figyelhető
@@ -50804,7 +50519,6 @@ megfelelne,megfelel
 semlegesség,semlegesség
 rendelkezhetnek,rendelkezik
 hinnénk,hisz
-(d),(
 Juliska,Juliska
 rendbetétele,rendbetétel
 gondolkozom,gondolkozik
@@ -50926,7 +50640,6 @@ megbénult,meg+bénul
 táncokat,tánc
 infokommunikációs,infokommunikációs
 számolom,számol
-˛,""""
 rahell,rahell
 üzlete,üzlet
 zéró,zéró
@@ -51549,7 +51262,6 @@ növekedéshez,növekedés
 jóízűen,jóízű
 Telenor,Telenor
 MüM,MüM
-?????????,?
 Gazdálkodási,Gazdálkodási
 kiszorítani,ki+szorít
 receptje,recept
@@ -51966,7 +51678,6 @@ alkalmazhatóak,alkalmazható
 Nosza,Nosza
 nagymamám,nagymama
 eros,eros
-ŤŤ,
 ötágú,ötágú
 sorával,sor
 választhatjuk,választ
@@ -53299,7 +53010,6 @@ belsőleg,belső
 hangerő,hangerő
 Palesztina,Palesztina
 Natura,Natura
-XV,""""
 székét,szék
 tudomásuk,tudomás
 míves,míves
@@ -54422,7 +54132,6 @@ bevételeiből,bevétel
 Steam,Steam
 csatornázási,csatornázási
 expó,expó
-rtól,r
 öltő,öltő
 öntöttvas,öntöttvas
 képalkotó,képalkotó
@@ -55009,7 +54718,6 @@ Parancsnoksága,Parancsnoksága
 lovagrend,lovagrend
 eltúlzott,eltúlzik
 kapcsolatból,kapcsolat
-being,ő
 sütemények,sütemény
 eljuttatják,el+jut
 szolgálna,szolgál
@@ -55184,9 +54892,7 @@ vágysz,vágysz
 nyelvismeret,nyelvismer
 kiegészítésével,kiegészítés
 hulye,huly
-:)))))),:
 25_millió,25_millió
-˝˝,
 kenni,kesz
 irányultságú,irányultságú
 hatásaira,hatás
@@ -55221,7 +54927,6 @@ aktualitása,aktualitás
 tapasztalatainkat,tapasztalat
 kiemelném,ki+emel
 Gyermekjóléti,Gyermekjóléti
-!!!!!!,!
 Irányítóbizottság,Irányítóbizottság
 magnézium,magnézium
 Gaulle,Gaulle
@@ -55553,7 +55258,6 @@ lisztből,liszt
 színhelyére,színhely
 tejszín,tejszú
 hozzak,hoz
-őbenne,ő
 hagyományban,hagyomány
 eloltották,el+olt
 harmonizáció,harmonizáció
@@ -55594,7 +55298,6 @@ Command,Command
 írásával,írás
 hódítani,hódít
 terjedési,terjedési
-...?!,.
 rendbontás,rendbontás
 megszerkesztett,megszerkeszt
 eltörölni,el+töröl
@@ -55801,7 +55504,6 @@ késztetés,késztetés
 irányonként,irány
 béketárgyalások,béketárgyalás
 hitről,hit
-5-től,5
 Rogers,Rogers
 1854,1854
 lenyomata,lenyomata
@@ -56238,8 +55940,6 @@ elhallgat,el+hall
 belügy,belügy
 Üdvözöljük,Üdvözöljük
 Atyához,atya
-0:2,0
-ÚMIL,""""
 irodán,iroda
 túrós,túrós
 Rónai,Rónai
@@ -56438,7 +56138,6 @@ előterjesztői,előterjesztői
 nyaralást,nyaralás
 törülközőt,törülköző
 intézkedésről,intézkedés
-Úrral,Ú
 Eucharisztia,Eucharisztia
 MH-összeállítás,MH-összeállítás
 távközlő,távközlő
@@ -56592,7 +56291,6 @@ Félre,Félre
 kezeléseket,kezelés
 kétfordulós,kétfordulós
 derüljön,derül
-P:,p
 gigabájt,gigaba
 befektetésre,befektetés
 tíz-húsz,tíz-húsz
@@ -56991,7 +56689,6 @@ otthonunk,otthon
 igyál,igyál
 visszafizetése,visszafizetés
 800x600,800x600
-:o))),:
 fészkét,fészk
 termekben,term
 hazájának,haza
@@ -57018,7 +56715,6 @@ megismerkedtem,meg+ismerkedik
 Tsz,Tsz
 60_millió,60_millió
 hajthatatlan,hajthatatlan
-"5,4",5
 megsérül,meg+sérül
 tiltása,tiltás
 engedünk,enged
@@ -57168,7 +56864,6 @@ idegesség,idegesség
 Szászfalvi,Szászfalvi
 vizsgálnak,vizsgál
 hárommal,három
-p),p
 kikérte,ki+kér
 szépre,szép
 Műemlékvédelmi,Műemlékvédelmi
@@ -57404,7 +57099,6 @@ engedelmességet,engedelmesség
 szénát,széna
 karácsonyán,karácsony
 felbontását,felbontás
-//,
 zsebben,zseb
 növényfajok,növényfa
 jelenthetik,jelent
@@ -57431,7 +57125,6 @@ temetik,temet
 leváltotta,le+vált
 elfogadottá,el+fogad
 mindnyájunkat,mindnya
-°,°
 operaház,operaház
 Megnyílt,megnyíl
 mártírok,mártír
@@ -57442,7 +57135,6 @@ törvénytisztelő,törvénytisztelő
 Adó,adó
 feltérképezni,fel+térképez
 elméletnek,elmélet
-ű,ű
 bemutattuk,be+mut
 előlem,előlem
 masodik,masod
@@ -58272,7 +57964,6 @@ Gorcsev,gorcsev
 01/22/99,01/22
 Minisztertanács,Minisztertanács
 díszítette,díszít
-4-től,4
 MC,MC
 rétegekben,réteg
 zűrös,zűrös
@@ -59262,7 +58953,6 @@ teherhordó,teherhordó
 pótlás,pótlás
 vegyétek,vegyét
 QVGA,QVGA
-:-)))))),:
 egységeit,egység
 dühében,düh
 kormányzott,kormányzik
@@ -59276,7 +58966,6 @@ hangtalanul,hangtalan
 estéken,esték
 rádöbben,rádö
 igaztalan,igaztalan
-"6,2",6
 kenu,kenu
 beültetett,be+ült
 kromoszóma,kromoszó
@@ -60886,7 +60575,6 @@ elfeledkezni,elfeledkez
 beruházni,beruház
 bocsáss,bocsáss
 javaslunk,javasl
-a)-c),a
 bírod,bírod
 egeszen,egeszen
 Cateye,Cateye
@@ -61234,7 +60922,6 @@ gyomor-,gyomor-
 tapasztalatokból,tapasztalat
 neveljük,nevel
 párkapcsolatban,párkapcsolat
-í,í
 madara,madara
 Angyalok,Angyalok
 far,far
@@ -61409,7 +61096,6 @@ visszavezetni,visszavezet
 engedhet,enged
 színmű,színmű
 szériában,széria
-(B),(
 szakítottak,szakít
 sikerben,siker
 építészetben,építészet
@@ -61450,7 +61136,6 @@ leküzdésében,leküzdés
 csúsznak,csúszik
 épületekre,épület
 utcái,utca
--ból,-
 idegenekkel,idegen
 alakra,alak
 Gears,Gears
@@ -61703,7 +61388,6 @@ Híreinket,Hír
 /Zene,/Zene
 hsz,hsz
 Judith,Judith
-"6,4",6
 Úton,úton
 45-50,45-50
 konténerek,konténer
@@ -61909,7 +61593,6 @@ exportálni,exportál
 segíthetek,segít
 bankgarancia,bankgarancia
 albérleti,albérleti
-(p),(
 Bicsák,Bicsa
 Elhatároztam,el+határoz
 Láthatatlan,láthatatlan
@@ -62313,7 +61996,6 @@ elöljárója,elöljáró
 karjába,kar
 áprilisig,áprilisig
 társuló,társuló
-8),8
 irja,ir
 obszcén,obszca
 Földesi,Földesi
@@ -63716,7 +63398,6 @@ számaránya,számarány
 könyvecske,könyvecs
 bűneinket,bűnei
 Sisák,Sisák
-??????????,?
 végzősök,végző
 igényként,igény
 szavuk,szó
@@ -64417,7 +64098,6 @@ októberre,október
 magyarázatára,magyarázat
 robbantak,robban
 rejtik,resz
-BV,""""
 hoppon,hoppon
 korhoz,kor
 kisebbet,kiseb
@@ -64441,7 +64121,6 @@ munkaerőpiacról,munkaerőpiac
 szoptatni,szoptat
 feltételektől,feltétel
 SuSE,SuSE
-(1)A,(
 jellemzo,jellemz
 50_%,50_
 hozatott,hozat
@@ -64459,7 +64138,6 @@ Szentmihályi,Szentmihályi
 botrányba,botrány
 letartóztatta,le+tartózik
 vízhiány,vízhiány
-"5,1",5
 Zsanett,Zsanett
 gép-,gép-
 kirabolták,kirabol
@@ -65608,7 +65286,6 @@ megfelelőképpen,megfelelőképpen
 törvényünk,törvény
 egyetemleges,egyetemleges
 emlékem,emlékem
-(2)A,(
 Szilvi,Szilvi
 szlengje,szleng
 "2,5_millió","2,5_millió"
@@ -65657,7 +65334,6 @@ késleltetett,késleltetett
 Gólszerzők,gólszerző
 Jánosra,Jánosra
 ejtenek,ejt
-2-től,2
 érzelmekre,érzelem
 bevonta,be+von
 avatkozni,avatkozik
@@ -66092,7 +65768,6 @@ MÁRTON,MÁRTON
 irányelveknek,irányelv
 megnyugodtam,meg+nyugodik
 belterjes,belterjes
-PK,""""
 megnyugvással,megnyugvás
 képzésével,képzés
 realizálódott,realizálódik
@@ -66829,7 +66504,6 @@ sms-t,sms-t
 hallgatsz,hallgat
 humuszos,humuszos
 tartalomjegyzékhez,tartalomjegyék
-Ś,""""
 kerul,kerul
 egyenáramú,egyenáramú
 átad,átad
@@ -67832,7 +67506,6 @@ módosításról,módosítás
 telepedni,teleped
 fejedet,fejedet
 fiacskám,fiacska
-:o)),:
 férhetnek,fér
 családfája,családfa
 napelemek,napel
@@ -67840,7 +67513,6 @@ Munkácson,Munkács
 Bukaresti,Bukaresti
 iskolájába,iskola
 Óriás,Óriás
-D:,""""
 összecsapásra,összecsapás
 149.,149.
 tagad,tagad
@@ -68249,7 +67921,6 @@ bitumenes,bitumenes
 kozmetikumok,kozmetikum
 ruhám,ruha
 üzletágának,üzletág
-(e),(
 355,355
 felhúzni,fel+húz
 kötelezettségként,kötelezettség
@@ -69197,7 +68868,6 @@ feladatsor,feladatsor
 Rt.-hez,Rt.
 fagylalt,fagylalt
 feladva,feladva
--től,-
 24-es,24-es
 Beer,Beer
 zsidókérdés,zsidókérdés
@@ -69553,7 +69223,6 @@ Tina,Tina
 feljogosítja,fel+jogosít
 kifordult,kifordul
 összeszokott,összeszok
-6),6
 Jellemzők,vellemző
 számoljanak,számol
 jugoszlávok,jugoszláv
@@ -70267,7 +69936,6 @@ olvasat,olvasat
 háborúellenes,háborúellenes
 Melbourne,Melbourne
 Dolly,Dolly
-˙,""""
 birtokukban,birtok
 tengelyt,tengely
 kocsijával,kocsi
@@ -70965,7 +70633,6 @@ archiv,archiv
 megfeleloen,megfelel
 társfinanszírozás,társfinanszírozás
 előfizetést,előfizetés
-(iii),(
 gyógytornász,gyógytornász
 50_%-os,50_%-os
 Taxonomic,Taxonomic
@@ -71120,7 +70787,6 @@ hatóanyagú,hatóanyagú
 terének,tere
 táplálkozott,táplálkozik
 hithű,hithű
-"7,4",7
 visszaadták,visszaad
 ezüstérem,ezüstérem
 meghallani,meg+hall
@@ -71204,7 +70870,6 @@ véradás,véradás
 megfékezése,megfékezés
 felsőoktatásra,felsőoktatás
 igyekezzenek,igyekezik
-(3)-(4),(
 észrevesszük,észre+veszt
 áttérünk,áttér
 végigolvasni,végigol+asz
@@ -72454,7 +72119,6 @@ kilogrammonként,kilogrammon
 reklám-,reklám-
 energiapolitika,energiapolitika
 megjelenteti,meg+jelent
-"0,25",0
 menve,menve
 tárgyakhoz,tárgy
 hordozni,hordoz
@@ -72487,7 +72151,6 @@ adókra,adó
 1874.,1874.
 lerakódott,lerakódik
 nőnél,nő
-Je,
 szeretetéről,szeretet
 négyszeresére,négyszeres
 képzőművészetben,képzőművészet
@@ -73067,7 +72730,6 @@ Filozófia,Filozófia
 beiktatni,be+iktat
 találkozójának,találkozó
 választásoknak,választás
-.NET,.
 baltával,balta
 szerkesztőségbe,szerkesztőség
 jogrendszerben,jogrendszer
@@ -73201,7 +72863,6 @@ Asztalitenisz,Asztalitenisz
 behozatalának,behozatal
 R:-,r:-
 Wishfor,Wishfor
-Ôô,
 Joeyline,joeyline
 őrületbe,őrület
 1974-től,1974
@@ -73994,7 +73655,6 @@ lakóhelyi,lakóhelyi
 Képviselőtestülete,képviselőtestület
 párommal,párom
 morgott,morg
-Áe,
 80_millió,80_millió
 Double,Double
 Darányi,Darányi
@@ -74117,7 +73777,6 @@ tartozék,tartozék
 Iránt,iránt
 következményeitől,következmény
 különbségekre,különbség
-::,:
 egyesítik,egyesít
 idetartozik,idetartozik
 bemenet,bemenet
@@ -74257,7 +73916,6 @@ jogosak,jogos
 orvostól,orvos
 ellenérzést,ellenérzés
 Nyuszi,Nyuszi
-.......,.
 örököltem,örököl
 kitárt,kitár
 Zirc,Zirc
@@ -74443,7 +74101,6 @@ Mf,mf
 draga,drag
 satya,satya
 Tpt,op
-"6,1",6
 konyhájában,konyha
 betegesen,beteges
 lombhullató,lombhullató
@@ -74878,7 +74535,6 @@ titkosítási,titkosítási
 nyelvvizsgák,nyelvvizsga
 aszfaltoznak,aszfaltoz
 viszed,viszed
--Én,""""
 Sarracenia,Sarracenia
 hatalmasra,hatalmas
 grófnak,gróf
@@ -75306,7 +74962,6 @@ Továbbképzési,Továbbképzési
 könyvecskét,könyvecs
 ledolgozott,ledolgozott
 11.10,11.10
-6:0,6
 Megkaptam,meg+kap
 mellékletébe,melléklet
 nézzetek,néz
@@ -75410,7 +75065,6 @@ megvásárolják,meg+vásárol
 reményem,remény
 hivatások,hivatás
 szaktárcák,szaktárca
-őhozzá,ő
 42-es,42-es
 ideologikus,ideologikus
 alapveto,alapvet
@@ -75713,7 +75367,6 @@ kisorsolt,kisorsol
 átnyújtotta,átnyújt
 világcsúcsot,világcsúcs
 duda,duda
-C-on,C
 szentségének,szentség
 Kilián,Kilián
 Raúl,Raúl
@@ -76571,7 +76224,6 @@ számíthattak,számít
 meglepődtek,meg+lepődik
 telefonbeszélgetés,telefonbeszélgetés
 fogyasztással,fogyasztás
-t),)
 Toroczkai,Toroczkai
 műveiket,mű
 lappangási,lappangási
@@ -77600,7 +77252,6 @@ habilitált,habilitál
 génmanipulált,génmanipulál
 Jensen,Jensen
 kétméteres,kétméteres
-7),7
 legfeltűnőbb,fontes
 megművelt,meg+művel
 ötvözve,ötvözve
@@ -77847,7 +77498,6 @@ jelzőlámpás,jelzőlámpás
 szobájából,szoba
 tudatosítja,tudatosít
 kegyeiért,kegy
-"8,4",8
 szemüvege,szemüveg
 tartalmazná,tartalmaz
 programjairól,program
@@ -78972,7 +78622,6 @@ böngészve,böngészve
 mikéntje,miként
 hordom,hord
 adósságkezelési,adósságkezelési
-Őbenne,ő
 Osztályok,osztály
 201.,201.
 Élelmiszerlánc-,Élelmiszerlánc-
@@ -79286,7 +78935,6 @@ gépkocsiját,gépkocsi
 elmélyítésére,elmélyítés
 kategóriákra,kategória
 ügyintézője,ügyintéző
-2:3,2
 engedj,enged
 jelenségként,jelenség
 megkeresések,megkeresés
@@ -79550,7 +79198,6 @@ Chen,Chen
 international,internation
 bejárható,bejárható
 jobbágyság,jobbágyság
-Ca,
 racionalizmus,racionalizmus
 fejükön,fej
 elindítására,elindítás
@@ -79772,7 +79419,6 @@ felületről,felület
 Imi,Imi
 érdekeltséget,érdekeltség
 Kolontáron,Kolontár
-!!!!!!!,!
 áfája,áfa
 ÚGY,úgy
 sírsz,sírsz
@@ -80465,7 +80111,6 @@ Elender,elender
 gondoskodnunk,gondoskodik
 napod,napod
 témakörhöz,témakör
--De,""""
 vámáru,vámáru
 Danielisz,Danielisz
 utó,utó
@@ -80947,7 +80592,6 @@ felhívásokat,felhívás
 hazudtak,hazud
 Vitathatatlan,vitathatatlan
 alkoholra,alkohol
-/A,""""
 beérkezésétől,beérkezés
 LVII.,LVII.
 órájának,óra
@@ -81067,7 +80711,6 @@ kereteiben,keret
 tiz,tiz
 hozzájáruljanak,hozzá+járul
 időmben,idő
-J:,""""
 termések,termés
 ártér,ártér
 cégszerűen,cégszerű
@@ -81366,7 +81009,6 @@ kockázatértékelés,kockázatértékelés
 Eh,eh
 vágódott,vágódik
 rez,rez
-"""Opernglas""-avagy",""""
 120_millió,120_millió
 Driver,Driver
 Burger,Burger
@@ -81465,7 +81107,6 @@ Szomszédok,szomszéd
 csendül,csendül
 konzekvensen,konzekvens
 szembeszáll,szembeszáll
-(K),(
 vizsgázik,vizsgáz
 Fatah,Fatah
 kapitányságra,kapitányság
@@ -81661,7 +81302,6 @@ Dél-Szlovákia,Dél-Szlovákia
 emelnünk,emel
 férfiaké,férfi
 döntéstől,döntés
-0:3,0
 tőzsdéken,tőzsdék
 nagyszüleim,nagyszüleim
 országaival,ország
@@ -81730,7 +81370,6 @@ Pénzügyminisztériumnak,Pénzügyminisztérium
 OGYI,OGYI
 sarokból,sar
 fölment,fölmenik
-(2)-(4),(
 kiöregedtem,ki+öreged
 éhségtől,éhség
 betegellátó,betegellátó
@@ -82751,7 +82390,6 @@ MANNINGER,MANNINGER
 házikó,házikó
 vállamon,vállam
 férfiember,férfiember
-.a,.
 Anderlich,anderlich
 térdem,térdem
 04/10/99,04
@@ -82768,7 +82406,6 @@ keménysége,keménység
 következtettek,következik
 modorában,modor
 kételyei,kétely
-(F),(
 választhatott,választ
 következőben,következő
 forgalomirányító,forgalomirányító
@@ -82806,7 +82443,6 @@ soroltam,sorol
 szenzor,szenzor
 FTT,FTT
 beszerzi,beszer
-FI,""""
 mobilomon,mobilom
 topicnak,topik
 10/06/98,10
@@ -83566,7 +83202,6 @@ bőrgyógyász,bőrgyógyász
 ütközhet,ütközik
 Esztergomot,Esztergom
 akváriumban,akvárium
-"7,1",7
 kedvezőbbé,kedvező
 hallgatóságnak,hallgatóság
 könyvünk,könyv
@@ -84072,7 +83707,6 @@ vitorla,vitorla
 soronként,sor
 behatóbban,behatóbban
 csavarral,csavar
-2:1-re,2
 Fájó,fájó
 tiltakozunk,tiltakozik
 szakaszokban,szakasz
@@ -84241,7 +83875,6 @@ minimis,minimis
 föl-le,föl-le
 naplóba,napló
 Klestil,klestil
-:))))))),:
 alapértelmezésű,alapértelmezésű
 Som-Som,Som-Som
 lobby,lobby
@@ -84533,7 +84166,6 @@ III.30.,III.30.
 fotód,fotód
 tyutyus,tyutyus
 füge,füg
-9),9
 CSU,CSU
 1792,1792
 névmások,névmás
@@ -85032,7 +84664,6 @@ felejthető,felejthető
 31-től,31
 Miranda,Miranda
 Részleges,részleges
-G:,G
 beszédbe,beszéd
 visszanyerni,visszanyer
 képezzen,képez
@@ -85608,7 +85239,6 @@ illetékhivatal,illetékhivatal
 díjemelés,díjemelés
 beállott,be+áll
 akkó,akkó
-:((((,:
 04/25/99,04/25
 adatlapod,adatlapod
 2002.05.02-án,2002.05.02
@@ -85753,7 +85383,6 @@ pénznyerő,pénznyerő
 Adok,ad
 Wachsler,Wachsler
 szaporíthatják,szaporít
-(3)A,(
 tejfölös,tejfölös
 District,District
 variációban,variáció
@@ -86063,7 +85692,6 @@ mesefilmházba,mesefilmház
 Gulledge,gulledg
 összemérném,összemérném
 "1,2_millió","1,2_millió"
-.§§,.
 Bowie,Bowie
 harmonika,harmonika
 másod,másod
@@ -86394,7 +86022,6 @@ aszú,aszú
 Folk,Folk
 garanciái,garancia
 Technikailag,technikai
-/a,
 Tálaláskor,tálaláskor
 Könyvet,könyvet
 okiratában,okirat
@@ -86564,7 +86191,6 @@ keretszámok,keretszám
 jogtanácsos,jogtanácsos
 osztályzatokat,osztályzat
 Kapolyi,Kapolyi
-a)-d),a
 változtatásának,változtatás
 kereszteny,kereszteny
 kilyukadni,kilyukad
@@ -86730,7 +86356,6 @@ leöntjük,lesz
 finomat,finom
 Geomédia,Geomédia
 10/08/98,10
-ŽŽ,
 hétfőjén,hétfő
 Övé,övé
 Csata,Csata
@@ -87104,7 +86729,6 @@ ajánlattevővel,ajánlattevő
 balesetnél,baleset
 testedet,testedet
 D-ÉG,D-ÉG
-:o(,:
 300_000,300_000
 hajógyár,hajógyár
 tanárait,tanár
@@ -87438,7 +87062,6 @@ hallgatóinkat,hallgató
 jogeset,joges
 káprázat,káprázat
 immunológiai,immunológiai
-(D),(
 Look,Look
 486,486
 zaklatta,zaklat
@@ -87784,7 +87407,6 @@ Duma,Duma
 Kozmikus,Kozmikus
 lőszereket,lőszer
 dékánhelyettes,dékánhelyettes
-(1)-(4),(
 outsourcing,outsourcing
 lakáshitelt,lakáshitel
 csevegés,csevegés
@@ -87949,7 +87571,6 @@ méhnyakrák,méhnyakra
 Lakáshitel,Lakáshitel
 tudatalattinkban,tudatalattink
 kep,kep
-???????????,?
 villamos-,villamos-
 leányával,leány
 rosszallását,rosszallás
@@ -88156,7 +87777,6 @@ kereszténydemokrácia,kereszténydemokrácia
 iskolarendszerben,iskolarendszer
 PS3-ra,PS3-
 szerverén,szerver
-ÁV,""""
 tanfolyamokra,tanfolyam
 hajdú,hajdú
 axelero.hu,axelero.hu
@@ -88208,7 +87828,6 @@ lepődtem,le+pődik
 gépjárműveket,gépjármű
 népességre,népesség
 elrendelhető,elrendelhető
-"8,1",8
 előkészületeiről,előkészület
 tartózkodásának,tartózkodás
 kapa,kapa
@@ -88652,7 +88271,6 @@ tartozásukat,tartozás
 Nyugodj,Nyugodj
 sérüléses,sérüléses
 befizetniük,be+fizet
-s),s
 meggondolandó,meggondolandó
 utolérhetetlen,utolérhetetlen
 használniuk,használ
@@ -88795,7 +88413,6 @@ Cesare,Cesare
 fődíját,fődíj
 icipici,icipici
 eleganciát,elegancia
-(R),(
 jutalmazás,jutalmazás
 Tizenkilenc,Tizenkilenc
 nyereségérdekelt,nyereségérdek
@@ -89441,7 +89058,6 @@ végrehajtsa,végre+haj
 meteor,meteor
 392,392
 alakítója,alakító
-FAQ,""""
 9500,9500
 Kárpótlási,Kárpótlási
 Mártont,mártonik
@@ -90423,7 +90039,6 @@ Kötelezően,kötelező
 eldöntöttük,eldönt
 kivetése,kivetés
 gyötrik,gyötrik
-LL,""""
 géppisztoly,géppisztoly
 Gyergyószentmiklóson,Gyergyószentmiklóson
 cipőm,cipő
@@ -90652,7 +90267,6 @@ maradhassanak,maradhat
 értékénél,érték
 akié,aki
 kialakításáért,kialakítás
-(x),(
 megtévesztette,meg+téveszt
 számítógépekhez,számítógép
 következményekre,következmény
@@ -91012,14 +90626,12 @@ hadkiegészítő,hadkiegészítő
 hirdetőtáblán,hirdetőtáblan
 namam,namam
 SZÓ-ÖSSZEFOGLALÓ,SZÓ-ÖSSZEFOGLALÓ
-Lo,
 930,930
 Linz,Linz
 életmódjuk,életmód
 osztogat,osztogat
 bombázása,bombázás
 Sherman,Sherman
-!.,!
 381,381
 Szerepelt,szerepel
 501,501
@@ -91185,7 +90797,6 @@ táblagép,táblagép
 Pirítós,Pirítós
 fázom,fáz
 oops,oops
-KMIK,""""
 egyezményes,egyezményes
 gyermekáldás,gyermekáldás
 átvehette,átvehesz
@@ -91331,7 +90942,6 @@ jogorvoslatra,jogorvoslat
 csúszda,csúszda
 gazdálkodáshoz,gazdálkodás
 ugráltak,ugrál
-˘,""""
 Medgyessyt,Medgyessyt
 felkerülhessen,felkerül
 lestem,lesz
@@ -93436,7 +93046,6 @@ előrelépések,előrelépés
 díszpolgárává,díszpolgár
 hazugnak,hazug
 zenén,zene
-1-ben,1
 nyír,nyír
 alkalmazásokra,alkalmazás
 egészségvédő,egészségvédő
@@ -93739,7 +93348,6 @@ hermeneutikai,hermeneutikai
 reményük,remény
 rajzolnak,rajzol
 Galaktika,Galaktika
-ZH,""""
 afgánok,afgán
 hangszórót,hangszóró
 Könyörgöm,könyörgöm
@@ -93842,7 +93450,6 @@ szükségetek,szükséget
 Kedvezmény,Kedvezmény
 eletben,elet
 tovabbra,tovabbra
-:-))))))),:
 09/25/98,09/25
 1799,1799
 torlódást,torlódás
@@ -94035,7 +93642,6 @@ Fejedelemség,Fejedelemség
 tengernagy,tengernagy
 anarchizmus,anarchizmus
 orvul,orvul
-C:,""""
 közönyösen,közönyös
 modernizációját,modernizáció
 megosztásáról,megosztás
@@ -94925,7 +94531,6 @@ dura,dura
 ügyvivők,ügyvivő
 írnunk,ír
 konnyen,konny
-ţ,""""
 opi,opi
 Applications,Applications
 Display,Display
@@ -95028,7 +94633,6 @@ választandó,választandó
 emberrablás,emberrablás
 Pasteur,Pasteur
 Kuno,Kuno
-"9,1",9
 Közvetett,köz
 cégénél,cég
 Tivoli,Tivoli
@@ -96123,7 +95727,6 @@ Feláll,feláll
 dermedten,dermed
 Kodolányin,Kodolányin
 03/06/99,03
-DH,""""
 egereket,eger
 alapszakaszban,alapszakasz
 szerepeit,szerep
@@ -96667,7 +96270,6 @@ belgyógyászat,belgyógyászat
 unni,unn
 védencem,védencem
 embertársunk,embertárs
-6:7,6
 tartsátok,tartsát
 hatáskörük,hatáskör
 határozatokban,határozat
@@ -97157,7 +96759,6 @@ Izzó,Izzó
 kínoznak,kínoz
 tanítóknak,tanító
 lézerrel,lézer
-F:,""""
 12-re,12
 igéjének,igéj
 rákerül,rákerül
@@ -97489,7 +97090,6 @@ csimpánz,csimpánz
 ugyanannál,ugyanannál
 lenyelt,lenyel
 figurákkal,figura
-SL,""""
 obszervatórium,obszervatórium
 azték,azték
 selmecbányai,selmecbány
@@ -97565,7 +97165,6 @@ eres,eres
 mu,mu
 szánalom,szánalom
 ügyem,ügyem
-.Az,.
 meka,meka
 topic-ban,topic
 5_%,5_
@@ -97692,7 +97291,6 @@ Látogatás,látogatás
 felvételekkel,felvétel
 kívülállónak,kívülálló
 helyéből,hely
-r),r
 Kuala,Kuala
 neoklasszikus,neoklasszikus
 magashegyi,magashegyi
@@ -97862,7 +97460,6 @@ irodákkal,irodák
 417,417
 nyalni,nyal
 praxist,praxist
-Ú,""""
 félvér,félvér
 Bolíviában,Bolívia
 alapelveknek,alapelev
@@ -98803,7 +98400,6 @@ befolyásolási,befolyásolási
 feltalálták,fel+talál
 Villő,Villő
 vágásra,vágás
-?!...,?
 Merci,Merci
 kétsoros,kétsoros
 Avval,az
@@ -98908,7 +98504,6 @@ rendeltünk,rendel
 Hm.,hm.
 SEMMI,SEMMI
 impresszum,impresszum
-Göbl,""""
 holdfényben,holdfény
 Hunguest,Hunguest
 mindket,mindket
@@ -99016,7 +98611,6 @@ kisgyermekhez,kisgyerm
 /table,/table
 torveny,torveny
 elnezest,elnezes
-ôô,
 pinjin,pinjin
 épületszárny,épületszárny
 megfestett,meg+fest
@@ -99228,7 +98822,6 @@ parancsnokai,parancsnok
 határozó,határozó
 bronzot,bronz
 mintái,minta
-(I),(
 ritkaságok,ritkaság
 10-12.,10-12.
 Zalatnay,Zalatnay
@@ -99658,7 +99251,6 @@ mintaképe,mintakép
 ipartörténeti,ipartörténeti
 Szudánban,Szudán
 párral,pár
-(f),(
 szembeállítja,szembeállít
 óhajtotta,óhajt
 1946-os,1946-os
@@ -99845,7 +99437,6 @@ Zacher,Zacher
 Kereskedelemfejlesztési,kereskedelemfejlesztési
 E3-as,e3-as
 "1,4_milliárd","1,4_milliárd"
-.Várom,.
 szimpátiát,szimpátia
 motorkocsik,motorkocsik
 tárolásával,tárolás
@@ -100654,7 +100245,6 @@ könyvvizsgálati,könyvvizsgálati
 rosszakat,rossz
 jegyezd,jegyezd
 20.000.-Ft,20.000.-F
-"0,15",0
 fitogtatja,fitogtat
 N:,n:
 feküdtünk,feküd
@@ -101304,8 +100894,6 @@ Szereted,szereted
 cégkivonat,cégkivonat
 nevezed,nevezed
 S.T.A.L.K.E.R.,s.
-ÁKMI,""""
-(4)-(5),(
 09/30/98,09/30
 csab,csab
 komplikáltabb,komplikált
@@ -101453,7 +101041,6 @@ térítések,térítés
 visszamentek,visszamenik
 2003-2004-es,2003-2004-es
 elveire,elvei
-3-ban,3
 hibákról,hibák
 megkülönböztet,meg+különböz
 véréből,vér
@@ -102307,7 +101894,6 @@ irodatechnikai,irodatechnikai
 témakörből,témakör
 fókuszba,fókusz
 oldattal,oldat
-LEN,""""
 sz.-ban,sz.
 tervpályázatot,tervpályázat
 Heidfeld,Heidfeld
@@ -102474,7 +102060,6 @@ olvasnom,olvas
 tanulságosak,tanulságos
 pályaalkalmassági,pályaalkalmassági
 Migrációs,Migrációs
-(2)-(5),(
 felvehetők,felvehető
 Sárfalvi,Sárfalvi
 Sóval,Sóval
@@ -103044,7 +102629,6 @@ esszéíró,esszéíró
 Mojo,Mojo
 megközelítéseket,megközelítés
 Detektív,Detektív
-JA,""""
 folyókban,folyó
 ütődött,ütődik
 megelevenedett,meg+elevenedik
@@ -103078,7 +102662,6 @@ háttérnek,hátt
 felváltották,fel+vált
 éket,ék
 mentségére,mentség
-bonobo,ő
 szakközépiskolát,szakközépiskolat
 megbuktatni,meg+buktat
 bontaniuk,bont
@@ -103393,7 +102976,6 @@ MySQL,MySQL
 cc,cc
 hittérítő,hittérítő
 Vezúv,Vezúv
-(T),(
 CD-ről,CD
 Szóló,szóló
 "13,3","13,3"
@@ -103677,7 +103259,6 @@ minőségükben,minőség
 szolgálhatják,szolgál
 Ingmar,Ingmar
 igazítsák,igazít
-"0,75",0
 nedű,nedű
 Közterület,Közterület
 kuncsaft,kuncsaft
@@ -104035,7 +103616,6 @@ Megbeszéltük,meg+beszél
 küldtél,küld
 Csöndes,Csöndes
 ellenőrt,ellenőr
-!!!!!!!!,!
 mosogatni,mosogat
 terelje,terel
 nyitottuk,nyit
@@ -104512,7 +104092,6 @@ internetezik,internetez
 gyakorlatunk,gyakorlat
 kiadásnak,kiadás
 Lego,Lego
-÷,""""
 megválaszolható,megválaszolható
 meghatározottakon,meghatározott
 jeligével,jelig
@@ -104671,7 +104250,6 @@ Ezüsthajó,Ezüsthajó
 megalapozottabb,megalapozott
 pályaművet,pályamű
 világnapján,világnap
-........,.
 látogatottságát,látogatottság
 külügyminisztériumban,külügyminisztérium
 avatkoztak,avatkozik
@@ -104908,7 +104486,6 @@ Emlékhely,Emlékhely
 csontvelő,csontvelő
 torkának,torka
 Vu,vu
-(P),(
 regisztráltatni,regisztráltat
 lefaragása,lefaragás
 lapátra,lapát
@@ -104959,7 +104536,6 @@ Bejárja,be+jár
 szaladgálnak,szaladgál
 egészségturizmus,egészségturizmus
 Ópusztaszeri,Ópusztaszeri
-(M),(
 termékcsoportok,termékcsoport
 megmozdítani,meg+mozdít
 előmenetelét,előmenetel
@@ -105526,7 +105102,6 @@ megállítható,megállítható
 phones,phones
 szabályozhatja,szabályozhat
 Nyugdíjpénztár,Nyugdíjpénztár
-2.A,2
 ujjunkat,uj
 Akiben,aki
 teljesítettnek,teljesített
@@ -105633,7 +105208,6 @@ europai,europ
 MRFK,oR
 pronto,pronto
 O.V.,O.V.
-joval,j
 mashol,maszol
 Raadasul,raadasul
 Phoeniixx,Phoeniixx
@@ -106282,7 +105856,6 @@ Arte,Arte
 megvásárló,megvásárló
 győzködni,győzködik
 sztereotípiákat,sztereotípia
-(52),(
 ellentmondásosnak,ellentmondásos
 közhelynek,közhely
 szélesíti,szélesít
@@ -106299,13 +105872,11 @@ FDA,FDA
 fedje,fed
 középdöntőbe,középdöntő
 Davidson,Davids
-DD,""""
 Vásáry,Vásáry
 megvédték,meg+véd
 behavazott,behavazott
 kontinensünk,kontinens
 jónevű,jónevű
-y),y
 szomszéddal,szomszéd
 Frau,Frau
 irgalma,irgalom
@@ -106389,7 +105960,6 @@ elvándorlása,elvándorlás
 181.,181.
 fe,fe
 békemegállapodás,békemegállapodás
-Ju,
 Hadtörténelmi,Hadtörténelmi
 megszervezve,megszervezve
 szomszédjában,szomszéd
@@ -106873,7 +106443,6 @@ geci,geci
 Sztv.,sztv.
 .00,.00
 srac,srac
-:)))))))),:
 07/08/98,07
 üzletszabályzatunkat,üzletszabályzat
 lecsüngő,lecsüngő
@@ -107221,7 +106790,6 @@ szarik,szarik
 Ébredés,ébredés
 átnyúlik,átnyúlik
 borítást,borítás
-1A,""""
 szezonon,szezon
 fióka,fió
 bogyókat,bogyó
@@ -107359,7 +106927,6 @@ mogott,mog
 09/04/98,09/04/98
 F.C,F.C
 "4,5_milliárd","4,5_milliárd"
-˛˛,
 Sankt,Sankt
 híresen,híres
 hatástalanok,hatástalan
@@ -107433,7 +107000,6 @@ hitelüket,hitel
 szabályozástól,szabályozás
 bejegyeztetni,be+jegyeztet
 atomerőművel,atomerőmű
-1Jn,ő
 Ilyés,Ilyés
 tekintenie,tekint
 ellentmondásnak,ellentmondás
@@ -107847,7 +107413,6 @@ FCC,FCC
 végveszéllyel,végveszély
 célprogramok,célprogram
 kérdeztél,kérdez
--Te,.
 misimisi,misimisi
 Nyr.,Nyr.
 műsorváltozásokért,műsorváltozás
@@ -108089,7 +107654,6 @@ mobilra,mobil
 DÖK,DÖK
 Liebmann,Liebmann
 igyekezz,igyekezz
-;-)))),;
 alienne,alienne
 01/24/99,01/24/99
 65533,65533
@@ -108253,7 +107817,6 @@ tájképek,tájkép
 diszkriminációra,diszkrimináció
 többségén,többség
 megszállni,meg+száll
-VA,""""
 családoktól,család
 térhatású,térhatású
 iromány,iromány
@@ -108461,7 +108024,6 @@ nyersz,nyersz
 imho,imho
 wan,wan
 02/13/99,02
-g.,g
 infohu,infohu
 személyiségében,személyiség
 Hivatalon,Hivatalon
@@ -108974,7 +108536,6 @@ Zarathustra,Zarathust
 Kuss,Kuss
 lehel,lehel
 Hozza,hoz
-?!?,?
 devizabelföldi,devizabelföldi
 csupan,csup
 Jóformán,jóformán
@@ -109008,7 +108569,6 @@ szlogenek,szlog
 találás,találás
 rohanásban,rohanás
 magyarázatul,magyarázatul
-MD,""""
 Megelőzés,megelőzés
 zarándokút,zarándokú
 csillognak,csillog
@@ -109263,7 +108823,6 @@ jogintézményt,jogintézmény
 felfutó,felfutó
 sugallva,sugallva
 bosszúra,bosszú
-/-,""""
 irodalmon,irodalem
 pincével,pinc
 Segítségükkel,segítség
@@ -109496,7 +109055,6 @@ Tár,Tár
 állattartást,állattartás
 Portsmouth,Portsmouth
 Válság,válság
--ja,
 Jacqueline,Jacqueline
 éveikben,év
 részeknél,rész
@@ -109507,7 +109065,6 @@ gazdaságpolitikára,gazdaságpolitika
 leírásából,leírás
 osztályokkal,osztály
 érdektelenné,érdektelen
-č,č
 számította,számít
 megvétózta,meg+vétózik
 kijárata,kijárat
@@ -109727,7 +109284,6 @@ készíthetjük,készít
 Szentléleknek,Szentlél
 felük,fél
 italokkal,italok
-Ü,""""
 Technical,Technical
 Taurus,Taurus
 Betegsége,betegség
@@ -110614,7 +110170,6 @@ véleménynyilvánításra,véleménynyilvánítás
 Gulácsi,Gulácsi
 patents,patents
 kitárul,kisz
-(2)Az,(
 &#x03c3;&#x03c4;&#x03b7;&#x03bd;,&#x03c3;
 zárkában,zárka
 Izé,Izé
@@ -110801,7 +110356,6 @@ földmunkák,földmunka
 antológiát,antológia
 Bemutatkozik,be+mutatkozik
 gyűjteményekben,gyűjtemény
-(H),(
 Somlai,Somlai
 afrikaiak,afrik
 I.-II,1.
@@ -112455,7 +112009,6 @@ felnőttkor,felnőttkor
 Lange,Lange
 terheltek,terhel
 gépágyú,gépágyú
-0),0
 jelenségének,jelenség
 Lois,Lois
 stábbal,stáb
@@ -112996,7 +112549,6 @@ Keretprogram,Keretprogram
 megsemmisítheti,meg+semmisít
 Pápák,pápa
 embercsempészet,embercsempészet
-PI,""""
 feloldódott,fel+oldódik
 átjárta,át+jár
 mezőnek,mező
@@ -113012,7 +112564,6 @@ antybounty,antybounty
 kiszabadították,kiszabadít
 részeihez,rész
 kísérővel,kísérő
-Í,""""
 lebomlik,lebomlik
 erőktől,erő
 fonalak,fonal
@@ -113398,7 +112949,6 @@ névsorból,névsor
 alusznak,aluszik
 sorköteles,sorköteles
 fűtőanyagot,fűtőanyag
-że,
 adókötelezettséget,adókötelezettség
 Pécstől,Pécs
 vőfély,vőfély
@@ -113794,7 +113344,6 @@ tudásod,tudásod
 fogyasztóknál,fogyasztó
 érintőkijelző,érintőkijelző
 csodálkozz,csodálkozz
-RFK,""""
 Mindíg,mindíg
 vilagban,vilag
 07/16/98,07
@@ -113894,7 +113443,6 @@ címszóval,címszó
 Mentes,mentes
 Fóris,Fóris
 veszekedést,veszekedés
-"0,50",0
 lelkülete,lelkület
 lenyűgözően,lenyűgöző
 %-nál,%-nál
@@ -114483,9 +114031,7 @@ lettetek,lesz
 kitárult,ki+tárul
 Nyomott,nyom
 Orltran,Orltran
-???__,?
 PHARE-szerződést,PHARE-szerződés
-§-§,""""
 normának,norma
 sajtóközleményében,sajtóközlemény
 levonult,levonul
@@ -114909,7 +114455,6 @@ szoptatós,szoptatós
 kifutópálya,kifutópálya
 húgával,húga
 beolvasztották,beolvaszt
-Lu,
 urasági,urasági
 Világkongresszus,Világkongresszus
 vizsgáit,vizsga
@@ -115053,7 +114598,6 @@ Gyógynövények,gyógynövény
 átlagával,átlag
 logóval,logó
 oda-visszavágós,oda-visszavágós
-IK,""""
 személyvonatok,személyvonat
 megszüntettek,meg+szünt
 Saga,Saga
@@ -115793,7 +115337,6 @@ kamrák,kamra
 beszívott,be+szív
 terjedne,terjed
 Huntington,Huntington
-S:,s
 5.00,5.00
 merni,mer
 űrhajóval,űrhajó
@@ -116919,7 +116462,6 @@ paragrafusát,paragrafus
 nagymamának,nagymama
 lennétek,lesz
 Tekintet,tekint
-¨,""""
 elszomorít,elszomorít
 virágom,virág
 megtennék,meg+tegy
@@ -117348,7 +116890,6 @@ szavatolják,szavatol
 Ozirisz,Ozirisz
 olaszokkal,olasz
 Vízzel,vízzel
-6-2-re,6
 Petrarca,Petrarca
 DV,DV
 átépítésére,átépítés
@@ -117514,7 +117055,6 @@ készletből,készlet
 58-as,58-as
 torzulás,torzulás
 Államokhoz,Államok
-..h,.
 telefonbeszélgetést,telefonbeszélgetés
 imponál,imponál
 sorról,sor
@@ -117684,7 +117224,6 @@ részesedésével,részesedés
 szabályra,szabály
 borverseny,borverseny
 GDF,GDF
-(2)-(6),(
 Gabriellának,Gabriella
 Zavartan,Zavart
 misztériumában,misztériuma
@@ -117741,7 +117280,6 @@ Direktíva,Direktíva
 Bm,bm
 lényünk,lény
 meredtek,mered
-i.sz,i
 Kérdezed,kérdezed
 61623,61623
 megrendelései,megrendelés
@@ -118142,7 +117680,6 @@ Okmány,Okmány
 egészségpénztári,egészségpénztári
 hullámtér,hullámtér
 kocsonyás,kocsonyás
-L:,l
 tevékenységeink,tevékenység
 iramú,iramú
 veszélyhelyzetek,veszélyhelyzet
@@ -118151,7 +117688,6 @@ tanácsnokok,tanácsnok
 MIÉP-re,MIÉP
 elgondolkodom,elgondolkodik
 Habeas,Habeas
-(3)-(5),(
 Jezovics,jezovics
 valodi,valodi
 stewe,stewe
@@ -118876,7 +118412,6 @@ KÖLTSÉGEK,KÖLTSÉGEK
 motorban,motor
 előfizetővel,előfizető
 tartálykocsi,tartálykocsi
-H:,h
 ikes,ikes
 RSA,RSA
 szenilis,szenilis
@@ -118891,7 +118426,6 @@ Dvéri,dvéri
 MILYEN,mILYEN
 ajánlatához,ajállat
 egyszerubb,egyszer
-:-((((,:
 vilagon,vilag
 07/27/98,07
 szétosztották,szétoszt
@@ -119342,7 +118876,6 @@ Burkovits,Burkovits
 johet,joh
 legkozelebb,legkozelebb
 08/18/98,08
-Š,""""
 changes,changes
 lédús,lédús
 Szuperkupa,Szuperkupa
@@ -120477,7 +120010,6 @@ ajtóba,ajtó
 előnyeiből,előny
 nézőtérről,nézőt
 Olvasónk,Olvasó
-FN,""""
 gerjesztette,gerjeszt
 cselekedeteiben,cselekedet
 témáinak,témai
@@ -120552,7 +120084,6 @@ próbaképpen,próbaképpen
 apjukat,ap
 &#x00b1;,&#x00b1;
 kriptában,kripta
-(V),(
 embargót,embargó
 behívtak,beszv
 betolakodó,betolakodó
@@ -121040,7 +120571,6 @@ nagylaki,nagylaki
 gerjesztik,gerjeszt
 végződhet,végződik
 hangfelvételeket,hangfelvétel
-˝,""""
 Hatásos,hatásos
 kiadójának,kiadó
 ütésálló,ütésálló
@@ -121661,7 +121191,6 @@ segedelmével,segedelem
 hátuljára,hátul
 jellé,jellé
 veseelégtelenség,veseelégtelenség
-IR,""""
 főkapitányi,főkapitányi
 Rocco,Rocco
 fújva,fújva
@@ -123960,7 +123489,6 @@ Bagdadba,Bagdad
 elnek,elik
 méltatlankodva,méltatlankodva
 Kialakul,kialakul
-(iv),(
 ellátogatunk,ellátogat
 foglalkozásom,foglalkozás
 Figyeljetek,figyel
@@ -124154,7 +123682,6 @@ eladótól,eladó
 Bordány,Bordány
 vásárba,vásár
 napocska,napocs
-Y:,Y
 gyerekért,gyerek
 Térj,tér
 technológiáról,technológia
@@ -124182,7 +123709,6 @@ lillafüredi,lillafüredi
 Testének,Teste
 indexét,index
 költenének,költ
-(S),(
 élvezetessé,élvezetes
 leszokott,lesz
 takarók,takaró
@@ -124295,7 +123821,6 @@ védencét,védenc
 jelölünk,jelöl
 rendőrtisztek,rendőrtiszt
 Egymástól,Egymás
-(N),(
 klimax,klimax
 Agrobank,Agrobank
 Helyesebben,Helyes
@@ -124631,7 +124156,6 @@ elmesélték,el+mesél
 próbálkozásait,próbálkozás
 fertőzéssel,fertőzés
 kerületünkben,kerület
-"5,25",5
 elnézően,elnéző
 jogforrások,jogforrás
 megelégedni,meg+elégedik
@@ -124858,7 +124382,6 @@ minimálár,minimálár
 felso,fels
 K.G.,k.g.
 uramat,uramat
-(4)A,(
 tudnek,tud
 erovel,erő
 flyOrDie,flyOrDie
@@ -125364,7 +124887,6 @@ Szegedma,szegedma
 Egerfai,Egerfai
 klikkelj,kli+kel
 mitol,mitol
-;(,;
 modelljeinek,modellej
 tíz-tíz,tíz-tíz
 megörökölte,meg+örököl
@@ -126058,7 +125580,6 @@ VII.1.,VII.1.
 Steamen,Steamen
 nezd,nezd
 atlag,atlag
-:-)))))))),:
 pontosra,pontos
 mangában,manga
 veszélyeztetettnek,veszélyeztet
@@ -126194,7 +125715,6 @@ megnézünk,meg+néz
 nyújtásáról,nyújtás
 életünkhöz,élet
 csatol,csatol
-3.A,3
 gallyak,gally
 sajátosságot,sajátosság
 demokratikussá,demokratikussá
@@ -126210,7 +125730,6 @@ aranyosan,aranyos
 oktatóink,oktató
 bizonylaton,bizonylat
 restrikciós,restrikciós
-5:7,5
 802.11n,802.11n
 siessünk,siesz
 Azota,azota
@@ -126580,7 +126099,6 @@ Inn,Inn
 vezír,vezír
 fájlrendszer,fájlrendszer
 1702-ben,1702
-2-ről,2
 nádi,nádi
 gyümölcséből,gyümölcs
 Maier,Maier
@@ -127843,7 +127361,6 @@ intézményeinél,intézmény
 támadhatnak,támadhat
 törlődnek,törlődik
 töltelékkel,töltelék
-DFC,""""
 ételben,étel
 messzeség,messzeség
 tanyáról,tanya
@@ -128297,7 +127814,6 @@ Ivánka,Ivánka
 lerövidíti,le+rövidít
 gyengítése,gyengítés
 korszakokat,korszak
-(y),(
 elkerültek,el+kerül
 városvezetést,városvezetés
 2-6.,2-6.
@@ -128754,7 +128270,6 @@ zombori,zombori
 tudományhoz,tudomány
 közelharci,közelharci
 Közalapítványnak,Közalapítvány
-"0,35",0
 Árpádházi,Árpádházi
 tanszékeken,tanszék
 Sokuk,sokuk
@@ -129687,7 +129202,6 @@ településnevek,település
 emelkedésében,emelkedés
 előnyökért,előnyö
 tandíjmentes,tandíjmentes
-3-ról,3
 kisebbíteni,kisebbít
 bevezetésben,bevezetés
 Sápadt,Sápadt
@@ -129892,7 +129406,6 @@ Csath,Csath
 elkerülésében,elkerülés
 közember,közember
 szimbolikája,szimbolika
-GJ,""""
 választásában,választás
 Totál,totál
 Street-i,Street-i
@@ -130192,7 +129705,6 @@ Meredek,meredek
 kérhetsz,kérhet
 Fadrusz,Fadrusz
 Személye,személy
-¤,""""
 kiépítendő,kiépítendő
 napfénytől,napfény
 rátért,rátér
@@ -130303,7 +129815,6 @@ Szint,szint
 habverővel,habverő
 5501-6000,5501-6000
 3001-3500,3001-3500
-????????????,?
 eu_news,eu_news
 3501-4000,3501-4000
 kovetkezik,kovetkezik
@@ -131083,7 +130594,6 @@ Lányom,lány
 tarthatna,tart
 találékonyság,találékonyság
 Babitsot,Babits
-.........,.
 produktumok,produktum
 néznél,néz
 közétek,közét
@@ -131803,7 +131313,6 @@ szakiskolát,szakiskola
 termelésük,termelés
 soványak,sovány
 négyzete,négyzet
-5:1,5
 7%-a,7%-a
 tenyészállatok,tenyészállat
 sikertelenségét,sikertelenség
@@ -131835,7 +131344,6 @@ karrierről,karrier
 ASE,ASE
 ujjunkkal,uj
 Sáling,sáling
-.!,.
 kifizetőhely,kifizetőhely
 Harmonizációs,Harmonizációs
 kedvezőbbnek,kedvezőbb
@@ -132369,7 +131877,6 @@ meggondoltam,meggondol
 Adatokat,ndat
 fejlesztenie,fejleszt
 megadóztatni,meg+adóztat
-q),""""
 meghirdetésére,meghirdetés
 beépülni,be+épül
 akárkinek,akár
@@ -132644,7 +132151,6 @@ ITK,ITK
 humusz.hu,humusz
 Távhőszolgáltató,Távhőszolgáltató
 konnyebb,konnyű
-:(((((,:
 22_millió,22_millió
 ellenanyagok,ellenanyag
 utódának,utóda
@@ -132970,7 +132476,6 @@ kormánypárttal,kormánypárt
 kéziféket,kézifék
 felbujtóként,felbujtó
 Akikkel,aki
-v),v
 alamizsna,alamizsna
 Tanuló,Tanuló
 Krisztus-hívők,Krisztus-hívő
@@ -133625,7 +133130,6 @@ röpült,röpül
 Tudjanak,tud
 kösd,kösd
 Alkohollal,alkohol
--Ne,""""
 Arkan,arkan
 g-os,g-os
 okozhasson,okozhat
@@ -133636,7 +133140,6 @@ Nevetett,nevet
 Nekem8,nekem8
 eFt-al,eFt
 tündérlala,tündérlal
-(2)&ndash;(5),(
 Sarkadi-levél,sarkadi-levél
 felhagynak,fel+hagy
 hüvelyben,hüvely
@@ -133753,7 +133256,6 @@ időkhöz,idő
 kelhet,kel
 28-ra,28.
 prognosztizálja,prognosztizál
-Őneki,ő
 emberére,ember
 706,706
 kitételeket,kitétel
@@ -134347,7 +133849,6 @@ százszoros,százszoros
 Velencén,Velencén
 működésről,működés
 Pénzügyminisztériumot,Pénzügyminisztérium
-UA,""""
 nagyjait,nagy
 mutatókra,mutató
 kitartását,kitartás
@@ -134377,7 +133878,6 @@ virágcsokrot,virágcsokr
 zsenialitás,zsenialitás
 tanyákat,tanya
 talajmechanikai,talajmechanikai
-GA,""""
 közegészség,közegészség
 mértéktartás,mértéktartás
 bejegyzéshez,bejegyzés
@@ -134553,7 +134053,6 @@ súlyából,súly
 Lemond,lemond
 Évről-évre,Évről-év
 Geri,Geri
-"1,15",1
 Balaton-parton,Balatonppart
 kiállunk,kiáll
 Mikulást,mikulás
@@ -134631,7 +134130,6 @@ leterített,leterít
 látogattuk,lát
 Bettis,bettis
 artikulátlan,artikulátlan
-..........,.
 Angyalarcú,angyalarcú
 X.28.,x.28.
 Chavo,Chavo
@@ -135205,7 +134703,6 @@ kifogásolva,kifogásolva
 felülbírálni,fel+ülbírál
 üléssor,üléssor
 lakozott,lakozik
-5-en,5
 Fejős,Fejős
 végrendeletét,végrendelet
 létrehozatala,létrehozatal
@@ -135305,7 +134802,6 @@ punci,punci
 alrendszereiből,alrendszer
 kulso,kuls
 TOPIC,TOPIC
-ŚŚ,
 12/22/98,12/22
 Kentaur,Kentaur
 szellemekkel,szellem
@@ -135399,7 +134895,6 @@ tizeddel,tized
 forrásaival,forrás
 mélykék,mélykék
 cárt,cár
-(g),(
 27-28,27-28
 Készítmények,készítmény
 Köszöntő,Köszöntő
@@ -135956,7 +135451,6 @@ jövedelemig,jövedel
 Stoiber,Stoiber
 igényéhez,igény
 beszaladt,be+szalad
-.Főbb,.
 bajotok,bajot
 combom,combom
 ruháimat,ruha
@@ -136192,7 +135686,6 @@ Bementünk,be+ment
 Internet-használók,Internet-használó
 felárért,felár
 JOBB,JOBB
-(4)-(6),(
 rohansz,rohansz
 Lewinfiú,Lewinfiú
 Brumimackó,Brumimackó
@@ -136322,7 +135815,6 @@ előadásaival,előadás
 huny,huny
 bánták,bán
 hozadékát,hozadék
-FMK,""""
 lakásépítést,lakásépítés
 pénzhamisítás,pénzhamisítás
 célrendszer,célrendszer
@@ -136389,7 +135881,6 @@ poénból,poén
 Hozzon,hoz
 megtagadásáról,megtagadás
 autorités,autorités
-(v),(
 silence,silence
 Közterületi,Közterületi
 zugot,zug
@@ -136409,7 +135900,6 @@ vizsgaidőszakon,vizsgaidősz
 altalam,altalam
 lathato,lat
 coclib,coclib
-:))))))))),:
 fuggetlen,fuggetlen
 06/19/98,06
 75_millió,75_millió
@@ -137015,7 +136505,6 @@ Flaisz,flaisz
 önzetlenebb,önzetlen
 sóvár,sóvár
 letre,lete
-:o)))),:
 "13,4","13,4"
 Shape,Shape
 Krupp,Krupp
@@ -137668,7 +137157,6 @@ megajándékozzunk,megajándékoz
 másolhatod,másol
 felaprítjuk,fel+aprít
 Zalakerámia,Zalakerámia
-(5)-(6),(
 teleházas,teleházas
 Aláírtál,Aláírtál
 Ajánlattevő,ajánlattevő
@@ -138670,7 +138158,6 @@ Nagyatádon,Nagyatád
 bankhitel,bankhi
 érdemelnének,érdemel
 meggyőződhetünk,meg+győződik
-"2,25",2
 iskolájukat,iskola
 Pódium,Pódium
 előadótermében,előadóterem
@@ -138996,7 +138483,6 @@ hozzákezdeni,hozzákezdik
 előszobája,előszoba
 Antoinette,Antoinette
 lárvái,lárva
-2-tól,2
 malomipar,malomipar
 rendelésére,rendelés
 udvarló,udvarló
@@ -139075,7 +138561,6 @@ mészkövet,mészköv
 vakmerőség,vakmerőség
 megkedvelték,meg+kedvel
 kínálatába,kínálat
-noir,ő
 játékoknál,játék
 petrezselymes,petrezselymes
 szennyeződött,szennyeződik
@@ -139279,7 +138764,6 @@ aacheni,aacheni
 bonyolultság,bonyolultság
 röplapok,röplap
 izmainak,izm
-null,null
 levetni,le+vet
 egyházjog,egyházjog
 Cassidy,Cassidy
@@ -140903,7 +140387,6 @@ tűnjék,tűnjék
 helyemben,hely
 jegyrendelés,jegyrendelés
 legméltóbb,nagy
-(X),(
 minőségbiztosítással,minőségbiztosítás
 asked,asked
 Államtitkárságának,Államtitkársága
@@ -140925,7 +140408,6 @@ terepgyakorlat,terepgyakorlat
 papának,papa
 szépségversenyeken,szépségverseny
 KöViM,KöViM
-Aján,a
 papir,papir
 pedagógiai-szakmai,pedagógiai-szakmai
 tulajdonkeppen,tulajdonkepp
@@ -141910,7 +141392,6 @@ tetszel,tetszel
 268-4599,268-4599
 csaltam,csal
 felültem,fel+ül
-!!!!!!!!!,!
 ÁHH,áhh
 SzVSz,szvsz
 fűzhetsz,fűzhet
@@ -142086,7 +141567,6 @@ búcsúztunk,búcsúz
 funkcionálni,funkcionál
 Józsika,Józsika
 Antropológiai,Antropológiai
-(L),(
 Fejfájás,Fejfájás
 695,695
 járműveknél,jármű
@@ -142353,7 +141833,6 @@ szervátültetés,szervátültetés
 területhasználat,területhasználat
 olyanban,olyan
 érvem,érvem
-"8,25",8
 mérlegkészítés,mérlegkészítés
 Kijelölt,kijelöl
 Balázstól,Balázs
@@ -142883,7 +142362,6 @@ Window,Window
 sarkait,sar
 Stargate,Stargate
 megfigyelésének,megfigyelés
-Ural,i
 Toby,Toby
 építésszel,építész
 cenzúrázott,cenzúráz
@@ -142918,7 +142396,6 @@ EFOTT,EFOTT
 Kasztíliai,Kasztíliai
 erejűnek,erejű
 színüket,szín
-(E),(
 Maróthy,Maróthy
 egyikéről,egyik
 helyjegy,helyjegy
@@ -143834,7 +143311,6 @@ elszorult,elszorul
 küldeniük,küld
 1957-ig,1957
 deux,deux
-..?,.
 szavazatuk,szavazat
 Paszkál,Paszkál
 vászonból,vászon
@@ -144640,7 +144116,6 @@ babára,babár
 potyognak,potyogik
 Szózatot,Szózat
 prevencióra,prevenció
-x),""""
 kamatkiadások,kamatkiadás
 zselízi,zselízi
 relevanciája,relevancia
@@ -144683,7 +144158,6 @@ PowerPC,PowerPC
 statikailag,statikai
 BKV-tól,BKV
 Fleischer,Fleischer
-(J),(
 költségcsökkentést,költségcsökentés
 leveri,le+ver
 költségvetéseket,költségvetés
@@ -145199,7 +144673,6 @@ készségekre,készség
 BEVÉTELEK,BEVÉTELE
 újjászülető,újjászülető
 kiválóbb,kiváló
-ŕ,""""
 alapvizsgát,alapvizsga
 felelj,felel
 biszex,biszex
@@ -145990,7 +145463,6 @@ Alison,Alison
 különbözőséget,különbözőség
 titkárként,titkár
 eléneklése,eléneklés
-u),u
 építkezők,építkező
 szédülést,szédülés
 céloztak,céloz
@@ -146427,7 +145899,6 @@ teljesítménytúrák,teljesítménytúra
 rétsági,rétsági
 vérbosszú,vérbosszú
 Jónéhány,jónéhány
-6:4-re,6
 adataiba,adat
 adagoljuk,adagol
 kormányőr,kormányőr
@@ -146901,7 +146372,6 @@ Kultúrális,Kultúrális
 postabélyegző,postabélyegző
 bűneimet,bű
 ördögöket,ördög
-(1)Az,(
 kinagyított,kinagyít
 ólban,ólban
 miniszterasszony,miniszterasszony
@@ -147484,7 +146954,6 @@ kitiltják,ki+tilt
 Holden,Holden
 Elővárosi,elővárosi
 vízhőmérséklet,vízhőmérséklet
-(II),(
 nemzetséget,nemzetség
 1905-től,1905
 éberségét,éberség
@@ -148250,7 +147719,6 @@ böngészőkkel,böngésző
 azonosítónkat,azonosító
 Gyermekeim,ryermek
 szállítólevél,szállítólev
-Ť,""""
 Piacvezető,Piacvezető
 Őrá,az
 zárásra,zárás
@@ -148791,7 +148259,6 @@ stempi,stempi
 Muncurkó,Muncurkó
 freimann,fre+ima
 DLala,dlala
-KUNDI,""""
 3_%,3_
 OlvTársak,OlvTárs
 katalógusunkhoz,katalógus
@@ -148904,7 +148371,6 @@ eredetiből,eredeti
 Cosimo,Cosimo
 helységeket,helység
 231.,231.
-"0,10",0
 népszerűsítésének,népszerűsítés
 koreográfusa,koreográfus
 bevonulást,bevonulás
@@ -149491,7 +148957,6 @@ alábbiakból,alábbi
 Szemészeti,Szemészeti
 elraktározott,el+raktároz
 elgondolható,elgondolható
-VH,""""
 Damjáni,Damjáni
 mutandis,mutandis
 rutinosabb,rutinos

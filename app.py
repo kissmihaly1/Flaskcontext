@@ -45,9 +45,8 @@ def faq():
 
 @app.route('/checkdate', methods=['POST'])
 def checkdate():
-    current_date = datetime.now().strftime('%Y. %m. %d.')
-    current_date2 = datetime.now().strftime('%d/%m/%Y')
-    return jsonify({"date": current_date, "date2": current_date2})
+    day = os.getenv("GAMEDAY")
+    return jsonify({"day": day})
 
 
 
