@@ -38,7 +38,9 @@ def save_guess(word, rank, user_id=None):
 def home():
     return render_template('index.html')
 
-
+@app.route('/adatvedelmitajekoztato')
+def privacy():
+    return render_template('privacy.html')
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
