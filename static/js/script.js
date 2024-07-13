@@ -102,6 +102,8 @@ window.addEventListener('load', () => {
             } else {
                 // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
+                    const pElement = document.querySelector('p.find');
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
                     document.getElementById('guesses-count').innerText = savedResults.length;
                     document.getElementById('hint-left').innerText = 5-hintCount;
                     document.querySelector('.instructions').classList.add('hidden');
@@ -194,7 +196,9 @@ function handleGuess() {
                     let solutionWord = results.find(result => result.rank === 1)?.word;
                     showCongratulationsPage(solutionWord, results.length);
                 } else {
-                    // Save the result to localStorage
+                    const pElement = document.querySelector('p.find');
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
+
                     document.querySelector('.instructions').classList.add('hidden');
                     results.push({ word: word, rank: data.rank });
                     gameData[gameDay].results = results;
@@ -203,6 +207,9 @@ function handleGuess() {
                     localStorage.setItem('gameData', JSON.stringify(gameData));
 
                     document.getElementById('guesses-count').innerText = results.length;
+                    document.getElementById('game-number').innerText = gameDay;
+                    document.getElementById('streak').innerText = streak;
+                    document.getElementById('hint-left').innerText = 5-hintCount;
 
                     // Clear previous results
                     const container = document.getElementById('results');
@@ -359,7 +366,7 @@ document.body.innerHTML = `
 
             </div>
             <div class="stats">
-                <p>Tippek száma: <span id="guesses-count">${guessCount}</span> | Segítségek száma: <span id="hint-count">${hintCount}</span></p>
+                <p>Tippek száma: <strong id="guesses-count">${guessCount}</strong> | Segítségek száma: <span id="hint-count">${hintCount}</span></p>
 
                 <canvas id="colorBarChart" width="400" height="200"></canvas>
             </div>
@@ -478,7 +485,6 @@ createColorBarChart(green_number, orange_number, red_number);
             document.getElementById('give-up').addEventListener('click', (event) => {
                 let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
                 let results = gameData[gameDay].results || [];
-                console.log(results);
                 if (results.length <= 0) {
                     showError("Tippelned kell, mielőtt feladnád.");
                     event.preventDefault();
