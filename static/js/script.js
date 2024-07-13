@@ -378,13 +378,15 @@ function showCongratulationsPage(word, guessCount) {
     const countdownInterval = setInterval(updateCountdown, 1000); // Update every second
 }
 
-//new
 
 // Add event listeners for various UI interactions and modal behavior
         document.addEventListener('DOMContentLoaded', (event) => {
             updateJsVariablesFromLocalStorage()
             document.getElementById('give-up').addEventListener('click', (event) => {
-                if (savedResults.length <= 0) {
+                let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
+                let results = gameData[gameDay].results || [];
+                console.log(results);
+                if (results.length <= 0) {
                     showError("Tippelned kell, mielőtt feladnád.");
                     event.preventDefault();
                     return;
