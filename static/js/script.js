@@ -381,9 +381,9 @@ function createColorBarChart(green, orange, red) {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Green', 'Orange', 'Red'],
+            labels: ['Zöld', 'Narancssárga', 'Piros'],
             datasets: [{
-                label: '', // Set label to empty to remove the legend box
+                label: '',
                 data: [green, orange, red],
                 backgroundColor: [
                     'rgba(0, 255, 0, 0.7)',
@@ -401,10 +401,10 @@ function createColorBarChart(green, orange, red) {
         options: {
             plugins: {
                 legend: {
-                    display: false // Hide the legend
+                    display: false
                 },
                 datalabels: {
-                    color: '#fff', // Set text color to white
+                    color: '#fff',
                     anchor: 'end',
                     align: 'end',
                     formatter: Math.round,
@@ -412,13 +412,13 @@ function createColorBarChart(green, orange, red) {
                         weight: 'bold',
                         size: 14
                     },
-                    offset: 5 // Add offset to ensure labels fit within the chart
+                    offset: 5
                 }
             },
             scales: {
                 x: {
                     ticks: {
-                        color: '#fff', // Set tick color to white
+                        color: '#fff',
                         font: {
                             size: 14,
                             weight: 'bold'
@@ -428,17 +428,17 @@ function createColorBarChart(green, orange, red) {
                 y: {
                     beginAtZero: true,
                     ticks: {
-                        color: '#fff', // Set tick color to white
+                        color: '#fff',
                         font: {
                             size: 14,
                             weight: 'bold'
                         }
                     },
-                    suggestedMax: Math.max(green, orange, red) + 6 // Ensure space for labels
+                    suggestedMax: Math.max(green, orange, red) + 6
                 }
             }
         },
-        plugins: [ChartDataLabels] // Ensure ChartDataLabels plugin is included
+        plugins: [ChartDataLabels]
     });
 }
 
