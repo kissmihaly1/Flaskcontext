@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KONTEXTUS.</title>
+    <meta name="description" content="KONTEXTUS - Találd meg a titkos szót és javítsd a kontextusod jelentését. Korlátlan számú tipp, napi kihívás.">
+    <meta name="keywords" content="KONTEXTUS, titkos szó, játék, magyar szavak, AI, mesterséges intelligencia, szórakozás">
+    <meta property="og:title" content="KONTEXTUS">
+    <meta property="og:description" content="Találd meg a titkos szót és javítsd a kontextusod jelentését.">
+    <meta property="og:image" content="../static/logo.png">
+    <meta property="og:url" content="http://kontextus.eu">
     <link rel="stylesheet" href="../static/styles.css">
     <link rel="icon" type="image/png" href="../static/logo.png">
 </head>
@@ -24,51 +30,49 @@
         <hr>
         <p class="find">Nap: <span id="game-number"></span> |  Sorozat: <strong id="streak">0</strong> nap</p>
         <main>
-            <input type="text" placeholder="írj ide egy szót..." id="word-input">
+            <input type="text" placeholder="írj ide egy szót..." id="word-input" aria-label="Word input">
             <button id="submit-button">Küldés</button>
             <div id="results"></div>
-            <div class="instructions">
+            <section class="instructions">
                 <h2>Hogyan kell játszani?</h2>
                 <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
                 <p>Korlátlan számú tipped van.</p>
                 <p>Csak 5 segítségkérést használhatsz egy nap!</p>
                 <p>A szavakat egy mesterséges intelligencia algoritmusa rendezte aszerint, hogy mennyire hasonlítanak a titkos szóhoz.</p>
                 <p><strong>A játék béta verzióban van, fejlesztés alatt áll!</strong></p>
-            </div>
+            </section>
         </main>
         <footer id="faq-section">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198"
             crossorigin="anonymous"></script>
         </footer>
     </div>
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" id="close-info-modal">&times;</span>
-        <h2>Információk</h2>
-        <p>Ez egy személyes projekt, amelyet már létező oldalak ihlettek, azonban azok nem voltak elérhetőek magyar szavakkal. Hibák előfordulhatnak, és <strong>még</strong> nem a legjobb a pontosság, de folyamatosan fejlesztve van.</p>
-        <p>Visszajelzés: kissmihalyit@gmail.com</p>
-        <p>A weboldal cookie-kat használ statisztikák gyűjtésére és hirdetések megjelenítésére. További információk az <a href="{{ url_for('privacy') }}">Adatvédelmi tájékoztató</a></p>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-info-modal">&times;</span>
+            <h2>Információk</h2>
+            <p>Ez egy személyes projekt, amelyet már létező oldalak ihlettek, azonban azok nem voltak elérhetőek magyar szavakkal. Hibák előfordulhatnak, és <strong>még</strong> nem a legjobb a pontosság, de folyamatosan fejlesztve van.</p>
+            <p>Visszajelzés: kissmihalyit@gmail.com</p>
+            <p>A weboldal cookie-kat használ statisztikák gyűjtésére és hirdetések megjelenítésére. További információk az <a href="{{ url_for('privacy') }}">Adatvédelmi tájékoztató</a>-ban</p>
+        </div>
     </div>
-</div>
-
-<div id="modal_info" class="modal_info">
-    <div class="modal-content">
-        <span class="close" id="close-game-info-modal">&times;</span>
-        <h2>A játékról</h2>
-        <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
-        <p>Csak 5 segítségkérést használhatsz egy nap!</p>
+    <div id="modal_info" class="modal_info">
+        <div class="modal-content">
+            <span class="close" id="close-game-info-modal">&times;</span>
+            <h2>A játékról</h2>
+            <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb a szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
+            <p>Csak 5 segítségkérést használhatsz egy nap!</p>
+        </div>
     </div>
-</div>
-
-<div id="surrender-modal" class="modal">
-    <div class="modal-content">
-        <span class="close" id="close-surrender-modal">&times;</span>
-        <h2>Biztos, hogy feladod?</h2>
-        <p>Ez megszakítja a sorozatodat.</p>
-        <button id="cancel-surrender">Mégsem</button>
-        <button id="confirm-surrender">Feladás</button>
+    <div id="surrender-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-surrender-modal">&times;</span>
+            <h2>Biztos, hogy feladod?</h2>
+            <p>Ez megszakítja a sorozatodat.</p>
+            <button id="cancel-surrender">Mégsem</button>
+            <button id="confirm-surrender">Feladás</button>
+        </div>
     </div>
-</div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="../static/js/script.js"></script>
