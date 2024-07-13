@@ -127,21 +127,6 @@ main {
     animation: highlight 1s;
 }
 
-@keyframes highlight {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1) rotate(-5deg);
-    }
-    75% {
-        transform: scale(1.1) rotate(5deg);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 .hidden {
     display: none;
 }
@@ -279,7 +264,7 @@ footer p {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 35%;
+    width: 50%;
     border-radius: 10px;
     color: #e1e0e0;
     animation: slideIn 0.5s ease;
@@ -312,7 +297,7 @@ footer p {
 }
 
 .modal-content h2 {
-    color: #ec7b0a;
+    color: #e1e0e0;
     border-bottom: 2px solid #ec7b0a;
     padding-bottom: 10px;
     margin-bottom: 20px;
