@@ -24,6 +24,7 @@
                     <a href="#" id="hint">Segítség kérése</a>
                     <a href="#" id="informations">Információk</a>
                     <a href="#" id="game_info">A játékról</a>
+                    <a href="#" id="game_choose">Korábbi napok játékai</a>
                 </div>
             </div>
         </header>
@@ -77,6 +78,13 @@
             <p>Ez megszakítja a sorozatodat.</p>
             <button id="cancel-surrender">Mégsem</button>
             <button id="confirm-surrender">Feladás</button>
+        </div>
+    </div>
+    <div id="modal-game" class="modal-game">
+        <div class="modal-content">
+            <span class="close" id="close-game-modal">&times;</span>
+            <h2>Korábbi játékok</h2>
+            <div id="box-container"></div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -39,13 +39,24 @@ header h1 {
 header .highlight {
     color: #ec7b0a;
 }
-
+.orange{
+    color: #ec7b0a;
+}
 main {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
     max-height: 60vh;
     overflow-y: auto;
+}
+.giveup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-height: 50vh;
+    margin-bottom: 200px;
 }
 
 ::-webkit-scrollbar {
@@ -88,7 +99,20 @@ main {
     background-color: #ad5906;
     transition: background-color 1s;
 }
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ec7b0a;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+}
 
+.button:hover {
+    background-color: #ad5906;
+    transition: background-color 1s;
+}
 #results {
     margin-top: 20px;
 }
@@ -207,7 +231,7 @@ footer p {
     display: block;
 }
 
-.modal, .modal_info {
+.modal, .modal_info, .modal-game {
     display: none;
     position: fixed;
     z-index: 1;
@@ -235,6 +259,8 @@ footer p {
     border-radius: 10px;
     color: #e1e0e0;
     animation: slideIn 0.5s ease;
+    overflow-y: auto;
+    max-height: 450px;
 }
 
 @keyframes slideIn {
@@ -420,7 +446,7 @@ button {
 }
 
 .solution-word {
-    font-size: 2em;
+    font-size: 1.2em;
     color: #ec7b0a;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -479,4 +505,31 @@ button {
 .faq-content.active {
     max-height: 200px;
     transition: max-height 0.5s ease-in;
+}
+.box {
+    padding: 10px;
+    margin: 5px;
+    background-color: #ec7b0a;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.number {
+    flex: 1;
+    text-align: center;
+}
+
+.status {
+    position: absolute;
+    right: 10px;
+
+}
+
+.box:hover{
+    background-color: #ad5906;
+    transition: background-color 0.3s ease-in;
 }

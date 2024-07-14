@@ -10,10 +10,10 @@ load_dotenv()
 
 app = Flask(__name__)
 
-
+day = os.getenv("GAMEDAY")
 contexto_game = ContextoGame('model/w2vhun.w2v', 'lemmatized_words2.csv')
 solution_word = os.getenv('SOLUTION_WORD')
-contexto_game.create_ranked_list(solution_word)
+contexto_game.create_ranked_list(solution_word, day)
 
 mongodb = os.getenv('MONGODB')
 client = MongoClient(mongodb, tlsCAFile=certifi.where())
@@ -56,11 +56,11 @@ def checkdate():
 def process():
     data = request.json
     input_word = data.get('word')
-
+    day = data.get('day')
     if not input_word:
         return jsonify({"error": "Nem lett szó beírva!"}), 400
 
-    rank = contexto_game.get_similarity_rank(input_word)
+    rank = contexto_game.get_similarity_rank(input_word, day)
     if rank == -1:
         return jsonify({"error": f"Ez a szó ('{input_word}') nincs a szavak között!"}), 404
     response, status_code = save_guess(input_word, rank)

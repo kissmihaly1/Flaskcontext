@@ -23,7 +23,7 @@ class ContextoGame:
         else:
             return 0.0
 
-    def create_ranked_list(self, solution_word):
+    def create_ranked_list(self, solution_word, day):
         if solution_word not in self.model:
             raise ValueError(f"The solution word '{solution_word}' is not in the model.")
         similarities = []
@@ -36,15 +36,28 @@ class ContextoGame:
                     similarities.append((word, similarity))
 
         self.ranked_list = sorted(similarities, key=lambda x: x[1], reverse=True)
-        self.save_list_to_txt(self.ranked_list, 'ranked_list4.txt')
+        self.save_list_to_txt(self.ranked_list, f'ranked_list{day}.txt')
         return self.ranked_list
 
-    def get_similarity_rank(self, input_word):
-        for rank, (word, _) in enumerate(self.ranked_list):
-            if word == input_word:
-                return rank + 1
+    def get_similarity_rank(self, input_word, day):
+        try:
+            filename = f'words/ranked_list{day}.txt'
+            ranked_list = []
+            with open(filename, 'r', encoding='utf-8') as file:
+                for line in file:
+                    item = eval(line.strip())
+                    ranked_list.append(item)
+            for index, item in enumerate(ranked_list):
+                if item[0] == input_word:
+                    return index+1
 
-        return -1
+            return -1
+        except FileNotFoundError:
+            print(f"File {filename} not found.")
+            return -1
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return -1
 
     def get_hint(self, rank):
         if rank > 200:
@@ -67,7 +80,6 @@ class ContextoGame:
             return None, None
 
     def save_list_to_txt(self, lst, filename):
-        with open(filename, 'w') as file:
+        with open(f'words/{filename}', 'w') as file:
             for item in lst:
                 file.write(f"{item}\n")
-

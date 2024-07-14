@@ -7,6 +7,8 @@ let lastGuess;
 let cooldown;
 let streak; // Initialize streak
 let lastSolvedDay;
+let lastGameID;
+let numberofDays
 // Function to fetch the current game day from the backend
 async function getDate() {
     return fetch('/checkdate', {
@@ -33,7 +35,7 @@ function initializeNewGameData() {
         giveUp: false,
         hintCount: 0,
         solvedToday: false,
-        lastGuess: []
+        lastGuess: [],
     };
 }
 
@@ -53,9 +55,16 @@ function updateStreak(streak, lastSolvedDay) {
 // Initialize gameDay when the page loads
 window.addEventListener('load', () => {
     getDate().then(day => {
-        gameDay = day;
-        document.getElementById('game-number').innerText = `${gameDay}`;
+        numberofDays = day;
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
+        gameDay = gameData[lastGameID];
+        if (!gameData[day]){
+            gameDay = day;
+            lastGameID = day;
+        }else{
+            gameDay = gameData.lastGameID;
+        }
+        document.getElementById('game-number').innerText = `${gameDay}`;
 
         // Load streak and last solved day from localStorage
         streak = parseInt(localStorage.getItem('streak')) || 0;
@@ -67,8 +76,11 @@ window.addEventListener('load', () => {
         if (!storedGameData) {
             // Initialize new game data for the current game day
             storedGameData = initializeNewGameData();
-            updateGameData(gameDay, storedGameData);
 
+            updateGameData(gameDay, storedGameData);
+            let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
+            changeGameID.lastGameID = gameDay;
+            localStorage.setItem('gameData', JSON.stringify(changeGameID));
             // If last solved day is not yesterday, reset the streak
             if (gameDay - lastSolvedDay !== 1) {
                 streak = 0;
@@ -82,6 +94,7 @@ window.addEventListener('load', () => {
             hintCount = storedGameData.hintCount;
             solvedToday = storedGameData.solvedToday;
             lastGuess = storedGameData.lastGuess;
+            lastGameID = storedGameData.lastGameID;
             // Example of updating the current game day's data (if needed)
             let newDayData = {
                 results: savedResults,
@@ -90,6 +103,7 @@ window.addEventListener('load', () => {
                 hintCount: hintCount,
                 solvedToday: solvedToday,
                 lastGuess: lastGuess,
+                lastGameID: lastGameID,
             };
             updateGameData(gameDay, newDayData);
             if (giveUp) {
@@ -106,6 +120,7 @@ window.addEventListener('load', () => {
                     pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
                     document.getElementById('guesses-count').innerText = savedResults.length;
                     document.getElementById('hint-left').innerText = 5-hintCount;
+                    document.getElementById('game-number').innerText = gameDay;
                     document.querySelector('.instructions').classList.add('hidden');
                     document.querySelector('footer').classList.add('hidden');
                     const container = document.getElementById('results');
@@ -136,14 +151,13 @@ window.addEventListener('load', () => {
 function handleGuess() {
     let word = document.getElementById('word-input').value.trim().toLowerCase();
     document.getElementById('word-input').value = '';
-
+    let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     getDate().then(day => {
-        if(gameDay !== day){
+        if(!gameData[day]){
         location.reload();
         return;
         }else{
     // Retrieve gameData from localStorage
-    let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
 
     // Check if gameDay matches the current game day
     if (!gameData[gameDay]) {
@@ -174,7 +188,7 @@ function handleGuess() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ word: word })
+            body: JSON.stringify({ word: word, day: gameDay })
         })
         .then(response => response.json())
         .then(data => {
@@ -241,12 +255,6 @@ function handleGuess() {
     })
 }
 
-document.getElementById('submit-button').addEventListener('click', handleGuess);
-document.getElementById('word-input').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        handleGuess();
-    }
-});
 
 function getColorClass(rank) {
     if (rank <= 1000) {
@@ -331,7 +339,10 @@ function showError(message) {
         }, 300);
     }, 1500);
 }
-
+function showGameModal(){
+    let modal = document.getElementById('modal-game');
+    modal.style.display = 'block';
+}
 // Function to show the congratulations page after finding the solution word
 function showCongratulationsPage(word, guessCount) {
     let green_number = 0;
@@ -363,8 +374,7 @@ document.body.innerHTML = `
         <main class="congrats-main">
             <div class="solution">
                 <h1 class="subtitle">Gratulálok!</h1>
-                <p>Eltaláltad a titkos szót:</p>
-                <strong class="solution-word">${word}</strong>
+                <p>Eltaláltad a titkos szót: <strong class="solution-word">${word}</strong></p>
 
             </div>
             <div class="stats">
@@ -382,9 +392,20 @@ document.body.innerHTML = `
             <div class="streak-container">
                 <p>Sorozat: <strong id="streak">${streak}</strong> nap</p>
             </div>
+                <div id="modal-game" class="modal-game">
+                <div class="modal-content">
+                    <span class="close" id="close-game-modal">&times;</span>
+                    <h2>Korábbi játékok</h2>
+                    <div id="box-container"></div>
+                </div>
+            </div>
+               <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
         </main>
     </div>
 `;
+document.getElementById("close-game-modal").onclick = function() {
+    document.getElementById("modal-game").style.display = "none";
+};
 
 // Function to create the bar chart
 function createColorBarChart(green, orange, red) {
@@ -500,9 +521,11 @@ createColorBarChart(green_number, orange_number, red_number);
             document.getElementById('informations').addEventListener('click', handleInformations);
             document.querySelector('.dropbtn').addEventListener('click', toggleDropdown);
             document.getElementById('game_info').addEventListener('click', gameInformations);
+            document.getElementById('game_choose').addEventListener('click', modalGame);
 
             // Surrender modal event listeners
             document.getElementById('close-surrender-modal').addEventListener('click', closeSurrenderModal);
+            document.getElementById('close-game-modal').addEventListener('click', closeGameModal);
             document.getElementById('close-game-info-modal').addEventListener('click', closeGameInformations);
             document.getElementById('close-info-modal').addEventListener('click', closeInformations);
             document.getElementById('cancel-surrender').addEventListener('click', closeSurrenderModal);
@@ -512,13 +535,23 @@ createColorBarChart(green_number, orange_number, red_number);
             window.addEventListener('click', function (event) {
                 let modal = document.getElementById('surrender-modal');
                 let modalInfo = document.getElementById('modal_info');
+                let modalGame = document.getElementById('modal-game');
                 let modalGeneral = document.getElementById('modal');
                 let dropdownContent = document.querySelector('.dropdown-content');
 
-                if (event.target === modal || event.target === modalInfo || event.target === modalGeneral) {
+                if (event.target === modal) {
                     modal.style.display = 'none';
+                }
+                if (event.target === modalInfo){
                     modalInfo.style.display = 'none';
+                }
+
+                if (event.target === modalGeneral){
                     modalGeneral.style.display = 'none';
+                }
+
+                if ( event.target === modalGame){
+                    modalGame.style.display = 'none';
                 }
 
                 if (!event.target.matches('.dropbtn')) {
@@ -549,6 +582,9 @@ createColorBarChart(green_number, orange_number, red_number);
         function closeSurrenderModal() {
             document.getElementById('surrender-modal').style.display = 'none';
         }
+        function closeGameModal() {
+            document.getElementById('modal-game').style.display = 'none';
+        }
 
 // Function to close the game information modal
         function closeGameInformations() {
@@ -565,6 +601,7 @@ createColorBarChart(green_number, orange_number, red_number);
             document.getElementById('modal').style.display = 'none';
             document.getElementById('modal_info').style.display = 'none';
             document.getElementById('surrender-modal').style.display = 'none';
+            document.getElementById('modal-game').style.display = 'none';
         }
 
 function handleGiveUp() {
@@ -591,18 +628,30 @@ function handleGiveUp() {
         const solutionWord = data.solution_word;
         document.body.innerHTML = `
             <div class="giveup">
+            
                 <header>
                     <h1>KONT<span class="highlight">EXTUS</span>.</h1>
                     <hr>
                     <h1>A mai játék feladva</h1>
                 </header>
                 <main>
-                    <p>A megoldás a(z) <strong>${solutionWord}</strong> szó volt. Próbáld meg holnap is!</p>
+                    <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbáld meg holnap is!</p>
                     <p>A következő napi játék: </p><div id="countdown"></div>
+                    <hr>
+                    <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
+                    <div id="modal-game" class="modal-game">
+                        <div class="modal-content">
+                            <span class="close" id="close-game-modal">&times;</span>
+                            <h2>Korábbi játékok</h2>
+                            <div id="box-container"></div>
+                        </div>
+                    </div>
                 </main>
             </div>
         `;
-
+document.getElementById("close-game-modal").onclick = function() {
+    document.getElementById("modal-game").style.display = "none";
+};
         // Countdown to 00:00:00
         function updateCountdown() {
             const now = new Date();
@@ -706,10 +755,21 @@ function handleHint() {
         }
 
 // Function to show the game information modal
-        function gameInformations() {
-            let modal = document.getElementById('modal_info');
-            modal.style.display = 'block';
-        }
+function gameInformations() {
+    let modal = document.getElementById('modal_info');
+    modal.style.display = 'block';
+}
+function modalGame() {
+
+    createBoxes(numberofDays);
+    let modal = document.getElementById('modal-game');
+    modal.style.display = 'block';
+    //HERE MAKE THE CHANGE GAME FOR THE CHOSEN DAY
+
+    let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
+    let lastGameID = gameData.lastGameID;
+
+}
 
 function updateJsVariablesFromLocalStorage() {
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
@@ -747,14 +807,125 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
 const faqTitle = document.querySelector('.faq-title2');
 const faqContent = document.querySelector('.faq-content2');
-const arrow = faqTitle.querySelector('.arrow');
-faqTitle.addEventListener('click', function() {
-    if (faqContent.style.maxHeight) {
-        faqContent.style.maxHeight = null;
-        arrow.classList.remove('rotate');
-    } else {
-        arrow.classList.add('rotate');
-        faqContent.style.maxHeight = faqContent.scrollHeight + "px";
+
+});
+
+
+    function createBoxes(number) {
+        const container = document.getElementById('box-container');
+        container.innerHTML = '';
+        let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
+        for (let i = number; i > 0; i--) {
+                const box = document.createElement('div');
+
+                if (gameData[i]) {
+                    if (gameData[i].solvedToday) {
+                        box.className = 'box';
+                        box.innerHTML = `<span class="number">${i}</span> <strong class="status"> Játék megoldva</strong>`;
+                    } else if (gameData[i].giveUp) {
+                        box.className = 'box';
+                        box.innerHTML = `<span class="number">${i}</span> <strong class="status"> Játék feladva!</strong>`;
+                    } else {
+                        box.className = 'box';
+                        box.innerHTML = `<span class="number">${i}</span>`;
+                    }
+                } else {
+                    box.className = 'box';
+                    box.innerHTML = `<span class="number">${i}</span>`;
+                }
+
+                box.addEventListener('click', function () {
+                    let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
+                    changeGameID.lastGameID = i;
+                    localStorage.setItem('gameData', JSON.stringify(changeGameID));
+                    gameDay = i;
+                    otherDayPlay(i);
+                    location.reload();
+                    lastGameID = i;
+                    closeGameModal();
+                    document.getElementById('game-number').innerText = `${i}`;
+                });
+
+                container.appendChild(box);
+            }
     }
-});
-});
+
+    function otherDayPlay(chosenDay){
+
+        let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
+        let storedGameData = gameData[chosenDay];
+
+        if (!storedGameData) {
+            // Initialize new game data for the current game day
+            storedGameData = initializeNewGameData();
+
+            updateGameData(chosenDay, storedGameData);
+            let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
+            changeGameID.lastGameID = chosenDay;
+            localStorage.setItem('gameData', JSON.stringify(changeGameID));
+            // If last solved day is not yesterday, reset the streak
+            if (chosenDay - lastSolvedDay !== 1) {
+                streak = 0;
+                updateStreak(streak, null);
+            }
+        } else {
+            // At this point, `storedGameData` contains the current game day's data
+            savedResults = storedGameData.results;
+            guessesCount = savedResults.length;
+            giveUp = storedGameData.giveUp;
+            hintCount = storedGameData.hintCount;
+            solvedToday = storedGameData.solvedToday;
+            lastGuess = storedGameData.lastGuess;
+            // Example of updating the current game day's data (if needed)
+            let newDayData = {
+                results: savedResults,
+                guessesCount: guessesCount,
+                giveUp: giveUp,
+                hintCount: hintCount,
+                solvedToday: solvedToday,
+                lastGuess: lastGuess,
+            };
+            updateGameData(chosenDay, newDayData);
+            if (giveUp) {
+                handleGiveUp();
+                return;
+            }
+            if (solvedToday) {
+                const solutionWord = savedResults.find(result => result.rank === 1).word;
+                showCongratulationsPage(solutionWord, savedResults.length);
+            } else {
+                // Load existing boxes from results
+                if (savedResults && savedResults.length > 0) {
+                    const pElement = document.querySelector('p.find');
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
+                    document.getElementById('guesses-count').innerText = savedResults.length;
+                    document.getElementById('hint-left').innerText = 5-hintCount;
+                    document.querySelector('.instructions').classList.add('hidden');
+                    document.querySelector('footer').classList.add('hidden');
+                    const container = document.getElementById('results');
+                    container.innerHTML = '';
+
+                    // Create and insert the latest tip box (first occurrence of the current guess)
+                    const latestResult = lastGuess;
+                    createWordBox(latestResult.word, latestResult.rank, true);
+
+                    // Add a separator line
+                    const separator = document.createElement('div');
+                    separator.classList.add('separator');
+                    container.appendChild(separator);
+
+                    // Sort the results by rank and create and insert all word boxes
+                    savedResults.sort((a, b) => a.rank - b.rank);
+                    savedResults.forEach(result => {
+                        createWordBox(result.word, result.rank, result.word === latestResult.word);
+                    });
+                }
+            }
+        }
+    }
+    document.getElementById('submit-button').addEventListener('click', handleGuess);
+    document.getElementById('word-input').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            handleGuess();
+        }
+    });
