@@ -107,6 +107,7 @@ window.addEventListener('load', () => {
                     document.getElementById('guesses-count').innerText = savedResults.length;
                     document.getElementById('hint-left').innerText = 5-hintCount;
                     document.querySelector('.instructions').classList.add('hidden');
+                    document.querySelector('footer').classList.add('hidden');
                     const container = document.getElementById('results');
                     container.innerHTML = '';
 
@@ -200,6 +201,7 @@ function handleGuess() {
                     pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
 
                     document.querySelector('.instructions').classList.add('hidden');
+                    document.querySelector('footer').classList.add('hidden');
                     results.push({ word: word, rank: data.rank });
                     gameData[gameDay].results = results;
                     lastGuess = { word: word, rank: data.rank };
@@ -728,3 +730,31 @@ function updateJsVariablesFromLocalStorage() {
         lastGuess = [];
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const faqTitle = document.querySelector('.faq-title');
+    const faqContent = document.querySelector('.faq-content');
+
+    faqTitle.addEventListener('click', function() {
+        if (faqContent.style.maxHeight) {
+            faqContent.style.maxHeight = null;
+        } else {
+            faqContent.style.maxHeight = faqContent.scrollHeight + "px";
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+const faqTitle = document.querySelector('.faq-title2');
+const faqContent = document.querySelector('.faq-content2');
+const arrow = faqTitle.querySelector('.arrow');
+faqTitle.addEventListener('click', function() {
+    if (faqContent.style.maxHeight) {
+        faqContent.style.maxHeight = null;
+        arrow.classList.remove('rotate');
+    } else {
+        arrow.classList.add('rotate');
+        faqContent.style.maxHeight = faqContent.scrollHeight + "px";
+    }
+});
+});
