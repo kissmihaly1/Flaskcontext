@@ -393,7 +393,7 @@ document.body.innerHTML = `
                 <p>Sorozat: <strong id="streak">${streak}</strong> nap</p>
             </div>
                 <div id="modal-game" class="modal-game">
-                <div class="modal-content">
+                <div class="modal-content-game">
                     <span class="close" id="close-game-modal">&times;</span>
                     <h2>Korábbi játékok</h2>
                     <div id="box-container"></div>
@@ -817,21 +817,39 @@ const faqContent = document.querySelector('.faq-content2');
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         for (let i = number; i > 0; i--) {
                 const box = document.createElement('div');
-
-                if (gameData[i]) {
-                    if (gameData[i].solvedToday) {
+                if (i === gameDay) {
+                    if (gameData[i]) {
+                        if (gameData[i].solvedToday) {
+                            box.className = 'box';
+                            box.innerHTML = `<strong class="number">${i}</strong> <strong class="status"> Játék megoldva</strong>`;
+                        } else if (gameData[i].giveUp) {
+                            box.className = 'box';
+                            box.innerHTML = `<strong class="number">${i}</strong> <strong class="status"> Játék feladva!</strong>`;
+                        } else {
+                            box.className = 'box';
+                            box.innerHTML = `<strong class="number">${i}</strong>`;
+                        }
+                    } else {
                         box.className = 'box';
-                        box.innerHTML = `<span class="number">${i}</span> <strong class="status"> Játék megoldva</strong>`;
-                    } else if (gameData[i].giveUp) {
-                        box.className = 'box';
-                        box.innerHTML = `<span class="number">${i}</span> <strong class="status"> Játék feladva!</strong>`;
+                        box.innerHTML = `<strong class="number current">${i}</strong>`;
+                    }
+                }else{
+                                        if (gameData[i]) {
+                        if (gameData[i].solvedToday) {
+                            box.className = 'box';
+                            box.innerHTML = `<span class="number">${i}</span> <strong class="status"> Játék megoldva</strong>`;
+                        } else if (gameData[i].giveUp) {
+                            box.className = 'box';
+                            box.innerHTML = `<span class="number">${i}</span> <strong class="status"> Játék feladva!</strong>`;
+                        } else {
+                            box.className = 'box';
+                            box.innerHTML = `<span class="number">${i}</span>`;
+                        }
                     } else {
                         box.className = 'box';
                         box.innerHTML = `<span class="number">${i}</span>`;
                     }
-                } else {
-                    box.className = 'box';
-                    box.innerHTML = `<span class="number">${i}</span>`;
+
                 }
 
                 box.addEventListener('click', function () {

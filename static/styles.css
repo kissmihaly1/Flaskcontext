@@ -262,6 +262,19 @@ footer p {
     overflow-y: auto;
     max-height: 450px;
 }
+.modal-content-game {
+    background-color: #333;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 10px;
+    color: #e1e0e0;
+    animation: slideIn 0.5s ease;
+    overflow-y: auto;
+    max-height: 450px;
+    max-width: 400px;
+}
 
 @keyframes slideIn {
     from { transform: translateY(-50px); opacity: 0; }
@@ -459,7 +472,7 @@ button {
     margin: 20px 0;
 }
 
-.streak-container {
+.sorozat-container {
     margin: 20px 0;
 }
 
@@ -468,7 +481,7 @@ button {
     color: #ec7b0a;
 }
 
-#streak {
+#sorozat {
     color: #ec7b0a;
 }
 
