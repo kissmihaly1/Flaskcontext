@@ -329,7 +329,7 @@ function showError(message) {
             errorElement.remove();
             cooldown = false;
         }, 300);
-    }, 3000);
+    }, 1500);
 }
 
 // Function to show the congratulations page after finding the solution word
