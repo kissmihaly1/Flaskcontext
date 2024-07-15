@@ -876,8 +876,112 @@ const faqContent = document.querySelector('.faq-content2');
                 container.appendChild(box);
             }
     }
+function updateBodyContent() {
+        document.body.innerHTML = `
+            <div class="container">
+                <header class="header-flex">
+                    <h1>KONT<span class="highlight">EXTUS</span>.</h1>
+                    <div class="dropdown">
+                        <button class="dropbtn">⋮</button>
+                        <div class="dropdown-content">
+                            <a href="#" id="give-up">Feladás</a>
+                            <a href="#" id="hint">Segítség kérése</a>
+                            <a href="#" id="informations">Információk</a>
+                            <a href="#" id="game_info">A játékról</a>
+                            <a href="#" id="game_choose">Korábbi napok játékai</a>
+                        </div>
+                    </div>
+                </header>
+                <hr>
+                <p class="find">Nap: <span id="game-number"></span> |  Megoldva: <strong id="streak"></strong> játék</p>
+                <main>
+                    <input type="text" placeholder="írj ide egy szót..." id="word-input" aria-label="Word input">
+                    <button id="submit-button">Küldés</button>
+                    <div id="results"></div>
+                    <section class="instructions">
+                        <h2>Hogyan kell játszani?</h2>
+                        <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
+                        <p>Korlátlan számú tipped van.</p>
+                        <p>Csak 5 segítségkérést használhatsz egy nap!</p>
+                        <p>A szavakat egy mesterséges intelligencia algoritmusa rendezte aszerint, hogy mennyire hasonlítanak a titkos szóhoz.</p>
+                        <p><strong>A játék béta verzióban van, fejlesztés alatt áll!</strong></p>
+                    </section>
+                </main>
+                <footer id="faq-section">
+                    <h2>Gyakran Ismételt Kérdések</h2>
+                    <p class="faq-title">Hogyan számoljuk ki a szavak pontszámait?</p>
+                    <div class="faq-content">
+                        <p>A játék egy mesterséges intelligencia algoritmus és több ezer szöveg segítségével számítja ki a szavak hasonlóságát a nap titkos szavához képest. Nem feltétlenül CSAK a szavak jelentésével függ össze, hanem az interneten használt közelségével is. Például, ha a nap szava „végtelen”, akkor a „szeretet”-hez vagy az „univerzumhoz” kapcsolódó szavak közel állhatnak a nap szavához, mivel a „végtelen” kifejezést általában ebben a két kontextusban használják.</p>
+                    </div>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198" crossorigin="anonymous"></script>
+                </footer>
+            </div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close-info-modal">&times;</span>
+                    <h2>Információk</h2>
+                    <p>Ez egy személyes projekt, amelyet már létező oldalak ihlettek, azonban azok nem voltak elérhetőek magyar szavakkal. Hibák előfordulhatnak, és <strong>még</strong> nem a legjobb a pontosság, de folyamatosan fejlesztve van.</p>
+                    <p>Visszajelzés: kissmihalyit@gmail.com</p>
+                    <p>A weboldal cookie-kat használ statisztikák gyűjtésére és hirdetések megjelenítésére. További információk az <a href="{{ url_for('privacy') }}">Adatvédelmi tájékoztató</a>-ban</p>
+                </div>
+            </div>
+            <div id="modal_info" class="modal_info">
+                <div class="modal-content">
+                    <span class="close" id="close-game-info-modal">&times;</span>
+                    <h2>A játékról</h2>
+                    <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb a szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
+                    <p>Csak 5 segítségkérést használhatsz egy nap!</p>
+                    <hr>
+                    <p>A játék egy mesterséges intelligencia algoritmus és több ezer szöveg segítségével számítja ki a szavak hasonlóságát a nap titkos szavához képest. Nem feltétlenül CSAK a szavak jelentésével függ össze, hanem az interneten használt közelségével is. Például, ha a nap szava „végtelen”, akkor a „szeretet”-hez vagy az „univerzumhoz” kapcsolódó szavak közel állhatnak a nap szavához, mivel a „végtelen” kifejezést általában ebben a két kontextusban használják.</p>
+                </div>
+            </div>
+            <div id="surrender-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close-surrender-modal">&times;</span>
+                    <h2>Biztos, hogy feladod?</h2>
+                    <p>Ez megszakítja a sorozatodat.</p>
+                    <button id="cancel-surrender">Mégsem</button>
+                    <button id="confirm-surrender">Feladás</button>
+                </div>
+            </div>
+            <div id="modal-game" class="modal-game">
+                <div class="modal-content-game">
+                    <span class="close" id="close-game-modal">&times;</span>
+                    <h2>Korábbi játékok</h2>
+                    <hr>
+                    <div id="box-container"></div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+            <script src="../static/js/script.js"></script>
+        `;
 
-    function otherDayPlay(chosenDay){
+        // Ensure all scripts are loaded
+        const scripts = [
+            "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198",
+            "https://cdn.jsdelivr.net/npm/chart.js",
+            "https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels",
+            "../static/js/script.js"
+        ];
+
+        scripts.forEach(src => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = false; // Make sure scripts are executed in order
+            document.body.appendChild(script);
+        });
+    }
+function updateIndex() {
+
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = '../static/styles.css';
+    cssLink.onload = updateBodyContent;
+    document.head.appendChild(cssLink);
+}
+
+function otherDayPlay(chosenDay){
 
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         let storedGameData = gameData[chosenDay];
@@ -927,15 +1031,18 @@ const faqContent = document.querySelector('.faq-content2');
             } else {
                 // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
+                    updateIndex();
+                    location.reload()
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
-                    document.getElementById('guesses-count').innerText = savedResults.length;
-                    document.getElementById('hint-left').innerText = 5-hintCount;
-                    document.getElementById('streak').innerText = solved;
-                    document.querySelector('.instructions').classList.add('hidden');
-                    document.querySelector('footer').classList.add('hidden');
-                    const container = document.getElementById('results');
-                    container.innerHTML = '';
+                        pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
+                        document.getElementById('guesses-count').innerText = savedResults.length;
+                        document.getElementById('hint-left').innerText = 5 - hintCount;
+                        document.getElementById('streak').innerText = solved;
+                        document.querySelector('.instructions').classList.add('hidden');
+                        document.querySelector('footer').classList.add('hidden');
+
+                        const container = document.getElementById('results');
+                        container.innerHTML = '';
 
                     // Create and insert the latest tip box (first occurrence of the current guess)
                     const latestResult = lastGuess;

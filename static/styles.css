@@ -285,6 +285,9 @@ footer p {
     .modal-content {
         width: 80%;
     }
+    .modal-content-game{
+        width: 80%;
+    }
     main {
         height: 90%;
     }
