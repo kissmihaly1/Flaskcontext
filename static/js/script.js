@@ -108,6 +108,7 @@ window.addEventListener('load', () => {
                 return;
             }
             if (solvedToday) {
+                solved = 0;
                 for (let i = 1; i <= day; i++) {
                     if (gameData[i]) {
                         if (gameData[i].solvedToday === true) {
@@ -118,6 +119,7 @@ window.addEventListener('load', () => {
                 const solutionWord = savedResults.find(result => result.rank === 1).word;
                 showCongratulationsPage(solutionWord, savedResults.length);
             } else {
+                solved = 0;
                 for (let i = 1; i <= day; i++) {
                     if (gameData[i]) {
                         if (gameData[i].solvedToday === true) {
@@ -129,7 +131,7 @@ window.addEventListener('load', () => {
                         // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
                     document.getElementById('guesses-count').innerText = savedResults.length;
                     document.getElementById('streak').innerText = solved;
                     document.getElementById('hint-left').innerText = 5-hintCount;
@@ -224,7 +226,7 @@ function handleGuess() {
                     showCongratulationsPage(solutionWord, results.length);
                 } else {
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
 
                     document.querySelector('.instructions').classList.add('hidden');
                     document.querySelector('footer').classList.add('hidden');
@@ -364,7 +366,14 @@ function showCongratulationsPage(word, guessCount) {
     // Get the results from localStorage
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     let savedResults = gameData[gameDay]?.results || [];
-
+    solved = 0;
+    for (let i = 1; i <= numberofDays; i++) {
+        if (gameData[i]) {
+            if (gameData[i].solvedToday === true) {
+                solved++;
+            }
+        }
+    }
     savedResults.forEach(data => {
         if (data.rank <= 1000) {
             green_number += 1;
@@ -626,6 +635,7 @@ function handleGiveUp() {
     }
     gameData[gameDay].giveUp = true;
     updateGameData(gameDay, gameData[gameDay]);
+    solved = 0;
     for (let i = 1; i <= numberofDays; i++) {
         if (gameData[i]) {
             if (gameData[i].solvedToday === true) {
@@ -950,7 +960,7 @@ function updateBodyContent() {
                 <div class="modal-content">
                     <span class="close" id="close-surrender-modal">&times;</span>
                     <h2>Biztos, hogy feladod?</h2>
-                    <p>Ez megszakítja a sorozatodat.</p>
+                    <p>Ezt nem tudod visszacsinálni!</p>
                     <button id="cancel-surrender">Mégsem</button>
                     <button id="confirm-surrender">Feladás</button>
                 </div>
@@ -996,7 +1006,7 @@ function otherDayPlay(chosenDay){
 
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         let storedGameData = gameData[chosenDay];
-
+        solved = 0;
         for (let i = 1; i <= numberofDays; i++) {
             if (gameData[i]) {
                 if (gameData[i].solvedToday === true) {
