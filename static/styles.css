@@ -537,6 +537,17 @@ button {
     justify-content: center;
     position: relative;
 }
+.actual-box {
+    border: 2px solid #ffffff;
+    padding: 10px;
+    margin: 5px;
+    background-color: #ec7b0a;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
 
 .number {
     flex: 1;

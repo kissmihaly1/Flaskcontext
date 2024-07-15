@@ -673,7 +673,7 @@ function handleGiveUp() {
                     <h1>Feladva: ${gameDay}. nap</h1>
                 </header>
                 <main>
-                    <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbáld meg holnap is!</p>
+                    <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbálj másik napot is!</p>
                     <p>A következő napi játék: </p><div id="countdown"></div>
                     <hr>
                     <div class="streak-container">
@@ -682,7 +682,7 @@ function handleGiveUp() {
                     <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
 
                     <div id="modal-game" class="modal-game">
-                        <div class="modal-content">
+                        <div class="modal-content-game">
                             <span class="close" id="close-game-modal">&times;</span>
                             <h2>Korábbi játékok</h2>
                             <div id="box-container"></div>
@@ -861,13 +861,13 @@ const faqContent = document.querySelector('.faq-content2');
                 if (i === gameDay) {
                     if (gameData[i]) {
                         if (gameData[i].solvedToday) {
-                            box.className = 'box';
+                            box.className = 'actual-box';
                             box.innerHTML = `<strong class="number">${i}</strong> <strong class="status"> Játék megoldva</strong>`;
                         } else if (gameData[i].giveUp) {
-                            box.className = 'box';
+                            box.className = 'actual-box';
                             box.innerHTML = `<strong class="number">${i}</strong> <strong class="status"> Játék feladva!</strong>`;
                         } else {
-                            box.className = 'box';
+                            box.className = 'actual-box';
                             box.innerHTML = `<strong class="number">${i}</strong>`;
                         }
                     } else {
