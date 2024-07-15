@@ -875,7 +875,7 @@ const faqContent = document.querySelector('.faq-content2');
                         box.innerHTML = `<strong class="number current">${i}</strong>`;
                     }
                 }else{
-                                        if (gameData[i]) {
+                    if (gameData[i]) {
                         if (gameData[i].solvedToday) {
                             box.className = 'box';
                             box.innerHTML = `<span class="number">${i}</span> <strong class="status"> Játék megoldva</strong>`;
