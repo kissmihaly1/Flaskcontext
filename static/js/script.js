@@ -395,7 +395,7 @@ document.body.innerHTML = `
         <main class="congrats-main">
             <div class="solution">
                 <h1 class="subtitle">Gratulálok!</h1>
-                <p>Eltaláltad a titkos szót: <strong class="solution-word">${word}</strong></p>
+                <p>Kitaláltad a(z) ${gameDay}. nap titkos szavát: <strong class="solution-word">${word}</strong></p>
 
             </div>
             <div class="stats">
@@ -661,7 +661,7 @@ function handleGiveUp() {
                 <header>
                     <h1>KONT<span class="highlight">EXTUS</span>.</h1>
                     <hr>
-                    <h1>Feladva</h1>
+                    <h1>Feladva: ${gameDay}. nap</h1>
                 </header>
                 <main>
                     <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbáld meg holnap is!</p>
