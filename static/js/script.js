@@ -845,11 +845,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-const faqTitle = document.querySelector('.faq-title2');
-const faqContent = document.querySelector('.faq-content2');
-
-});
 
 
     function createBoxes(number) {

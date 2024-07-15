@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow: auto;
 }
 
@@ -46,7 +46,7 @@ main {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    max-height: 60vh;
+    max-height: 60dvh;
     overflow-y: auto;
 }
 .giveup {
@@ -55,7 +55,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-height: 50vh;
+    max-height: 50dvh;
     margin-bottom: 200px;
 }
 
@@ -441,7 +441,7 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 80dvh;
     color: #fff;
     font-family: 'Arial', sans-serif;
     padding: 20px;
@@ -496,7 +496,7 @@ button {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    max-height: 80vh;
+    max-height: 80dvh;
     overflow-y: auto;
     width: 90%;
 }
