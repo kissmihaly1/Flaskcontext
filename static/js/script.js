@@ -83,6 +83,15 @@ window.addEventListener('load', () => {
             let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
             changeGameID.lastGameID = gameDay;
             localStorage.setItem('gameData', JSON.stringify(changeGameID));
+            solved = 0;
+            for (let i = 1; i <= numberofDays; i++) {
+                if (gameData[i]) {
+                    if (gameData[i].solvedToday === true) {
+                        solved++;
+                    }
+                }
+            }
+            document.getElementById('streak').innerText = solved;
         } else {
             // At this point, `storedGameData` contains the current game day's data
             savedResults = storedGameData.results;
