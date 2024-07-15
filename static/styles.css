@@ -286,6 +286,7 @@ footer p {
         width: 80%;
     }
     .modal-content-game{
+        padding: 0;
         width: 80%;
     }
     main {
@@ -293,6 +294,9 @@ footer p {
     }
     .container {
         padding-bottom: 0;
+    }
+    .giveup{
+        min-height: 400px;
     }
 }
 
