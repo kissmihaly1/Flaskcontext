@@ -673,7 +673,7 @@ function handleGiveUp() {
                     <h1>Feladva: ${gameDay}. nap</h1>
                 </header>
                 <main>
-                    <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbálj másik napot is!</p>
+                    <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbálj ki másik napot is!</p>
                     <p>A következő napi játék: </p><div id="countdown"></div>
                     <hr>
                     <div class="streak-container">
