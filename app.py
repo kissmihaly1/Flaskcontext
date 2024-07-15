@@ -72,9 +72,11 @@ def process():
 def hint():
     data = request.json
     best_rank = data.get('best_rank')
+    day = data.get('day')
+
     if not best_rank:
         return jsonify({"error": "Nem lett szó beírva!"}), 400
-    word, rank = contexto_game.get_hint(best_rank)
+    word, rank = contexto_game.get_hint(best_rank, day)
     if word is None:
         return jsonify({"error": "Már megtaláltad a legközelebbi szót!"}), 400
 
@@ -83,6 +85,18 @@ def hint():
 
 @app.route('/giveup', methods=['POST'])
 def giveup():
+    data = request.json
+    day = data.get('day')
+    filename = f'words/ranked_list{day}.txt'
+    ranked_list = []
+    i = 0
+    with open(filename, 'r', encoding='utf-8') as file:
+        for line in file:
+            item = eval(line.strip())
+            ranked_list.append(item)
+            if i > 2:
+                break;
+    solution_word = ranked_list[0][0]
     return jsonify({'solution_word': solution_word})
 
 

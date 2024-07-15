@@ -59,23 +59,29 @@ class ContextoGame:
             print(f"An error occurred: {e}")
             return -1
 
-    def get_hint(self, rank):
+    def get_hint(self, rank, day):
+        filename = f'words/ranked_list{day}.txt'
+        ranked_list = []
+        with open(filename, 'r', encoding='utf-8') as file:
+            for line in file:
+                item = eval(line.strip())
+                ranked_list.append(item)
         if rank > 200:
-            return self.ranked_list[199][0], 200
+            return ranked_list[199][0], 200
         elif rank > 100:
-            return self.ranked_list[99][0], 100
+            return ranked_list[99][0], 100
         elif rank > 50:
-            return self.ranked_list[49][0], 50
+            return ranked_list[49][0], 50
         elif rank > 25:
-            return self.ranked_list[24][0], 25
+            return ranked_list[24][0], 25
         elif rank > 12:
-            return self.ranked_list[11][0], 12
+            return ranked_list[11][0], 12
         elif rank > 8:
-            return self.ranked_list[7][0], 8
+            return ranked_list[7][0], 8
         elif rank > 5:
-            return self.ranked_list[4][0], 5
+            return ranked_list[4][0], 5
         elif rank > 2:
-            return self.ranked_list[1][0], 2
+            return ranked_list[1][0], 2
         else:
             return None, None
 

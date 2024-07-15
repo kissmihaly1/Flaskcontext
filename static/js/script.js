@@ -5,10 +5,12 @@ let hintCount;
 let solvedToday;
 let lastGuess;
 let cooldown;
-let streak; // Initialize streak
+let streak;
 let lastSolvedDay;
 let lastGameID;
 let numberofDays
+let solved = 0;
+
 // Function to fetch the current game day from the backend
 async function getDate() {
     return fetch('/checkdate', {
@@ -66,10 +68,10 @@ window.addEventListener('load', () => {
         }
         document.getElementById('game-number').innerText = `${gameDay}`;
 
+
         // Load streak and last solved day from localStorage
-        streak = parseInt(localStorage.getItem('streak')) || 0;
         lastSolvedDay = localStorage.getItem('lastSolvedDay');
-        document.getElementById('streak').innerText = streak;
+        document.getElementById('streak').innerText = solved;
         // Check if data for the current game day exists
         let storedGameData = gameData[gameDay];
 
@@ -81,11 +83,6 @@ window.addEventListener('load', () => {
             let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
             changeGameID.lastGameID = gameDay;
             localStorage.setItem('gameData', JSON.stringify(changeGameID));
-            // If last solved day is not yesterday, reset the streak
-            if (gameDay - lastSolvedDay !== 1) {
-                streak = 0;
-                updateStreak(streak, null);
-            }
         } else {
             // At this point, `storedGameData` contains the current game day's data
             savedResults = storedGameData.results;
@@ -111,14 +108,30 @@ window.addEventListener('load', () => {
                 return;
             }
             if (solvedToday) {
+                for (let i = 1; i <= day; i++) {
+                    if (gameData[i]) {
+                        if (gameData[i].solvedToday === true) {
+                            solved++;
+                        }
+                    }
+                }
                 const solutionWord = savedResults.find(result => result.rank === 1).word;
                 showCongratulationsPage(solutionWord, savedResults.length);
             } else {
-                // Load existing boxes from results
+                for (let i = 1; i <= day; i++) {
+                    if (gameData[i]) {
+                        if (gameData[i].solvedToday === true) {
+                            solved++;
+                        }
+                    }
+                }
+                document.getElementById('streak').innerText = solved;
+                        // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
                     const pElement = document.querySelector('p.find');
                     pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
                     document.getElementById('guesses-count').innerText = savedResults.length;
+                    document.getElementById('streak').innerText = solved;
                     document.getElementById('hint-left').innerText = 5-hintCount;
                     document.getElementById('game-number').innerText = gameDay;
                     document.querySelector('.instructions').classList.add('hidden');
@@ -203,8 +216,7 @@ function handleGuess() {
                 if (data.rank === 1) {
                     gameData[gameDay].solvedToday = true;
                     solvedToday = true;
-                    streak += 1;
-                    updateStreak(streak, gameDay);
+
                     results.push({ word: word, rank: data.rank });
                     gameData[gameDay].results = results;
                     localStorage.setItem('gameData', JSON.stringify(gameData));
@@ -224,7 +236,7 @@ function handleGuess() {
 
                     document.getElementById('guesses-count').innerText = results.length;
                     document.getElementById('game-number').innerText = gameDay;
-                    document.getElementById('streak').innerText = streak;
+                    document.getElementById('streak').innerText = solved;
                     document.getElementById('hint-left').innerText = 5-hintCount;
 
                     // Clear previous results
@@ -390,7 +402,7 @@ document.body.innerHTML = `
                 <hr>
             </div>
             <div class="streak-container">
-                <p>Sorozat: <strong id="streak">${streak}</strong> nap</p>
+                <p>Megoldva: <strong id="streak">${solved}</strong> játék</p>
             </div>
                 <div id="modal-game" class="modal-game">
                 <div class="modal-content-game">
@@ -614,14 +626,12 @@ function handleGiveUp() {
     gameData[gameDay].giveUp = true;
     updateGameData(gameDay, gameData[gameDay]);
 
-    streak = 0;
-    updateStreak(streak, null);
-
     fetch('/giveup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
+        body: JSON.stringify({ day: gameDay })
     })
     .then(response => response.json())
     .then(data => {
@@ -705,7 +715,7 @@ function handleHint() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({best_rank: best_rank})
+                body: JSON.stringify({best_rank: best_rank, day: gameDay})
             })
                 .then(response => response.json())
                 .then(data => {
@@ -774,7 +784,6 @@ function modalGame() {
 function updateJsVariablesFromLocalStorage() {
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     let lastSolvedDay = localStorage.getItem('lastSolvedDay');
-    streak = parseInt(localStorage.getItem('streak')) || 0;
 
     if (gameData[gameDay]) {
         savedResults = gameData[gameDay].results || [];
@@ -873,6 +882,14 @@ const faqContent = document.querySelector('.faq-content2');
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         let storedGameData = gameData[chosenDay];
 
+        for (let i = 1; i <= numberofDays; i++) {
+            if (gameData[i]) {
+                if (gameData[i].solvedToday === true) {
+                    solved++;
+                }
+            }
+        }
+        document.getElementById('streak').innerText = solved;
         if (!storedGameData) {
             // Initialize new game data for the current game day
             storedGameData = initializeNewGameData();
@@ -881,11 +898,7 @@ const faqContent = document.querySelector('.faq-content2');
             let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
             changeGameID.lastGameID = chosenDay;
             localStorage.setItem('gameData', JSON.stringify(changeGameID));
-            // If last solved day is not yesterday, reset the streak
-            if (chosenDay - lastSolvedDay !== 1) {
-                streak = 0;
-                updateStreak(streak, null);
-            }
+
         } else {
             // At this point, `storedGameData` contains the current game day's data
             savedResults = storedGameData.results;
@@ -915,9 +928,10 @@ const faqContent = document.querySelector('.faq-content2');
                 // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Sorozat: <span id="streak">0</span> nap | Segítségek száma: <span id="hint-left">5</span>';
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
                     document.getElementById('guesses-count').innerText = savedResults.length;
                     document.getElementById('hint-left').innerText = 5-hintCount;
+                    document.getElementById('streak').innerText = solved;
                     document.querySelector('.instructions').classList.add('hidden');
                     document.querySelector('footer').classList.add('hidden');
                     const container = document.getElementById('results');
