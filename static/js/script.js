@@ -408,7 +408,7 @@ document.body.innerHTML = `
 
             </div>
             <div class="stats">
-                <p>Tippek száma: <strong id="guesses-count">${guessCount}</strong> | Segítségek száma: <span id="hint-count">${hintCount}</span></p>
+                <p>Tippek száma: <strong id="guesses-count">${guessCount}</strong> | Használt segítség: <span id="hint-count">${hintCount}</span></p>
 
                 <canvas id="colorBarChart" width="400" height="200"></canvas>
             </div>
