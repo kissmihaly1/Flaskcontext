@@ -617,15 +617,22 @@ createColorBarChart(green_number, orange_number, red_number);
         }
 
 function handleGiveUp() {
-    closeSurrenderModal();
-
+    if (document.getElementById('surrender-modal')) {
+        closeSurrenderModal();
+    }
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     if (!gameData[gameDay]) {
         gameData[gameDay] = initializeNewGameData();
     }
     gameData[gameDay].giveUp = true;
     updateGameData(gameDay, gameData[gameDay]);
-
+    for (let i = 1; i <= numberofDays; i++) {
+        if (gameData[i]) {
+            if (gameData[i].solvedToday === true) {
+                solved++;
+            }
+        }
+    }
     fetch('/giveup', {
         method: 'POST',
         headers: {
@@ -648,7 +655,11 @@ function handleGiveUp() {
                     <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbáld meg holnap is!</p>
                     <p>A következő napi játék: </p><div id="countdown"></div>
                     <hr>
+                    <div class="streak-container">
+                        <p>Megoldva: <strong id="streak">${solved}</strong> játék</p>
+                    </div>
                     <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
+
                     <div id="modal-game" class="modal-game">
                         <div class="modal-content">
                             <span class="close" id="close-game-modal">&times;</span>
