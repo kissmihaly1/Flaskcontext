@@ -576,8 +576,10 @@ createColorBarChart(green_number, orange_number, red_number);
                 }
 
                 if (!event.target.matches('.dropbtn')) {
-                    if (dropdownContent.style.display === 'block') {
-                        dropdownContent.style.display = 'none';
+                    if (dropdownContent) {
+                        if (dropdownContent.style.display === 'block') {
+                            dropdownContent.style.display = 'none';
+                        }
                     }
                 }
             });
@@ -659,7 +661,7 @@ function handleGiveUp() {
                 <header>
                     <h1>KONT<span class="highlight">EXTUS</span>.</h1>
                     <hr>
-                    <h1>A mai játék feladva</h1>
+                    <h1>Feladva</h1>
                 </header>
                 <main>
                     <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbáld meg holnap is!</p>
