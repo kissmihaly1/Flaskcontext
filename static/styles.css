@@ -98,7 +98,7 @@ main {
 }
 
 #submit-button:hover {
-    background-color: #ec7b0a;
+    background-color: #b46413;
     transition: background-color 1s;
 }
 .button {
@@ -112,7 +112,7 @@ main {
 }
 
 .button:hover {
-    background-color: #ec7b0a;
+    background-color: #b46413;
     transition: background-color 1s;
 }
 #results {
@@ -201,7 +201,7 @@ footer p {
 }
 
 .dropbtn:hover {
-    background-color: #ec7b0a;
+    background-color: #b46413;
     transition: background-color 1s;
 }
 
@@ -312,7 +312,7 @@ footer p {
 
 .close:hover,
 .close:focus {
-    color: #ec7b0a;
+    color: #b46413;
     text-decoration: none;
     cursor: pointer;
 }
@@ -513,7 +513,7 @@ button {
 }
 
 .faq-title:hover {
-    background-color: #ec7b0a;
+    background-color: #b46413;
 }
 
 .faq-content {
@@ -563,7 +563,7 @@ button {
 }
 
 .box:hover, .actual-box:hover{
-    background-color: #b6620d;
+    background-color: #b46413;
     transition: background-color 0.3s ease-in;
 }
 
