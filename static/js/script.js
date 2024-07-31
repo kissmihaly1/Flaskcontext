@@ -10,6 +10,7 @@ let lastSolvedDay;
 let lastGameID;
 let numberofDays
 let solved = 0;
+let isRandom = false
 
 // Function to fetch the current game day from the backend
 async function getDate() {
@@ -38,6 +39,7 @@ function initializeNewGameData() {
         hintCount: 0,
         solvedToday: false,
         lastGuess: [],
+        isRandom: false,
     };
 }
 
@@ -60,14 +62,19 @@ window.addEventListener('load', () => {
         numberofDays = day;
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         gameDay = gameData[lastGameID];
+        isRandom = gameData.isRandom;
         if (!gameData[day]){
             gameDay = day;
             lastGameID = day;
         }else{
             gameDay = gameData.lastGameID;
         }
-        document.getElementById('game-number').innerText = `${gameDay}`;
-
+        if (!isRandom) {
+            document.getElementById('game-number').innerText = `${gameDay}`;
+        }
+        else{
+            document.getElementById('game-number').innerText = "Véletlenszerű";
+        }
 
         // Load streak and last solved day from localStorage
         lastSolvedDay = localStorage.getItem('lastSolvedDay');
@@ -143,7 +150,12 @@ window.addEventListener('load', () => {
                     pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék';
                     document.getElementById('guesses-count').innerText = savedResults.length;
                     document.getElementById('streak').innerText = solved;
-                    document.getElementById('game-number').innerText = gameDay;
+                    if (!isRandom) {
+                        document.getElementById('game-number').innerText = `${gameDay}`;
+                    }
+                    else{
+                        document.getElementById('game-number').innerText = "Véletlenszerű";
+                    }
                     document.querySelector('.instructions').classList.add('hidden');
                     document.querySelector('footer').classList.add('hidden');
                     const container = document.getElementById('results');
@@ -176,13 +188,16 @@ function handleGuess() {
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     getDate().then(day => {
         if(!gameData[day]){
+        gameData.isRandom = false;
+        localStorage.setItem('gameData', JSON.stringify(gameData));
         location.reload();
         return;
         }else{
-    // Retrieve gameData from localStorage
 
     // Check if gameDay matches the current game day
     if (!gameData[gameDay]) {
+        gameData.isRandom=false;
+        localStorage.setItem('gameData', JSON.stringify(gameData));
         location.reload(); // Reload the page if the current game day data is not found
         return;
     }
@@ -266,7 +281,12 @@ const boxes = document.querySelectorAll('.row-wrapper');
                     localStorage.setItem('gameData', JSON.stringify(gameData));
 
                     document.getElementById('guesses-count').innerText = results.length;
-                    document.getElementById('game-number').innerText = gameDay;
+                    if (!isRandom) {
+                        document.getElementById('game-number').innerText = `${gameDay}`;
+                    }
+                    else{
+                        document.getElementById('game-number').innerText = "Véletlenszerű";
+                    }
                     document.getElementById('streak').innerText = solved;
 
                     // Clear previous results
@@ -434,7 +454,6 @@ function updateBodyContent() {
                 <div class="modal-content-game">
                     <span class="close" id="close-game-modal">&times;</span>
                     <h2>Korábbi játékok</h2>
-                    <hr>
                     <div id="box-container"></div>
                 </div>
             </div>

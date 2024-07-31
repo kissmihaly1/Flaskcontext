@@ -1,4 +1,4 @@
-function otherDayPlay(chosenDay){
+function otherDayPlay(chosenDay, isRandom){
 
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         let storedGameData = gameData[chosenDay];
@@ -37,7 +37,7 @@ function otherDayPlay(chosenDay){
                 solvedToday: solvedToday,
                 lastGuess: lastGuess,
             };
-            updateGameData(chosenDay, newDayData);
+            updateGameData(chosenDay, newDayData, isRandom);
             if (giveUp) {
                 handleGiveUp();
                 return;
@@ -51,6 +51,9 @@ function otherDayPlay(chosenDay){
                     updateIndex();
                     location.reload()
                     const pElement = document.querySelector('p.find');
+                    if (!isRandom) {
+                        document.getElementById('game-number').innerText = `${gameDay}`;
+                    }
                         pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék';
                         document.getElementById('guesses-count').innerText = savedResults.length;
                         document.getElementById('hint-left').innerText = 5 - hintCount;

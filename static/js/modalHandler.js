@@ -120,8 +120,6 @@ function modalGame() {
     createBoxes(numberofDays);
     let modal = document.getElementById('modal-game');
     modal.style.display = 'block';
-    //HERE MAKE THE CHANGE GAME FOR THE CHOSEN DAY
-
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     let lastGameID = gameData.lastGameID;
 
