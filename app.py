@@ -1,3 +1,4 @@
+import time
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template
 from get_context_number import ContextoGame
@@ -64,7 +65,7 @@ def process():
     if rank == -1:
         return jsonify({"error": f"Ez a szó ('{input_word}') nincs a szavak között!"}), 404
     response, status_code = save_guess(input_word, rank)
-    print(response, status_code)
+
     return jsonify({"word": input_word, "rank": rank})
 
 

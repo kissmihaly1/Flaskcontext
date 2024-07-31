@@ -10,7 +10,7 @@ function handleHint() {
     } else {
 
         if (hintCount >= 5) {
-            showError("Már elhasználtad az 5 tippedet mára.");
+            showError("Már elhasználtad az 5 segítségkérésed mára.");
         } else {
             hintCount += 1;
             gameData[gameDay].hintCount = hintCount;

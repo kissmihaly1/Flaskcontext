@@ -38,9 +38,16 @@
         </header>
         <hr>
         <p class="find">Nap: <span id="game-number"></span> |  Megoldva: <strong id="streak"></strong> játék</p>
-        <main>
             <input type="text" placeholder="írj ide egy szót..." id="word-input" aria-label="Word input">
-            <button id="submit-button">Küldés</button>
+        <button id="submit-button">Küldés</button>
+        <div class="loading-wrapper" id="loading-wrapper">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <main>
             <div id="results"></div>
             <section class="instructions">
                 <h2>Hogyan kell játszani?</h2>

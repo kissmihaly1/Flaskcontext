@@ -50,7 +50,7 @@ function getColorClass(rank) {
     if (rank <= 1000) {
         return 'green';
     } else if (rank <= 5000) {
-        return 'orange';
+        return '#f59204';
     } else {
         return 'red';
     }

@@ -171,7 +171,6 @@ window.addEventListener('load', () => {
         console.error('Failed to check date and manage game data:', error);
     });
 });
-
 function handleGuess() {
     let word = document.getElementById('word-input').value.trim().toLowerCase();
     document.getElementById('word-input').value = '';
@@ -189,23 +188,43 @@ function handleGuess() {
         return;
     }
 
-    // Retrieve results for the current game day
     let results = gameData[gameDay].results || [];
-
+    var loadingDiv = document.getElementById("loading-wrapper");
+    loadingDiv.style.display = "flex";
     let duplicateResult = results.find(result => result.word === word);
     if (duplicateResult) {
-        // Find the box element and add the shake effect
-        const boxes = document.querySelectorAll('.row-wrapper');
-        boxes.forEach(box => {
-            if (box.querySelector('.row span:first-child').textContent === word) {
+const boxes = document.querySelectorAll('.row-wrapper');
+    boxes.forEach(box => {
+        if (box.querySelector('.row span:first-child').textContent === word) {
+            const isInViewport = (element) => {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight-200 || document.documentElement.clientHeight-200) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            };
+
+            if (!isInViewport(box)) {
+                box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    box.classList.add('shake');
+                    setTimeout(() => {
+                        box.classList.remove('shake');
+                    }, 1000);
+                }, 500);
+            } else {
                 box.classList.add('shake');
                 setTimeout(() => {
                     box.classList.remove('shake');
                 }, 1000);
             }
+        }
+            loadingDiv.style.display = "none";
         });
     } else {
-        // Send the word to the backend
+
         gameData[gameDay].guessesCount += 1;
         fetch('/guess', {
             method: 'POST',
@@ -217,6 +236,7 @@ function handleGuess() {
         .then(response => response.json())
         .then(data => {
             if (data.error) {
+                loadingDiv.style.display = "none";
             const inputElement = document.getElementById('word-input');
                     inputElement.classList.add('shake');
                     setTimeout(() => {
@@ -224,6 +244,7 @@ function handleGuess() {
                     }, 1000);
                 showError(data.error);
             } else {
+                    loadingDiv.style.display = "none";
                 if (data.rank === 1) {
                     gameData[gameDay].solvedToday = true;
                     solvedToday = true;
