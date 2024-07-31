@@ -80,6 +80,7 @@ function createBoxes(number) {
         box.addEventListener('click', function () {
             let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
             changeGameID.lastGameID = i;
+            changeGameID.isRandom = false;
             localStorage.setItem('gameData', JSON.stringify(changeGameID));
             gameDay = i;
             otherDayPlay(i);
