@@ -51,7 +51,7 @@ function otherDayPlay(chosenDay){
                     updateIndex();
                     location.reload()
                     const pElement = document.querySelector('p.find');
-                        pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
+                        pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék';
                         document.getElementById('guesses-count').innerText = savedResults.length;
                         document.getElementById('hint-left').innerText = 5 - hintCount;
                         document.getElementById('streak').innerText = solved;

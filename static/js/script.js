@@ -140,10 +140,9 @@ window.addEventListener('load', () => {
                         // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék';
                     document.getElementById('guesses-count').innerText = savedResults.length;
                     document.getElementById('streak').innerText = solved;
-                    document.getElementById('hint-left').innerText = 5-hintCount;
                     document.getElementById('game-number').innerText = gameDay;
                     document.querySelector('.instructions').classList.add('hidden');
                     document.querySelector('footer').classList.add('hidden');
@@ -256,7 +255,7 @@ const boxes = document.querySelectorAll('.row-wrapper');
                     showCongratulationsPage(solutionWord, results.length);
                 } else {
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Megoldva: <span id="streak">0</span> játék | Segítségek száma: <span id="hint-left">5</span>';
+                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Megoldva: <span id="streak">0</span> játék';
 
                     document.querySelector('.instructions').classList.add('hidden');
                     document.querySelector('footer').classList.add('hidden');
@@ -269,7 +268,6 @@ const boxes = document.querySelectorAll('.row-wrapper');
                     document.getElementById('guesses-count').innerText = results.length;
                     document.getElementById('game-number').innerText = gameDay;
                     document.getElementById('streak').innerText = solved;
-                    document.getElementById('hint-left').innerText = 5-hintCount;
 
                     // Clear previous results
                     const container = document.getElementById('results');
@@ -392,7 +390,6 @@ function updateBodyContent() {
                         <h2>Hogyan kell játszani?</h2>
                         <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
                         <p>Korlátlan számú tipped van.</p>
-                        <p>Csak 5 segítségkérést használhatsz egy nap!</p>
                         <p>A szavakat egy mesterséges intelligencia algoritmusa rendezte aszerint, hogy mennyire hasonlítanak a titkos szóhoz.</p>
                         <p><strong>A játék béta verzióban van, fejlesztés alatt áll!</strong></p>
                     </section>
@@ -420,7 +417,6 @@ function updateBodyContent() {
                     <span class="close" id="close-game-info-modal">&times;</span>
                     <h2>A játékról</h2>
                     <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb a szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
-                    <p>Csak 5 segítségkérést használhatsz egy nap!</p>
                     <hr>
                     <p>A játék egy mesterséges intelligencia algoritmus és több ezer szöveg segítségével számítja ki a szavak hasonlóságát a nap titkos szavához képest. Nem feltétlenül CSAK a szavak jelentésével függ össze, hanem az interneten használt közelségével is. Például, ha a nap szava „végtelen”, akkor a „szeretet”-hez vagy az „univerzumhoz” kapcsolódó szavak közel állhatnak a nap szavához, mivel a „végtelen” kifejezést általában ebben a két kontextusban használják.</p>
                 </div>

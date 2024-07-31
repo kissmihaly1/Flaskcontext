@@ -66,7 +66,12 @@ class ContextoGame:
             for line in file:
                 item = eval(line.strip())
                 ranked_list.append(item)
-        if rank > 200:
+
+        if rank > 1000:
+            return ranked_list[999][0], 1000
+        elif rank > 500:
+            return ranked_list[499][0], 500
+        elif rank > 200:
             return ranked_list[199][0], 200
         elif rank > 100:
             return ranked_list[99][0], 100

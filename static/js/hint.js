@@ -8,13 +8,10 @@ function handleHint() {
         showError("Tippelned kell, mielőtt segítséget kérnél.");
         event.preventDefault();
     } else {
-
-        if (hintCount >= 5) {
-            showError("Már elhasználtad az 5 segítségkérésed mára.");
-        } else {
+            var loadingDiv = document.getElementById("loading-wrapper");
+            loadingDiv.style.display = "flex";
             hintCount += 1;
             gameData[gameDay].hintCount = hintCount;
-            document.getElementById('hint-left').innerText = 5-hintCount;
 
             const best_yet = savedResults.reduce((best, current) => {
                 return (current.rank < best.rank) ? current : best;
@@ -29,6 +26,8 @@ function handleHint() {
             })
                 .then(response => response.json())
                 .then(data => {
+
+                        loadingDiv.style.display = "none";
                     if (data.error) {
                         showError(data.error);
                     } else {
@@ -63,7 +62,8 @@ function handleHint() {
                 }
 
                     }
+
                 });
-        }
+
     }
 }
