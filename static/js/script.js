@@ -259,6 +259,7 @@ const boxes = document.querySelectorAll('.row-wrapper');
                         inputElement.classList.remove('shake');
                     }, 1000);
                 showError(data.error);
+                loadingDiv.style.display = "none";
             } else {
                     loadingDiv.style.display = "none";
                 if (data.rank === 1) {
@@ -313,6 +314,7 @@ const boxes = document.querySelectorAll('.row-wrapper');
         })
         .catch(error => {
             showError(error.message);
+            loadingDiv.style.display = "none";
         });
     }
     }
