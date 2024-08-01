@@ -11,8 +11,8 @@ let lastGameID;
 let numberofDays
 let solved = 0;
 let isRandom = false
-
 // Function to fetch the current game day from the backend
+
 async function getDate() {
     return fetch('/checkdate', {
         method: 'POST',
@@ -59,6 +59,7 @@ function updateStreak(streak, lastSolvedDay) {
 // Initialize gameDay when the page loads
 window.addEventListener('load', () => {
     getDate().then(day => {
+
         numberofDays = day;
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         gameDay = gameData[lastGameID];
@@ -135,6 +136,7 @@ window.addEventListener('load', () => {
                 const solutionWord = savedResults.find(result => result.rank === 1).word;
                 showCongratulationsPage(solutionWord, savedResults.length);
             } else {
+                document.body.classList.remove('hidden');
                 solved = 0;
                 for (let i = 1; i <= day; i++) {
                     if (gameData[i]) {

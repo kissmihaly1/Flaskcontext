@@ -1,4 +1,5 @@
 function handleGiveUp() {
+    document.body.classList.remove('hidden');
     if (document.getElementById('surrender-modal')) {
         closeSurrenderModal();
     }

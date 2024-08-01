@@ -2,7 +2,7 @@ function showCongratulationsPage(word, guessCount) {
     let green_number = 0;
     let orange_number = 0;
     let red_number = 0;
-
+    document.body.classList.remove('hidden');
     // Get the results from localStorage
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     let savedResults = gameData[gameDay]?.results || [];
@@ -26,6 +26,7 @@ function showCongratulationsPage(word, guessCount) {
 updateJsVariablesFromLocalStorage();
 guessCount = guessCount-hintCount;
 green_number = green_number - hintCount;
+
 document.body.innerHTML = `
     <div class="congrats">
         <header>

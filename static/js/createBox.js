@@ -4,7 +4,6 @@ function createBoxes(number) {
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     let isRandom = gameData.isRandom || false;
 
-    // Létrehozunk egy véletlenszerű dobozt
     const randomBox = document.createElement('div');
     randomBox.className = 'random-box';
     randomBox.innerHTML = `Véletlenszerű`;

@@ -42,9 +42,6 @@ def home():
 @app.route('/adatvedelmitajekoztato')
 def privacy():
     return render_template('privacy.html')
-@app.route('/faq')
-def faq():
-    return render_template('faq.html')
 
 @app.route('/checkdate', methods=['POST'])
 def checkdate():
