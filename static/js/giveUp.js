@@ -1,5 +1,4 @@
 function handleGiveUp() {
-    document.body.classList.remove('hidden');
     if (document.getElementById('surrender-modal')) {
         closeSurrenderModal();
     }
@@ -75,11 +74,12 @@ function updateCountdown() {
         document.getElementById('countdown').innerHTML = "00:00:00";
     }
 }
-
+document.body.classList.remove('hidden');
 updateCountdown(); // Initial call to display immediately
 const countdownInterval = setInterval(updateCountdown, 1000); // Update every second
 })
 .catch(error => {
 showError(error.message);
 });
+
 }

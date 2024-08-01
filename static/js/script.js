@@ -136,7 +136,6 @@ window.addEventListener('load', () => {
                 const solutionWord = savedResults.find(result => result.rank === 1).word;
                 showCongratulationsPage(solutionWord, savedResults.length);
             } else {
-                document.body.classList.remove('hidden');
                 solved = 0;
                 for (let i = 1; i <= day; i++) {
                     if (gameData[i]) {
@@ -145,6 +144,7 @@ window.addEventListener('load', () => {
                         }
                     }
                 }
+                document.body.classList.remove('hidden');
                 document.getElementById('streak').innerText = solved;
                         // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
