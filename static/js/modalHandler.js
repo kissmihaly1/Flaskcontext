@@ -87,9 +87,7 @@
         function closeGameModal() {
             document.getElementById('modal-game').style.display = 'none';
         }
-        function closeClosestWords() {
-            document.getElementById('modal-closest-words').style.display = 'none';
-        }
+
 // Function to close the game information modal
         function closeGameInformations() {
             document.getElementById('modal_info').style.display = 'none';
@@ -132,6 +130,8 @@ function modalGame() {
 }
 
 function modalClosestWords(day){
+    let loadingDiv = document.getElementById("loading-wrapper");
+    loadingDiv.style.display = "flex";
     const container = document.getElementById('results');
     container.innerHTML = '';
     let modal = document.getElementById('modal-closest-words');
@@ -153,4 +153,6 @@ function modalClosestWords(day){
                         rank += 1;
                     });
             });
+        loadingDiv.style.display = "none";
+
 }

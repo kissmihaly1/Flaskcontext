@@ -42,6 +42,13 @@ document.body.innerHTML = `
 
                 <canvas id="colorBarChart" width="400" height="200"></canvas>
             </div>
+            <div class="loading-wrapper" id="loading-wrapper">
+                <div class="loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <div class="hints">
             </div>
             <div class="countdown-container">

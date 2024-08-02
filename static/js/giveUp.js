@@ -43,7 +43,13 @@ function handleGiveUp() {
                         <p>Megoldva: <strong id="streak">${solved}</strong> játék</p>
                     </div>
                     <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
-
+                    <div class="loading-wrapper" id="loading-wrapper">
+                        <div class="loading">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                     <div id="modal-game" class="modal-game">
                         <div class="modal-content-game">
                             <span class="close" id="close-game-modal">&times;</span>
