@@ -34,7 +34,7 @@ html{
 }
 
 header h1 {
-    font-size: 2em;
+    font-size: 2.2em;
     margin: 10px;
 }
 
@@ -190,9 +190,13 @@ footer p {
 .result-box.red {
     background-color: #f44336;
 }
+.rotate {
+  transform: rotate(180deg);
+}
 
 .dropdown {
     position: relative;
+    display: inline-block;
 }
 
 .dropbtn {
@@ -202,19 +206,22 @@ footer p {
     font-size: 24px;
     border: none;
     cursor: pointer;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    border-radius: 5px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 5px 5px 5px 5px;
 }
 
 .dropbtn:hover {
     background-color: #b46413;
     transition: background-color 1s;
 }
-
+.dropbtn i {
+  transition: transform 0.5s;
+}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -527,7 +534,7 @@ button {
 }
 
 .faq-title:hover {
-    background-color: #b46413;
+    background-color: #ec7b0a;
 }
 
 .faq-content {

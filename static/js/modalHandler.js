@@ -15,7 +15,6 @@
 
             document.getElementById('hint').addEventListener('click', handleHint);
             document.getElementById('informations').addEventListener('click', handleInformations);
-            document.querySelector('.dropbtn').addEventListener('click', toggleDropdown);
             document.getElementById('game_info').addEventListener('click', gameInformations);
             document.getElementById('game_choose').addEventListener('click', modalGame);
 
@@ -54,13 +53,13 @@
                     modalGame.style.display = 'none';
                 }
 
-                if (!event.target.matches('.dropbtn')) {
+                /*if (!event.target.matches('.dropbtn')) {
                     if (dropdownContent) {
                         if (dropdownContent.style.display === 'block') {
                             dropdownContent.style.display = 'none';
                         }
                     }
-                }
+                }*/
             });
 
             document.querySelector('.close').addEventListener('click', closeModal);
@@ -155,4 +154,34 @@ function modalClosestWords(day){
             });
         loadingDiv.style.display = "none";
 
+}
+
+
+let isDropdownOpen = false;
+
+
+function toggleDropdown2(event) {
+  const dropdownContent = document.querySelector('.dropdown-content');
+  const arrow = document.querySelector('.dropbtn i');
+
+  isDropdownOpen = !isDropdownOpen;
+  dropdownContent.style.display = isDropdownOpen ? 'block' : 'none';
+  arrow.classList.toggle('rotate');
+
+  // Prevent the click event from propagating
+  event.stopPropagation();
+}
+
+document.querySelector('.dropbtn').addEventListener('click', toggleDropdown2);
+document.addEventListener('click', closeDropdown);
+
+function closeDropdown() {
+  const dropdownContent = document.querySelector('.dropdown-content');
+  const arrow = document.querySelector('.dropbtn i');
+
+  if (isDropdownOpen) {
+    isDropdownOpen = false;
+    dropdownContent.style.display = 'none';
+    arrow.classList.remove('rotate');
+  }
 }
