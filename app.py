@@ -16,10 +16,10 @@ contexto_game = ContextoGame('model/w2vhun.w2v', 'lemmatized_words2.csv')
 solution_word = os.getenv('SOLUTION_WORD')
 contexto_game.create_ranked_list(solution_word, day)
 
-#mongodb = os.getenv('MONGODB')
-#client = MongoClient(mongodb, tlsCAFile=certifi.where())
-#db = client['contextodb']
-#guesses_collection = db['guesses']
+mongodb = os.getenv('MONGODB')
+client = MongoClient(mongodb, tlsCAFile=certifi.where())
+db = client['contextodb']
+guesses_collection = db['guesses']
 
 
 def save_guess(word, rank, user_id=None):
@@ -30,7 +30,7 @@ def save_guess(word, rank, user_id=None):
             'user_id': user_id,
             'timestamp': datetime.now()
         }
-        #guesses_collection.insert_one(guess_data)
+        guesses_collection.insert_one(guess_data)
         return jsonify({'status': 'success'}), 200
     return jsonify({'error': 'Valami hiba történt, próbáld meg később!'}), 400
 
