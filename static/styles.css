@@ -149,14 +149,17 @@ main {
     text-align: left;
 }
 
+.modal-content-game h2{
+    margin: 10px;
+text-align: left;
+}
+
 .instructions h2 {
     font-size: 1.2em;
 }
 h2{
     padding: 0;
     margin: 0;
-
-
 }
 .instructions p {
     font-size: 0.9em;
@@ -238,6 +241,10 @@ footer p {
 
 .dropdown.show .dropdown-content {
     display: block;
+}
+
+#close-game-modal{
+    margin: 5px;
 }
 
 .modal, .modal_info, .modal-game, .modal-closest-words {

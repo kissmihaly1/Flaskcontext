@@ -49,7 +49,7 @@ function createBoxes(number) {
                     box.innerHTML = `<strong class="number">${i}</strong> <strong class="status"> Játék megoldva</strong>`;
                 } else if (gameData[i].giveUp) {
                     box.className = 'actual-box';
-                    box.innerHTML = `<strong class="number">${i}</strong> <strong class="status"> Játék feladva!</strong>`;
+                    box.innerHTML = `<strong class="number">${i}</strong> <strong class="status"> Játék feladva</strong>`;
                 } else {
                     box.className = 'actual-box';
                     box.innerHTML = `<strong class="number">${i}</strong>`;
