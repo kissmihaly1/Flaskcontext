@@ -29,13 +29,13 @@ document.body.innerHTML = `
     <div class="congrats">
         <header>
             <h1 class="title">KONT<span class="highlight">EXTUS</span>.</h1>
-            <hr>
         </header>
         <main class="congrats-main">
             <div class="solution">
                 <h1 class="subtitle">Gratulálok!</h1>
                 <p>Kitaláltad a(z) ${gameDay}. nap titkos szavát: <strong class="solution-word">${word}</strong></p>
-
+               <div><button class="button" onclick="modalClosestWords(gameDay)">Legközelebbi 500 szó</button></div>
+               <hr>     
             </div>
             <div class="stats">
                 <p>Tippek száma: <strong id="guesses-count">${guessCount}</strong> | Használt segítség: <span id="hint-count">${hintCount}</span></p>
@@ -57,6 +57,13 @@ document.body.innerHTML = `
                     <span class="close" id="close-game-modal">&times;</span>
                     <h2>Korábbi játékok</h2>
                     <div id="box-container"></div>
+                </div>
+            </div>
+            <div id="modal-closest-words" class="modal-closest-words">
+                <div class="modal-content-game">
+                    <span class="close" id="close-game-modal">&times;</span>
+                    <h2>Legközelebbi 500 szó</h2>
+                    <div id="results"></div>
                 </div>
             </div>
                <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>

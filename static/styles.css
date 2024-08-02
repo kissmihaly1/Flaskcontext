@@ -58,7 +58,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-height: 50dvh;
+    max-height: 60dvh;
     margin-bottom: 200px;
 }
 
@@ -152,7 +152,12 @@ main {
 .instructions h2 {
     font-size: 1.2em;
 }
+h2{
+    padding: 0;
+    margin: 0;
 
+
+}
 .instructions p {
     font-size: 0.9em;
     line-height: 1.5;
@@ -235,7 +240,7 @@ footer p {
     display: block;
 }
 
-.modal, .modal_info, .modal-game {
+.modal, .modal_info, .modal-game, .modal-closest-words {
     display: none;
     position: fixed;
     z-index: 1;

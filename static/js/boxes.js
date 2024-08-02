@@ -31,20 +31,20 @@ function createWordBox(word, rank, isCurrent) {
     rowWrapper.appendChild(row);
     container.appendChild(rowWrapper);
 }
-const getWidth = (rank) => {
-    const total = 80000;
-    const lambda = 0.5;
-    const pdf = (x) => lambda * Math.exp(-lambda * x);
-    const startX = 0;
-    const endX = 100;
-    const startY = pdf(startX);
-    const endY = pdf(endX);
-    const x = (rank / total) * (endX - startX);
-    let result = ((pdf(x) - endY) / (startY - endY)) * 100;
-    if (result < 1) {
-        result = 1;
-    }
-    return `${result}%`;
+const getWidth = (distance) => {
+  const total = 40000;
+  const lambda = 0.5;
+  const pdf = (x) => lambda * Math.exp(-lambda * x);
+  const startX = 0;
+  const endX = 100;
+  const startY = pdf(startX);
+  const endY = pdf(endX);
+  const x = (distance / total) * (endX - startX);
+  let result = ((pdf(x) - endY) / (startY - endY)) * 100;
+  if (result < 1) {
+    result = 1;
+  }
+  return `${result}%`;
 };
 function getColorClass(rank) {
     if (rank <= 1000) {

@@ -16,10 +16,10 @@ contexto_game = ContextoGame('model/w2vhun.w2v', 'lemmatized_words2.csv')
 solution_word = os.getenv('SOLUTION_WORD')
 contexto_game.create_ranked_list(solution_word, day)
 
-mongodb = os.getenv('MONGODB')
-client = MongoClient(mongodb, tlsCAFile=certifi.where())
-db = client['contextodb']
-guesses_collection = db['guesses']
+#mongodb = os.getenv('MONGODB')
+#client = MongoClient(mongodb, tlsCAFile=certifi.where())
+#db = client['contextodb']
+#guesses_collection = db['guesses']
 
 
 def save_guess(word, rank, user_id=None):
@@ -30,9 +30,9 @@ def save_guess(word, rank, user_id=None):
             'user_id': user_id,
             'timestamp': datetime.now()
         }
-        guesses_collection.insert_one(guess_data)
+        #guesses_collection.insert_one(guess_data)
         return jsonify({'status': 'success'}), 200
-    return jsonify({'error': 'Invalid data'}), 400
+    return jsonify({'error': 'Valami hiba történt, próbáld meg később!'}), 400
 
 
 @app.route('/')
@@ -62,7 +62,8 @@ def process():
     if rank == -1:
         return jsonify({"error": f"Ez a szó ('{input_word}') nincs a szavak között!"}), 404
     response, status_code = save_guess(input_word, rank)
-
+    if status_code == 400:
+        return jsonify({"error": "Valami hiba történt, próbáld meg később!"}), 400
     return jsonify({"word": input_word, "rank": rank})
 
 
@@ -92,10 +93,30 @@ def giveup():
         for line in file:
             item = eval(line.strip())
             ranked_list.append(item)
-            if i > 2:
-                break;
+            i+=1
+            if i >= 2:
+                break
     solution_word = ranked_list[0][0]
     return jsonify({'solution_word': solution_word})
+
+@app.route('/closestWords', methods=['POST'])
+def closesWords():
+    data = request.json
+    day = data.get('day')
+    filename = f'words/ranked_list{day}.txt'
+    ranked_list = []
+    i = 0
+    with open(filename, 'r', encoding='utf-8') as file:
+        for line in file:
+            item = eval(line.strip())
+            ranked_list.append(item[0])
+            i+=1
+            if i >= 500:
+                break
+
+    return jsonify({'solution_words': ranked_list})
+
+
 
 
 if __name__ == '__main__':

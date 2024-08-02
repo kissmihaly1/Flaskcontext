@@ -32,6 +32,7 @@
                 let modal = document.getElementById('surrender-modal');
                 let modalInfo = document.getElementById('modal_info');
                 let modalGame = document.getElementById('modal-game');
+                let modalClosest = document.getElementById('modal-closest-words');
                 let modalGeneral = document.getElementById('modal');
                 let dropdownContent = document.querySelector('.dropdown-content');
 
@@ -40,6 +41,9 @@
                 }
                 if (event.target === modalInfo){
                     modalInfo.style.display = 'none';
+                }
+                if (event.target === modalClosest){
+                    modalClosest.style.display = 'none';
                 }
 
                 if (event.target === modalGeneral){
@@ -83,7 +87,9 @@
         function closeGameModal() {
             document.getElementById('modal-game').style.display = 'none';
         }
-
+        function closeClosestWords() {
+            document.getElementById('modal-closest-words').style.display = 'none';
+        }
 // Function to close the game information modal
         function closeGameInformations() {
             document.getElementById('modal_info').style.display = 'none';
@@ -100,6 +106,7 @@
             document.getElementById('modal_info').style.display = 'none';
             document.getElementById('surrender-modal').style.display = 'none';
             document.getElementById('modal-game').style.display = 'none';
+            document.getElementById('modal-closest-words').style.display = 'none';
         }
 
 
@@ -122,5 +129,28 @@ function modalGame() {
     modal.style.display = 'block';
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     let lastGameID = gameData.lastGameID;
+}
 
+function modalClosestWords(day){
+    const container = document.getElementById('results');
+    container.innerHTML = '';
+    let modal = document.getElementById('modal-closest-words');
+    modal.style.display = 'block';
+    fetch('/closestWords', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({day: gameDay })
+            })
+            .then(response => response.json())
+            .then(data => {
+                    const words = data.solution_words;
+                    // Create a word box for each word with its rank
+                    let rank = 1;
+                    words.forEach(result => {
+                        createWordBox(result, rank, false);
+                        rank += 1;
+                    });
+            });
 }

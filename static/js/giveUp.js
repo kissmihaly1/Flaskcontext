@@ -31,11 +31,12 @@ function handleGiveUp() {
             
                 <header>
                     <h1>KONT<span class="highlight">EXTUS</span>.</h1>
-                    <hr>
-                    <h1>Feladva: ${gameDay}. nap</h1>
                 </header>
                 <main>
+                    <h2>Feladva: ${gameDay}. nap</h2>
                     <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbálj ki másik napot is!</p>
+                   <div><button class="button" onclick="modalClosestWords(gameDay)">Legközelebbi 500 szó</button></div>
+                   <hr>
                     <p>A következő napi játék: </p><div id="countdown"></div>
                     <hr>
                     <div class="streak-container">
@@ -50,6 +51,14 @@ function handleGiveUp() {
                             <div id="box-container"></div>
                         </div>
                     </div>
+                    <div id="modal-closest-words" class="modal-closest-words">
+                        <div class="modal-content-game">
+                            <span class="close" id="close-game-modal">&times;</span>
+                            <h2>Legközelebbi 500 szó</h2>
+                            <div id="results"></div>
+                        </div>
+                    </div>
+            </div>
                 </main>
             </div>
         `;

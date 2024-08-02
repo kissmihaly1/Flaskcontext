@@ -100,6 +100,7 @@ window.addEventListener('load', () => {
                 }
             }
             document.getElementById('streak').innerText = solved;
+            document.body.classList.remove('hidden');
         } else {
             // At this point, `storedGameData` contains the current game day's data
             savedResults = storedGameData.results;
@@ -313,7 +314,7 @@ const boxes = document.querySelectorAll('.row-wrapper');
             }
         })
         .catch(error => {
-            showError(error.message);
+                showError("Valami hiba történt, kérlek próbáld újra később!");
             loadingDiv.style.display = "none";
         });
     }
