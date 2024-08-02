@@ -54,6 +54,9 @@ function otherDayPlay(chosenDay, isRandom){
                     if (!isRandom) {
                         document.getElementById('game-number').innerText = `${gameDay}`;
                     }
+                    else{
+                        document.getElementById('game-number').innerText = "Véletlenszerű";
+                    }
                         pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék';
                         document.getElementById('guesses-count').innerText = savedResults.length;
                         document.getElementById('hint-left').innerText = 5 - hintCount;
