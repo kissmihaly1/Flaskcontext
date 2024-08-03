@@ -386,7 +386,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const faqTitle = document.querySelector('.faq-title2');
+    const faqContent = document.querySelector('.faq-content2');
 
+    faqTitle.addEventListener('click', function() {
+        if (faqContent.style.maxHeight) {
+            faqContent.style.maxHeight = null;
+        } else {
+            faqContent.style.maxHeight = faqContent.scrollHeight + "px";
+        }
+    });
+});
 
 
 function updateBodyContent() {
@@ -421,9 +432,13 @@ function updateBodyContent() {
                 </main>
                 <footer id="faq-section">
                     <h2>Gyakran Ismételt Kérdések</h2>
-                    <p class="faq-title">Hogyan számoljuk ki a szavak pontszámait?</p>
+                    <p class="faq-title">Hogyan számoljuk ki a szavak pontszámait?<span class="arrow"></span></p>
                     <div class="faq-content">
                         <p>A játék egy mesterséges intelligencia algoritmus és több ezer szöveg segítségével számítja ki a szavak hasonlóságát a nap titkos szavához képest. Nem feltétlenül CSAK a szavak jelentésével függ össze, hanem az interneten használt közelségével is. Például, ha a nap szava „végtelen”, akkor a „szeretet”-hez vagy az „univerzumhoz” kapcsolódó szavak közel állhatnak a nap szavához, mivel a „végtelen” kifejezést általában ebben a két kontextusban használják.</p>
+                    </div>
+                    <p class="faq-title2">Hogyan kérhetek segítséget?<span class="arrow"></span></p>
+                    <div class="faq-content2">
+                        <p>Segítséget kérni a menüben lehet, amely a 3 vonalra kattintva érhető el.</p>
                     </div>
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198" crossorigin="anonymous"></script>
                 </footer>

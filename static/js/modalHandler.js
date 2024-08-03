@@ -194,3 +194,10 @@ document.querySelectorAll('.faq-title').forEach(title => {
         this.classList.toggle('active');
     });
 });
+document.querySelectorAll('.faq-title2').forEach(title => {
+    title.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        content.classList.toggle('active');
+        this.classList.toggle('active');
+    });
+});

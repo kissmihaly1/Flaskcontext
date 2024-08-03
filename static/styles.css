@@ -155,7 +155,7 @@ main {
 
 .modal-content-game h2{
     margin: 10px;
-text-align: left;
+    text-align: left;
 }
 
 .instructions h2 {
@@ -171,7 +171,7 @@ h2{
 }
 
 footer {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 footer h2 {
@@ -536,7 +536,7 @@ button {
     width: 90%;
 }
 
-.faq-title {
+.faq-title, .faq-title2 {
     cursor: pointer;
     padding: 15px;
     background-color: #333;
@@ -548,7 +548,7 @@ button {
     align-items: center;
 }
 
-.faq-title:hover {
+.faq-title:hover, .faq-title2:hover {
     background-color: #ec7b0a;
 }
 
@@ -565,7 +565,7 @@ button {
 #faq-section h2{
 
 }
-.faq-content {
+.faq-content, .faq-content2 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
@@ -573,7 +573,7 @@ button {
     padding: 0 15px;
 }
 
-.faq-content.active {
+.faq-content.active, .faq-content2.active {
     max-height: 200px;
     transition: max-height 0.5s ease-in;
 }
@@ -581,7 +581,9 @@ button {
 .faq-title.active .arrow {
     transform: rotate(-135deg);
 }
-
+.faq-title2.active .arrow {
+    transform: rotate(-135deg);
+}
 .box {
     padding: 10px;
     margin: 5px 7px 5px 5px;
