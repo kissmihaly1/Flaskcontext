@@ -98,7 +98,7 @@ function createBoxes(number) {
         textboxRandom = document.getElementById('game-number')
         if (textboxRandom) {
             textboxRandom.innerText = "Véletlenszerű";
-            gameData.isRandom = false;
+            //gameData.isRandom = false;
         }
         localStorage.setItem('gameData', JSON.stringify(gameData));
     }

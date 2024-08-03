@@ -55,3 +55,38 @@ function getColorClass(rank) {
         return 'red';
     }
 }
+
+
+function createWordBoxClosest(word, rank, isCurrent) {
+    const container = document.getElementById('results'); // Assuming there's a container with id="results"
+
+    const rowWrapper = document.createElement('div');
+    rowWrapper.classList.add('row-wrapper-closest');
+    if (isCurrent) {
+        rowWrapper.classList.add('current');
+    }
+
+    const outerBar = document.createElement('div');
+    outerBar.classList.add('outer-bar');
+
+    const innerBar = document.createElement('div');
+    innerBar.classList.add('inner-bar');
+    innerBar.style.width = getWidth(rank);
+    innerBar.style.backgroundColor = getColorClass(rank);
+
+    const row = document.createElement('div');
+    row.classList.add('row');
+
+    const wordSpan = document.createElement('span');
+    wordSpan.textContent = word;
+
+    const rankSpan = document.createElement('span');
+    rankSpan.textContent = rank;
+
+    row.appendChild(wordSpan);
+    row.appendChild(rankSpan);
+    outerBar.appendChild(innerBar);
+    rowWrapper.appendChild(outerBar);
+    rowWrapper.appendChild(row);
+    container.appendChild(rowWrapper);
+}

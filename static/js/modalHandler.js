@@ -148,7 +148,7 @@ function modalClosestWords(day){
                     // Create a word box for each word with its rank
                     let rank = 1;
                     words.forEach(result => {
-                        createWordBox(result, rank, false);
+                        createWordBoxClosest(result, rank, false);
                         rank += 1;
                     });
             });
@@ -185,3 +185,12 @@ function closeDropdown() {
     arrow.classList.remove('rotate');
   }
 }
+
+
+document.querySelectorAll('.faq-title').forEach(title => {
+    title.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        content.classList.toggle('active');
+        this.classList.toggle('active');
+    });
+});
