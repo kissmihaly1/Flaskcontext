@@ -29,16 +29,17 @@ function handleGiveUp() {
         document.body.innerHTML = `
        <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198"
         crossorigin="anonymous"></script></head>
+            <body class="hidden">
+            <div class="game-wrapper">
             <div class="giveup">
-            
                 <header>
                     <h1>KONT<span class="highlight">EXTUS</span>.</h1>
                 </header>
+                <hr>
                 <main>
                     <h2>Feladva: ${gameDay}. nap</h2>
                     <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbálj ki másik napot is!</p>
                    <div><button class="button" onclick="modalClosestWords(gameDay)">Legközelebbi 500 szó</button></div>
-                   <hr>
                     <p>A következő napi játék: </p><div id="countdown"></div>
                     <hr>
                     <div class="streak-container">
@@ -69,6 +70,8 @@ function handleGiveUp() {
             </div>
                 </main>
             </div>
+            </body>
+            
         `;
 document.getElementById("close-game-modal").onclick = function() {
     document.getElementById("modal-game").style.display = "none";

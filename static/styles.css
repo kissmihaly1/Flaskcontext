@@ -4,22 +4,52 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100dvh;
     overflow: auto;
+}
+.congrats header, .giveup header {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.congrats .title, .giveup .title {
+    text-align: left;
+    margin: 0;
+}
+.giveup header {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.giveup .title {
+    text-align: left;
+    margin: 0;
+}
+.game-wrapper {
+    width: 100%;
+    min-height: 95dvh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.container {
+    width: 500px;
+    text-align: center;
+}
+
+#results {
+    display: flex;
+    flex-direction: column-reverse;
 }
 a{
     color: #fff;
 }
 html{
     background-color: #222;
-}
-.container {
-    width: 500px;
-    text-align: center;
-    padding-bottom: 0px;
 }
 
 .separator {
@@ -52,17 +82,8 @@ main {
     padding: 20px;
     border-radius: 10px;
     margin-top: 10px;
-    max-height: 52dvh;
-    overflow-y: auto;
-}
-.giveup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     max-height: 60dvh;
-    margin-bottom: 200px;
+    overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
@@ -100,6 +121,7 @@ main {
     cursor: pointer;
     font-size: 1em;
     margin-bottom: 5px;
+    width: 20%;
 }
 
 #submit-button:hover {
@@ -121,7 +143,7 @@ main {
     transition: background-color 1s;
 }
 #results {
-        margin-top: 20px;
+      margin-top: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -481,7 +503,7 @@ button {
     animation: shake 0.5s;
 }
 
-.congrats {
+.congrats, .giveup {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -489,10 +511,17 @@ button {
     min-height: 80dvh;
     color: #fff;
     font-family: 'Arial', sans-serif;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
+    width: 50dvh;
 }
-
+.congrats hr, .giveup hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: #fff;
+    margin: 10px 0;
+}
 .title {
     font-size: 2.5em;
 }
@@ -509,7 +538,6 @@ button {
 .solution {
     margin: 20px 0;
 }
-
 .solution-word {
     font-size: 1.2em;
     color: #ec7b0a;
@@ -537,7 +565,7 @@ button {
     color: #ec7b0a;
 }
 
-.congrats-main {
+.congrats-main, .giveup-main {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;

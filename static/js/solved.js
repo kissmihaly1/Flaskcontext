@@ -28,10 +28,13 @@ green_number = green_number - hintCount;
 document.body.innerHTML = `
     <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198"
      crossorigin="anonymous"></script></head>
-    <div class="congrats">
-        <header>
+    <body class="hidden">
+        <div class="game-wrapper">
+            <div class="congrats">        
+            <header>
             <h1 class="title">KONT<span class="highlight">EXTUS</span>.</h1>
         </header>
+        <hr>
         <main class="congrats-main">
             <div class="solution">
                 <h1 class="subtitle">Gratulálok!</h1>
@@ -78,6 +81,8 @@ document.body.innerHTML = `
                <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
         </main>
     </div>
+    </div>
+    </body>
 `;
 document.getElementById("close-game-modal").onclick = function() {
     document.getElementById("modal-game").style.display = "none";

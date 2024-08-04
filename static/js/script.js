@@ -242,82 +242,92 @@ const boxes = document.querySelectorAll('.row-wrapper');
             loadingDiv.style.display = "none";
         });
     } else {
-
-        gameData[gameDay].guessesCount += 1;
-        fetch('/guess', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ word: word, day: gameDay })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                loadingDiv.style.display = "none";
+        if (word === ''){
+                        loadingDiv.style.display = "none";
             const inputElement = document.getElementById('word-input');
-                    inputElement.classList.add('shake');
-                    setTimeout(() => {
-                        inputElement.classList.remove('shake');
-                    }, 1000);
-                showError(data.error);
-                loadingDiv.style.display = "none";
-            } else {
-                    loadingDiv.style.display = "none";
-                if (data.rank === 1) {
-                    gameData[gameDay].solvedToday = true;
-                    solvedToday = true;
-
-                    results.push({ word: word, rank: data.rank });
-                    gameData[gameDay].results = results;
-                    localStorage.setItem('gameData', JSON.stringify(gameData));
-                    let solutionWord = results.find(result => result.rank === 1)?.word;
-                    showCongratulationsPage(solutionWord, results.length);
-                } else {
-                    const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <strong id="game-number"></strong> | Tippek száma: <strong id="guesses-count">0</strong> | Segítség kérve: <strong id="hint-left">0</strong>';
-
-                    document.querySelector('.instructions').classList.add('hidden');
-                    document.querySelector('footer').classList.add('hidden');
-                    results.push({ word: word, rank: data.rank });
-                    gameData[gameDay].results = results;
-                    lastGuess = { word: word, rank: data.rank };
-                    gameData[gameDay].lastGuess = lastGuess;
-                    localStorage.setItem('gameData', JSON.stringify(gameData));
-                    savedResults = gameData[gameDay].results
-                    document.getElementById('guesses-count').innerText = savedResults.length-hintCount;
-                    if (!isRandom) {
-                        document.getElementById('game-number').innerText = `${gameDay}`;
-                    }
-                    else{
-                        document.getElementById('game-number').innerText = "Véletlenszerű";
-                    }
-//                    document.getElementById('streak').innerText = solved;
-                    document.getElementById('hint-left').innerText = hintCount;
-                    // Clear previous results
-                    const container = document.getElementById('results');
-                    container.innerHTML = '';
-
-                    // Create and insert the latest tip box (first occurrence of the current guess)
-                    createWordBox(word, data.rank, true);
-
-                    // Add a separator line
-                    const separator = document.createElement('div');
-                    separator.classList.add('separator');
-                    container.appendChild(separator);
-
-                    // Sort the results by rank and create and insert all word boxes
-                    results.sort((a, b) => a.rank - b.rank);
-                    results.forEach(result => {
-                        createWordBox(result.word, result.rank, result.word === word);
-                    });
-                }
-            }
-        })
-        .catch(error => {
-                showError("Valami hiba történt, kérlek próbáld újra később!");
+            inputElement.classList.add('shake');
+            setTimeout(() => {
+                inputElement.classList.remove('shake');
+            }, 1000);
             loadingDiv.style.display = "none";
-        });
+            showError('Nem lett szó beírva!')
+        }
+        else {
+            gameData[gameDay].guessesCount += 1;
+            fetch('/guess', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({word: word, day: gameDay})
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        loadingDiv.style.display = "none";
+                        const inputElement = document.getElementById('word-input');
+                        inputElement.classList.add('shake');
+                        setTimeout(() => {
+                            inputElement.classList.remove('shake');
+                        }, 1000);
+                        showError(data.error);
+                        loadingDiv.style.display = "none";
+                    } else {
+                        loadingDiv.style.display = "none";
+                        if (data.rank === 1) {
+                            gameData[gameDay].solvedToday = true;
+                            solvedToday = true;
+
+                            results.push({word: word, rank: data.rank});
+                            gameData[gameDay].results = results;
+                            localStorage.setItem('gameData', JSON.stringify(gameData));
+                            let solutionWord = results.find(result => result.rank === 1)?.word;
+                            showCongratulationsPage(solutionWord, results.length);
+                        } else {
+                            const pElement = document.querySelector('p.find');
+                            pElement.innerHTML = 'Nap: <strong id="game-number"></strong> | Tippek száma: <strong id="guesses-count">0</strong> | Segítség kérve: <strong id="hint-left">0</strong>';
+
+                            document.querySelector('.instructions').classList.add('hidden');
+                            document.querySelector('footer').classList.add('hidden');
+                            results.push({word: word, rank: data.rank});
+                            gameData[gameDay].results = results;
+                            lastGuess = {word: word, rank: data.rank};
+                            gameData[gameDay].lastGuess = lastGuess;
+                            localStorage.setItem('gameData', JSON.stringify(gameData));
+                            savedResults = gameData[gameDay].results
+                            document.getElementById('guesses-count').innerText = savedResults.length - hintCount;
+                            if (!isRandom) {
+                                document.getElementById('game-number').innerText = `${gameDay}`;
+                            } else {
+                                document.getElementById('game-number').innerText = "Véletlenszerű";
+                            }
+//                    document.getElementById('streak').innerText = solved;
+                            document.getElementById('hint-left').innerText = hintCount;
+                            // Clear previous results
+                            const container = document.getElementById('results');
+                            container.innerHTML = '';
+
+                            // Create and insert the latest tip box (first occurrence of the current guess)
+                            createWordBox(word, data.rank, true);
+
+                            // Add a separator line
+                            const separator = document.createElement('div');
+                            separator.classList.add('separator');
+                            container.appendChild(separator);
+
+                            // Sort the results by rank and create and insert all word boxes
+                            results.sort((a, b) => a.rank - b.rank);
+                            results.forEach(result => {
+                                createWordBox(result.word, result.rank, result.word === word);
+                            });
+                        }
+                    }
+                })
+                .catch(error => {
+                    showError("Valami hiba történt, kérlek próbáld újra később!");
+                    loadingDiv.style.display = "none";
+                });
+        }
     }
     }
     })
