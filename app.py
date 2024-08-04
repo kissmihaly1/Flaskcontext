@@ -39,9 +39,11 @@ def save_guess(word, rank, user_id=None):
 def home():
     return render_template('index.html')
 
-@app.route('/adatvedelmitajekoztato')
+@app.route('/privacy')
 def privacy():
     return render_template('privacy.html')
+
+
 
 @app.route('/checkdate', methods=['POST'])
 def checkdate():

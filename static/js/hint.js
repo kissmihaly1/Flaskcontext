@@ -47,6 +47,7 @@ function handleHint() {
 
                     // Create and insert the latest tip box (first occurrence of the current guess)
                     createWordBox(data.word, data.rank, true);
+                    document.getElementById('hint-left').innerText = hintCount;
 
                     // Add a separator line
                     const separator = document.createElement('div');

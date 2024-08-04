@@ -1,0 +1,37 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    overflow: auto;
+}
+.privacylink{
+    align-items: center;
+    left: 45%;
+    color: #fff;
+    border: 3px solid #ec7b0a;
+    background-color: #ec7b0a;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 10px;
+    width: 10%;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    text-decoration: none;
+}
+.highlight {
+    color: #ec7b0a;
+}
+.privacylink:hover{
+    background-color: #b46413;
+    border: 3px solid #b46413;
+    transition: background-color 1s;
+}
+.last{
+    margin-bottom: 70px;
+}

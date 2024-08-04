@@ -187,17 +187,41 @@ function closeDropdown() {
 }
 
 
-document.querySelectorAll('.faq-title').forEach(title => {
+function smoothScroll(targetY, duration) {
+    const startY = window.pageYOffset;
+    const difference = targetY - startY;
+    const startTime = performance.now();
+
+    function step() {
+        const progress = (performance.now() - startTime) / duration;
+        if (progress < 1) {
+            window.scrollTo(0, startY + difference * easeInOutCubic(progress));
+            requestAnimationFrame(step);
+        } else {
+            window.scrollTo(0, targetY);
+        }
+    }
+
+    function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }
+
+    requestAnimationFrame(step);
+}
+
+document.querySelectorAll('.faq-title, .faq-title2').forEach(title => {
     title.addEventListener('click', function() {
         const content = this.nextElementSibling;
         content.classList.toggle('active');
         this.classList.toggle('active');
-    });
-});
-document.querySelectorAll('.faq-title2').forEach(title => {
-    title.addEventListener('click', function() {
-        const content = this.nextElementSibling;
-        content.classList.toggle('active');
-        this.classList.toggle('active');
+
+        if (content.classList.contains('active')) {
+            setTimeout(() => {
+                const yOffset = -50; // Adjust this value to scroll more or less
+                const y = this.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                smoothScroll(y, 1500); // 1500ms duration for a slower scroll
+        }, 50);
+        }
     });
 });

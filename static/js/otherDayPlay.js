@@ -10,7 +10,7 @@ function otherDayPlay(chosenDay, isRandom){
                 }
             }
         }
-        document.getElementById('streak').innerText = solved;
+        //document.getElementById('streak').innerText = solved;
         if (!storedGameData) {
             // Initialize new game data for the current game day
             storedGameData = initializeNewGameData();

@@ -10,6 +10,9 @@ body {
     min-height: 100dvh;
     overflow: auto;
 }
+a{
+    color: #fff;
+}
 html{
     background-color: #222;
 }
@@ -685,6 +688,10 @@ button {
   40% {
     transform: scale(1);
     background-color: #ec7b0a;
-    border: 0.5px solid #fff;
+    border: 2px solid #fff;
   }
+}
+
+.strong{
+  font-weight: bold;
 }

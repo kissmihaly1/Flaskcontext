@@ -5,7 +5,7 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KONTEXTUS.</title>
+    <title>Kontextus</title>
     <meta name="description" content="KONTEXTUS - Találd meg a titkos szót és játssz minden nap! Korlátlan számú tipp, napi egy kihívás.">
     <meta name="keywords" content="KONTEXTUS, titkos szó, játék, magyar szavak, AI, mesterséges intelligencia, szórakozás">
     <meta property="og:title" content="KONTEXTUS">
@@ -36,7 +36,7 @@
             </div>
         </header>
         <hr>
-        <p class="find">Nap: <span id="game-number"></span> |  Megoldva: <strong id="streak"></strong> játék</p>
+        <p class="find">Nap: <strong id="game-number"></strong> |  Megoldva: <strong id="streak"></strong> játék</p>
                 <input type="text" placeholder="írj ide egy szót..." id="word-input" aria-label="Word input">
             <button id="submit-button">Küldés</button>
         <div class="loading-wrapper" id="loading-wrapper">
@@ -81,7 +81,7 @@
             <h2>Információk</h2>
             <p>Ez egy személyes projekt, amelyet már létező oldalak ihlettek, azonban azok nem voltak elérhetőek magyar szavakkal. Hibák előfordulhatnak, és <strong>még</strong> nem a legjobb a pontosság, de folyamatosan fejlesztve van.</p>
             <p>Visszajelzés: kissmihalyit@gmail.com</p>
-            <p>A weboldal cookie-kat használ statisztikák gyűjtésére és hirdetések megjelenítésére. További információk az <a href="{{ url_for('privacy') }}">Adatvédelmi tájékoztató</a>-ban.</p>
+            <p>A weboldal cookie-kat használ statisztikák gyűjtésére és hirdetések megjelenítésére. További információk az <a class="strong" href="{{ url_for('privacy') }}">Adatvédelmi tájékoztató</a>-ban.</p>
         </div>
     </div>
     <div id="modal_info" class="modal_info">

@@ -150,9 +150,10 @@ window.addEventListener('load', () => {
                         // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <strong id="guesses-count">0</strong> | Megoldva: <span id="streak">0</span> játék';
-                    document.getElementById('guesses-count').innerText = savedResults.length;
-                    document.getElementById('streak').innerText = solved;
+                    pElement.innerHTML = 'Nap: <strong id="game-number"></strong> | Tippek száma: <strong id="guesses-count">0</strong> | Segítség kérve: <strong id="hint-left">0</strong>';
+                    document.getElementById('guesses-count').innerText = savedResults.length-hintCount;
+                    //document.getElementById('streak').innerText = solved;
+                    document.getElementById('hint-left').innerText = hintCount;
                     if (!isRandom) {
                         document.getElementById('game-number').innerText = `${gameDay}`;
                     }
@@ -274,7 +275,7 @@ const boxes = document.querySelectorAll('.row-wrapper');
                     showCongratulationsPage(solutionWord, results.length);
                 } else {
                     const pElement = document.querySelector('p.find');
-                    pElement.innerHTML = 'Nap: <span id="game-number"></span> | Tippek száma: <span id="guesses-count">0</span> | Megoldva: <span id="streak">0</span> játék';
+                    pElement.innerHTML = 'Nap: <strong id="game-number"></strong> | Tippek száma: <strong id="guesses-count">0</strong> | Segítség kérve: <strong id="hint-left">0</strong>';
 
                     document.querySelector('.instructions').classList.add('hidden');
                     document.querySelector('footer').classList.add('hidden');
@@ -283,16 +284,16 @@ const boxes = document.querySelectorAll('.row-wrapper');
                     lastGuess = { word: word, rank: data.rank };
                     gameData[gameDay].lastGuess = lastGuess;
                     localStorage.setItem('gameData', JSON.stringify(gameData));
-
-                    document.getElementById('guesses-count').innerText = results.length;
+                    savedResults = gameData[gameDay].results
+                    document.getElementById('guesses-count').innerText = savedResults.length-hintCount;
                     if (!isRandom) {
                         document.getElementById('game-number').innerText = `${gameDay}`;
                     }
                     else{
                         document.getElementById('game-number').innerText = "Véletlenszerű";
                     }
-                    document.getElementById('streak').innerText = solved;
-
+//                    document.getElementById('streak').innerText = solved;
+                    document.getElementById('hint-left').innerText = hintCount;
                     // Clear previous results
                     const container = document.getElementById('results');
                     container.innerHTML = '';
@@ -417,7 +418,7 @@ function updateBodyContent() {
                     </div>
                 </header>
                 <hr>
-                <p class="find">Nap: <span id="game-number"></span> |  Megoldva: <strong id="streak"></strong> játék</p>
+                <p class="find">Nap: <strong id="game-number"></strong> |  Megoldva: <strong id="streak"></strong> játék</p>
                 <main>
                     <input type="text" placeholder="írj ide egy szót..." id="word-input" aria-label="Word input">
                     <button id="submit-button">Küldés</button>
@@ -449,7 +450,7 @@ function updateBodyContent() {
                     <h2>Információk</h2>
                     <p>Ez egy személyes projekt, amelyet már létező oldalak ihlettek, azonban azok nem voltak elérhetőek magyar szavakkal. Hibák előfordulhatnak, és <strong>még</strong> nem a legjobb a pontosság, de folyamatosan fejlesztve van.</p>
                     <p>Visszajelzés: kissmihalyit@gmail.com</p>
-                    <p>A weboldal cookie-kat használ statisztikák gyűjtésére és hirdetések megjelenítésére. További információk az <a href="{{ url_for('privacy') }}">Adatvédelmi tájékoztató</a>-ban</p>
+                    <p>A weboldal cookie-kat használ statisztikák gyűjtésére és hirdetések megjelenítésére. További információk az <a class="strong" href="{{ url_for('privacy') }}">Adatvédelmi tájékoztató</a>-ban</p>
                 </div>
             </div>
             <div id="modal_info" class="modal_info">
