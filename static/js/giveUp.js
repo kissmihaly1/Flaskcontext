@@ -2,6 +2,8 @@ function handleGiveUp() {
     if (document.getElementById('surrender-modal')) {
         closeSurrenderModal();
     }
+    let loadingDiv = document.getElementById("loading-wrapper");
+    loadingDiv.style.display = "flex";
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     if (!gameData[gameDay]) {
         gameData[gameDay] = initializeNewGameData();
@@ -36,7 +38,14 @@ function handleGiveUp() {
                     <h1>KONT<span class="highlight">EXTUS</span>.</h1>
                 </header>
                 <hr>
-                <main>
+                <div class="loading-wrapper" id="loading-wrapper">
+                    <div class="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                        <main>
                     <h2>Feladva: ${gameDay}. nap</h2>
                     <p>A megoldás a(z) <strong class="orange">${solutionWord}</strong> szó volt. Próbálj ki másik napot is!</p>
                    <div><button class="button" onclick="modalClosestWords(gameDay)">Legközelebbi 500 szó</button></div>
@@ -46,13 +55,6 @@ function handleGiveUp() {
                         <p>Megoldva: <strong id="streak">${solved}</strong> játék</p>
                     </div>
                     <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
-                    <div class="loading-wrapper" id="loading-wrapper">
-                        <div class="loading">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
                     <div id="modal-game" class="modal-game">
                         <div class="modal-content-game">
                             <span class="close" id="close-game-modal">&times;</span>
@@ -67,8 +69,9 @@ function handleGiveUp() {
                             <div id="results"></div>
                         </div>
                     </div>
-            </div>
+
                 </main>
+               </div>
             </div>
             </body>
             

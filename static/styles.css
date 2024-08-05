@@ -68,7 +68,7 @@ html{
 
 header h1 {
     font-size: 2.2em;
-    margin: 10px;
+    margin: 10px 10px 0 10px;
 }
 
 header .highlight {
@@ -314,7 +314,7 @@ footer p {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 30%;
     border-radius: 10px;
     color: #e1e0e0;
     animation: slideIn 0.5s ease;
@@ -399,7 +399,9 @@ button {
     background-color: #cececd;
     color: #0a0a0a;
 }
+#surrender-modal{
 
+}
 #confirm-surrender {
     background-color: #a90c0c;
     color: #fff;

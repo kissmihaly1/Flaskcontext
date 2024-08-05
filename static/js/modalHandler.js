@@ -152,11 +152,8 @@ function modalClosestWords(day){
                         rank += 1;
                     });
             });
-        loadingDiv.style.display = "none";
-
+    loadingDiv.style.display = "none";
 }
-
-
 let isDropdownOpen = false;
 
 
