@@ -7,8 +7,8 @@ import re
 class ContextoGame:
     def __init__(self, model_path, lemmatized_words_path):
         self.model = KeyedVectors.load_word2vec_format(model_path, limit=100000)
-        self.lemmatized_words_df = pd.read_csv(lemmatized_words_path)
-        self.lemmatized_words = list(set(self.lemmatized_words_df['lemma'].str.lower().tolist()))
+        with open('lemmatizedwords.txt', 'r', encoding='utf-8') as file:
+            self.lemmatized_words = list(set(word.lower().strip() for word in file))
         self.ranked_list = []
         self.hints = 0
 
@@ -36,7 +36,7 @@ class ContextoGame:
                     similarities.append((word, similarity))
 
         self.ranked_list = sorted(similarities, key=lambda x: x[1], reverse=True)
-        self.save_list_to_txt(self.ranked_list, f'ranked_list{day}.txt')
+        self.save_list_to_txt(self.ranked_list, f'ranked_list{day}jooo.txt')
         return self.ranked_list
 
     def get_similarity_rank(self, input_word, day):
