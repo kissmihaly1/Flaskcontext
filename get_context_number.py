@@ -5,7 +5,7 @@ import re
 
 
 class ContextoGame:
-    def __init__(self, model_path, lemmatized_words_path):
+    def __init__(self, model_path):
         self.model = KeyedVectors.load_word2vec_format(model_path, limit=100000)
         with open('lemmatizedwords.txt', 'r', encoding='utf-8') as file:
             self.lemmatized_words = list(set(word.lower().strip() for word in file))
@@ -75,8 +75,12 @@ class ContextoGame:
             return ranked_list[199][0], 200
         elif rank > 100:
             return ranked_list[99][0], 100
+        elif rank > 75:
+            return ranked_list[74][0], 75
         elif rank > 50:
             return ranked_list[49][0], 50
+        elif rank > 35:
+            return ranked_list[34][0], 35
         elif rank > 25:
             return ranked_list[24][0], 25
         elif rank > 12:
