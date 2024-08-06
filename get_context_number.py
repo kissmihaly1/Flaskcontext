@@ -67,32 +67,21 @@ class ContextoGame:
                 item = eval(line.strip())
                 ranked_list.append(item)
 
-        if rank > 1000:
-            return ranked_list[999][0], 1000
-        elif rank > 500:
-            return ranked_list[499][0], 500
-        elif rank > 200:
-            return ranked_list[199][0], 200
-        elif rank > 100:
-            return ranked_list[99][0], 100
-        elif rank > 75:
-            return ranked_list[74][0], 75
-        elif rank > 50:
-            return ranked_list[49][0], 50
-        elif rank > 35:
-            return ranked_list[34][0], 35
-        elif rank > 25:
-            return ranked_list[24][0], 25
-        elif rank > 12:
-            return ranked_list[11][0], 12
-        elif rank > 8:
-            return ranked_list[7][0], 8
-        elif rank > 5:
-            return ranked_list[4][0], 5
-        elif rank > 2:
-            return ranked_list[1][0], 2
-        else:
+        if 1000 <= rank <= 5000:
+            result = rank - int(rank * 0.4)
+        elif 100 <= rank < 1000:
+            result = rank - int(rank * 0.35)
+        elif 10 <= rank < 100:
+            result = rank - int(rank * 0.3)
+        elif 3 < rank < 10:
+            result = rank - int(rank * 0.5)
+        elif rank == 3:
+            result = 1
+        elif rank == 2:
             return None, None
+        else:
+            result = rank - int(rank * 0.4)
+        return ranked_list[result][0], result+1
 
     def save_list_to_txt(self, lst, filename):
         with open(f'words/{filename}', 'w') as file:
