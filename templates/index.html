@@ -37,7 +37,7 @@
             </div>
         </header>
         <hr>
-        <p class="find">Nap: <strong id="game-number"></strong> |  Megoldva: <strong id="streak"></strong> játék</p>
+        <p class="find">Nap: <strong id="game-number"></strong> |  Megoldva: <strong id="solved"></strong> játék |  Sorozat: <strong id="streak"></strong> nap</p>
                 <input type="text" placeholder="írj ide egy szót..." id="word-input" aria-label="Word input">
             <button id="submit-button">Küldés</button>
         <div class="loading-wrapper" id="loading-wrapper">
@@ -51,9 +51,8 @@
             <div id="results"></div>
             <section class="instructions">
                 <h2>Hogyan kell játszani?</h2>
-                <p>Találd meg a titkos szót. Egy pontszámot fogsz kapni a tippelt szó mellé, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb szám, annál jobb a tipp! A titkos szó az 1-es szám.</p>
-                <p>Korlátlan számú tipped van.</p>
-                <p>A szavakat egy mesterséges intelligencia algoritmusa rendezte aszerint, hogy mennyire hasonlítanak a titkos szóhoz.</p>
+                <p>A cél: találd meg a titkos szót. Ehhez tippelgetni kell szavakat, és minden szóhoz jár egy pontszám, amely azt mutatja, hogy milyen közel áll a kontextusa (jelentése) a titkos szóhoz. Minél kisebb a szám, annál jobb a tipp! A titkos szó az 1-es szám. Korlátlan számú tippet lehet tenni.</p>
+                <p>A szavakat egy mesterséges intelligencia algoritmusa rendezte aszerint, hogy mennyire hasonlítanak a titkos szóhoz. További információk a menüben!</p>
                 <p><strong>A játék béta verzióban van, fejlesztés alatt áll!</strong></p>
             </section>
         </main>
@@ -66,6 +65,10 @@
             <p class="faq-title2">Hogyan kérhetek segítséget?<span class="arrow"></span></p>
             <div class="faq-content2">
                 <p>Segítséget kérni a menüben lehet, amely a 3 vonalra kattintva érhető el.</p>
+            </div>
+            <p class="faq-title3">Mi a különbség a sorozat és a megoldva között?<span class="arrow"></span></p>
+            <div class="faq-content3">
+                <p>A sorozat azt jelzi, hogy hány napig oldottál meg sorozatban minden nap legalább egy játékot, míg a megoldva azt mutatja, hogy összesen hány napnak a játékát oldottad meg.</p>
             </div>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198" crossorigin="anonymous"></script>
         <p class="hidden">Kontextus</p>

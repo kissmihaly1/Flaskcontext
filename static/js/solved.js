@@ -37,13 +37,13 @@ document.body.innerHTML = `
         <hr>
         <main class="congrats-main">
             <div class="solution">
-                <h1 class="subtitle">Gratulálok!</h1>
+                <h1 class="subtitle">Szép munka!</h1>
                 <p>Kitaláltad a(z) ${gameDay}. nap titkos szavát: <strong class="solution-word">${word}</strong></p>
                <div><button class="button" onclick="modalClosestWords(gameDay)">Legközelebbi 500 szó</button></div>
-               <hr>     
+               <hr>
             </div>
             <div class="stats">
-                <p>Tippek száma: <strong id="guesses-count">${guessCount}</strong> | Használt segítség: <span id="hint-count">${hintCount}</span></p>
+                <p>Tippek száma: <strong id="guesses-count">${guessCount}</strong> | Használt segítség: <strong id="hint-count">${hintCount}</strong></p>
 
                 <canvas id="colorBarChart" width="400" height="200"></canvas>
             </div>
@@ -62,7 +62,7 @@ document.body.innerHTML = `
                 <hr>
             </div>
             <div class="streak-container">
-                <p>Megoldva: <strong id="streak">${solved}</strong> játék</p>
+                <p>Megoldva: <strong id="solved">${solved}</strong> játék</p>
             </div>
                 <div id="modal-game" class="modal-game">
                 <div class="modal-content-game">
@@ -79,6 +79,7 @@ document.body.innerHTML = `
                 </div>
             </div>
                <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
+              <div><p class="streak"> <em>Sorozatban <strong>${gameData.streak}</strong> egymást követő napon találtál ki szót!</em></p></div>
         </main>
     </div>
     </div>

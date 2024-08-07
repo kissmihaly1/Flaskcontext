@@ -52,7 +52,7 @@ function handleGiveUp() {
                     <p>A következő napi játék: </p><div id="countdown"></div>
                     <hr>
                     <div class="streak-container">
-                        <p>Megoldva: <strong id="streak">${solved}</strong> játék</p>
+                        <p>Megoldva: <strong id="solved">${solved}</strong> játék</p>
                     </div>
                     <div><button class="button" onclick="modalGame()">Játszanál még? További napok itt!</button></div>
                     <div id="modal-game" class="modal-game">

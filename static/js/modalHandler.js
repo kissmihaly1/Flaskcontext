@@ -206,7 +206,7 @@ function smoothScroll(targetY, duration) {
     requestAnimationFrame(step);
 }
 
-document.querySelectorAll('.faq-title, .faq-title2').forEach(title => {
+document.querySelectorAll('.faq-title, .faq-title2, .faq-title3').forEach(title => {
     title.addEventListener('click', function() {
         const content = this.nextElementSibling;
         content.classList.toggle('active');

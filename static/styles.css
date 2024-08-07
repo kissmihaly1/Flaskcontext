@@ -576,7 +576,7 @@ button {
     width: 90%;
 }
 
-.faq-title, .faq-title2 {
+.faq-title, .faq-title2, .faq-title3 {
     cursor: pointer;
     padding: 15px;
     background-color: #333;
@@ -588,7 +588,7 @@ button {
     align-items: center;
 }
 
-.faq-title:hover, .faq-title2:hover {
+.faq-title:hover, .faq-title2:hover, .faq-title3:hover {
     background-color: #ec7b0a;
 }
 
@@ -602,10 +602,8 @@ button {
     transform: translateY(-50%) rotate(45deg);
     margin: 5px 3px 0 0;
 }
-#faq-section h2{
 
-}
-.faq-content, .faq-content2 {
+.faq-content, .faq-content2, .faq-content3 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
@@ -613,7 +611,7 @@ button {
     padding: 0 15px;
 }
 
-.faq-content.active, .faq-content2.active {
+.faq-content.active, .faq-content2.active, .faq-content3.active {
     max-height: 200px;
     transition: max-height 0.5s ease-in;
 }
@@ -622,6 +620,9 @@ button {
     transform: rotate(-135deg);
 }
 .faq-title2.active .arrow {
+    transform: rotate(-135deg);
+}
+.faq-title3.active .arrow {
     transform: rotate(-135deg);
 }
 .box {
@@ -668,7 +669,9 @@ button {
     right: 10px;
 
 }
-
+.streak{
+    margin-top: 20px;
+}
 .box:hover, .actual-box:hover, .random-box:hover{
     background-color: #b46413;
     transition: background-color 0.3s ease-in;

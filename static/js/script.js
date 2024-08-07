@@ -64,6 +64,7 @@ window.addEventListener('load', () => {
         let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
         gameDay = gameData[lastGameID];
         isRandom = gameData.isRandom;
+        streak = gameData.streak;
         if (!gameData[day]){
             gameDay = day;
             lastGameID = day;
@@ -76,22 +77,37 @@ window.addEventListener('load', () => {
         else{
             document.getElementById('game-number').innerText = "Véletlenszerű";
         }
-
-        // Load streak and last solved day from localStorage
-        lastSolvedDay = localStorage.getItem('lastSolvedDay');
-        document.getElementById('streak').innerText = solved;
+        document.getElementById('solved').innerText = solved;
+        document.getElementById('streak').innerText = streak;
         // Check if data for the current game day exists
         let storedGameData = gameData[gameDay];
+
+        let lastSolved = gameData.lastSolved;
+        if (!lastSolved) {
+            gameData.lastSolved = new Date().toISOString().split('T')[0];
+            gameData.streak = 0;
+            localStorage.setItem('gameData', JSON.stringify(gameData));
+        }
+        else {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            const today = new Date().toISOString().split('T')[0];
+            if (!(lastSolved === yesterday.toISOString().split('T')[0]) && !(lastSolved=== today)) {
+                gameData.streak = 0;
+                streak = 0;
+            }
+        }
 
         if (!storedGameData) {
             // Initialize new game data for the current game day
             storedGameData = initializeNewGameData();
-
             updateGameData(gameDay, storedGameData);
+
             let changeGameID = JSON.parse(localStorage.getItem('gameData')) || {};
             changeGameID.lastGameID = gameDay;
             localStorage.setItem('gameData', JSON.stringify(changeGameID));
             solved = 0;
+            streak = gameData.streak;
             for (let i = 1; i <= numberofDays; i++) {
                 if (gameData[i]) {
                     if (gameData[i].solvedToday === true) {
@@ -99,7 +115,8 @@ window.addEventListener('load', () => {
                     }
                 }
             }
-            document.getElementById('streak').innerText = solved;
+            document.getElementById('solved').innerText = solved;
+            document.getElementById('streak').innerText = streak;
             document.body.classList.remove('hidden');
         } else {
             // At this point, `storedGameData` contains the current game day's data
@@ -110,6 +127,8 @@ window.addEventListener('load', () => {
             solvedToday = storedGameData.solvedToday;
             lastGuess = storedGameData.lastGuess;
             lastGameID = storedGameData.lastGameID;
+            lastSolved = storedGameData.lastSolved;
+            streak = storedGameData.streak;
             // Example of updating the current game day's data (if needed)
             let newDayData = {
                 results: savedResults,
@@ -119,6 +138,8 @@ window.addEventListener('load', () => {
                 solvedToday: solvedToday,
                 lastGuess: lastGuess,
                 lastGameID: lastGameID,
+                lastSolved: lastSolved,
+                streak: streak,
             };
             updateGameData(gameDay, newDayData);
             if (giveUp) {
@@ -145,14 +166,15 @@ window.addEventListener('load', () => {
                         }
                     }
                 }
+                streak = gameData.streak;
                 document.body.classList.remove('hidden');
-                document.getElementById('streak').innerText = solved;
+                document.getElementById('solved').innerText = solved;
+                document.getElementById('streak').innerText = streak;
                         // Load existing boxes from results
                 if (savedResults && savedResults.length > 0) {
                     const pElement = document.querySelector('p.find');
                     pElement.innerHTML = 'Nap: <strong id="game-number"></strong> | Tippek száma: <strong id="guesses-count">0</strong> | Segítség kérve: <strong id="hint-left">0</strong>';
                     document.getElementById('guesses-count').innerText = savedResults.length-hintCount;
-                    //document.getElementById('streak').innerText = solved;
                     document.getElementById('hint-left').innerText = hintCount;
                     if (!isRandom) {
                         document.getElementById('game-number').innerText = `${gameDay}`;
@@ -278,11 +300,28 @@ const boxes = document.querySelectorAll('.row-wrapper');
                             gameData[gameDay].solvedToday = true;
                             solvedToday = true;
 
+                            let lastSolved = gameData.lastSolved;
+                            if (lastSolved) {
+                            const yesterday = new Date();
+                            yesterday.setDate(yesterday.getDate() - 1);
+                            if (lastSolved === yesterday.toISOString().split('T')[0]) {
+                                streak += 1;
+                                lastSolved = new Date().toISOString().split('T')[0];
+                                gameData.lastSolved = lastSolved;
+                            }
+                            else{
+                                streak = 1;
+                            }
+                            gameData.streak= streak;
+                        }
+
                             results.push({word: word, rank: data.rank});
                             gameData[gameDay].results = results;
                             localStorage.setItem('gameData', JSON.stringify(gameData));
                             let solutionWord = results.find(result => result.rank === 1)?.word;
                             showCongratulationsPage(solutionWord, results.length);
+
+
                         } else {
                             const pElement = document.querySelector('p.find');
                             pElement.innerHTML = 'Nap: <strong id="game-number"></strong> | Tippek száma: <strong id="guesses-count">0</strong> | Segítség kérve: <strong id="hint-left">0</strong>';
@@ -301,7 +340,6 @@ const boxes = document.querySelectorAll('.row-wrapper');
                             } else {
                                 document.getElementById('game-number').innerText = "Véletlenszerű";
                             }
-//                    document.getElementById('streak').innerText = solved;
                             document.getElementById('hint-left').innerText = hintCount;
                             // Clear previous results
                             const container = document.getElementById('results');
@@ -428,7 +466,7 @@ function updateBodyContent() {
                     </div>
                 </header>
                 <hr>
-                <p class="find">Nap: <strong id="game-number"></strong> |  Megoldva: <strong id="streak"></strong> játék</p>
+                <p class="find">Nap: <strong id="game-number"></strong> |  Megoldva: <strong id="solved"></strong> játék |  Sorozat: <strong id="streak"></strong> nap</p>
                 <main>
                     <input type="text" placeholder="írj ide egy szót..." id="word-input" aria-label="Word input">
                     <button id="submit-button">Küldés</button>
