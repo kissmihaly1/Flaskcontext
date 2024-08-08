@@ -538,7 +538,7 @@ button {
 }
 
 .solution {
-    margin: 20px 0;
+    margin: 0;
 }
 .solution-word {
     font-size: 1.2em;
@@ -574,6 +574,7 @@ button {
     max-height: 80dvh;
     overflow-y: auto;
     width: 90%;
+    margin-top: 0;
 }
 
 .faq-title, .faq-title2, .faq-title3 {
@@ -670,7 +671,7 @@ button {
 
 }
 .streak{
-    margin-top: 20px;
+    margin: 10px 0 0 0;
 }
 .box:hover, .actual-box:hover, .random-box:hover{
     background-color: #b46413;
