@@ -6,7 +6,6 @@ let solvedToday;
 let lastGuess;
 let cooldown;
 let streak;
-let lastSolvedDay;
 let lastGameID;
 let numberofDays
 let solved = 0;
@@ -48,12 +47,6 @@ function updateGameData(gameDay, dayData) {
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
     gameData[gameDay] = dayData;
     localStorage.setItem('gameData', JSON.stringify(gameData));
-}
-
-// Function to update streak in localStorage
-function updateStreak(streak, lastSolvedDay) {
-    localStorage.setItem('streak', streak);
-    localStorage.setItem('lastSolvedDay', lastSolvedDay);
 }
 
 // Initialize gameDay when the page loads
@@ -311,9 +304,6 @@ const boxes = document.querySelectorAll('.row-wrapper');
                                 lastSolved = new Date().toISOString().split('T')[0];
                                 gameData.lastSolved = lastSolved;
                             }
-                            else{
-                                streak = 1;
-                            }
                             gameData.streak= streak;
                         }
 
@@ -407,7 +397,6 @@ function showGameModal(){
 
 function updateJsVariablesFromLocalStorage() {
     let gameData = JSON.parse(localStorage.getItem('gameData')) || {};
-    let lastSolvedDay = localStorage.getItem('lastSolvedDay');
 
     if (gameData[gameDay]) {
         savedResults = gameData[gameDay].results || [];
