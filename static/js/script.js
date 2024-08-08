@@ -68,6 +68,9 @@ window.addEventListener('load', () => {
         if (!gameData[day]){
             gameDay = day;
             lastGameID = day;
+            isRandom = false;
+            gameData.isRandom = false;
+            localStorage.setItem('gameData', JSON.stringify(gameData));
         }else{
             gameDay = gameData.lastGameID;
         }
@@ -217,7 +220,6 @@ function handleGuess() {
         gameData.isRandom = false;
         localStorage.setItem('gameData', JSON.stringify(gameData));
         location.reload();
-        return;
         }else{
 
     // Check if gameDay matches the current game day
