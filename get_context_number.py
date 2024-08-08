@@ -6,7 +6,7 @@ import re
 
 class ContextoGame:
     def __init__(self, model_path):
-        self.model = KeyedVectors.load_word2vec_format(model_path, limit=100000)
+        self.model = KeyedVectors.load_word2vec_format(model_path, limit=300000)
         with open('lemmatizedwords.txt', 'r', encoding='utf-8') as file:
             self.lemmatized_words = list(set(word.lower().strip() for word in file))
         self.ranked_list = []
