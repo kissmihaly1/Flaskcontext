@@ -207,8 +207,6 @@ window.addEventListener('load', () => {
     });
 });
 function handleGuess() {
-    const inputField = document.getElementById('word-input');
-    inputField.disabled = true;
     const submitButton = document.getElementById('submit-button');
     submitButton.disabled = true;
     let word = document.getElementById('word-input').value.trim().toLowerCase();
@@ -374,7 +372,6 @@ const boxes = document.querySelectorAll('.row-wrapper');
         }
     }
     }
-         inputField.disabled = false
          submitButton.disabled = false;
     })
 }
