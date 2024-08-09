@@ -26,6 +26,7 @@ class ContextoGame:
 
         self.ranked_list = sorted(similarities, key=lambda x: x[1], reverse=True)
         self.save_list_to_txt(self.ranked_list, f'ranked_list{day}.txt')
+        self.model = None
         return self.ranked_list
 
     def get_similarity_rank(self, input_word, day):
