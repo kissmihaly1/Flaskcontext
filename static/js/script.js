@@ -206,7 +206,12 @@ window.addEventListener('load', () => {
         console.error('Failed to check date and manage game data:', error);
     });
 });
+let isHandling = false;
+
 function handleGuess() {
+        if (isHandling) return;
+    isHandling = true;
+
     const submitButton = document.getElementById('submit-button');
     submitButton.disabled = true;
     let word = document.getElementById('word-input').value.trim().toLowerCase();
@@ -368,12 +373,15 @@ const boxes = document.querySelectorAll('.row-wrapper');
                 .catch(error => {
                     showError("Valami hiba történt, kérlek próbáld újra később!");
                     loadingDiv.style.display = "none";
+                    isHandling = false;
                 });
         }
     }
     }
          submitButton.disabled = false;
+        isHandling = false;
     })
+    isHandling = false;
 }
 
 
