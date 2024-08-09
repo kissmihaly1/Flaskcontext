@@ -6,22 +6,11 @@ import re
 
 class ContextoGame:
     def __init__(self, model_path):
-        self.model = KeyedVectors.load_word2vec_format(model_path, limit=300000)
+        self.model = KeyedVectors.load_word2vec_format(model_path, limit=100000)
         with open('lemmatizedwords.txt', 'r', encoding='utf-8') as file:
             self.lemmatized_words = list(set(word.lower().strip() for word in file))
         self.ranked_list = []
         self.hints = 0
-
-    def get_similarity(self, word1, word2):
-        if word1 in self.model and word2 in self.model:
-            vector1 = self.model[word1]
-            vector2 = self.model[word2]
-            dot_product = np.dot(vector1, vector2)
-            norm1 = np.linalg.norm(vector1)
-            norm2 = np.linalg.norm(vector2)
-            return dot_product / (norm1 * norm2)
-        else:
-            return 0.0
 
     def create_ranked_list(self, solution_word, day):
         if solution_word not in self.model:
@@ -37,22 +26,19 @@ class ContextoGame:
 
         self.ranked_list = sorted(similarities, key=lambda x: x[1], reverse=True)
         self.save_list_to_txt(self.ranked_list, f'ranked_list{day}.txt')
-        self.model = None
         return self.ranked_list
 
     def get_similarity_rank(self, input_word, day):
         try:
             filename = f'words/ranked_list{day}.txt'
-            ranked_list = []
+            rank_dict = {}
             with open(filename, 'r', encoding='utf-8') as file:
-                for line in file:
-                    item = eval(line.strip())
-                    ranked_list.append(item)
-            for index, item in enumerate(ranked_list):
-                if item[0] == input_word:
-                    return index+1
+                for rank, line in enumerate(file, 1):
+                    word, similarity = eval(line.strip())
+                    rank_dict[word] = rank
 
-            return -1
+            return rank_dict.get(input_word, -1)
+
         except FileNotFoundError:
             print(f"File {filename} not found.")
             return -1

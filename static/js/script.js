@@ -80,7 +80,7 @@ window.addEventListener('load', () => {
 
         let lastSolved = gameData.lastSolved;
         if (!lastSolved) {
-            gameData.lastSolved = new Date().toISOString().split('T')[0];
+            gameData.lastSolved = "";
             gameData.streak = 0;
             localStorage.setItem('gameData', JSON.stringify(gameData));
         }
@@ -91,6 +91,8 @@ window.addEventListener('load', () => {
             if (!(lastSolved === yesterday.toISOString().split('T')[0]) && !(lastSolved=== today)) {
                 gameData.streak = 0;
                 streak = 0;
+                lastSolved = "";
+                gameData.lastSolved = "";
             }
         }
 
@@ -296,16 +298,24 @@ const boxes = document.querySelectorAll('.row-wrapper');
                             solvedToday = true;
 
                             let lastSolved = gameData.lastSolved;
-                            if (lastSolved) {
                             const yesterday = new Date();
                             yesterday.setDate(yesterday.getDate() - 1);
+                            const today = new Date();
+                            today.setDate(today.getDate());
                             if (lastSolved === yesterday.toISOString().split('T')[0]) {
                                 streak += 1;
                                 lastSolved = new Date().toISOString().split('T')[0];
                                 gameData.lastSolved = lastSolved;
                             }
+                            else if(lastSolved === today.toISOString().split('T')[0]){
+                            }
+                            else{
+                                streak = 1;
+                                lastSolved = new Date().toISOString().split('T')[0];
+                                gameData.lastSolved = lastSolved;
+                            }
                             gameData.streak= streak;
-                        }
+
 
                             results.push({word: word, rank: data.rank});
                             gameData[gameDay].results = results;
