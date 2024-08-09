@@ -27,7 +27,17 @@ guessCount = guessCount-hintCount;
 green_number = green_number - hintCount;
 document.body.innerHTML = `
     <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4112526044003198"
-     crossorigin="anonymous"></script></head>
+     crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKZN55V66N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-NKZN55V66N');
+    </script>
+     
+     </head>
     <body class="hidden">
         <div class="game-wrapper">
             <div class="congrats">        
